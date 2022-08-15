@@ -1,0 +1,23 @@
+.button_removeSelection {
+    border: none;
+    border-radius: 5px;
+    color: grey;
+    background: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+.partlist {
+    font-family: Helvetica;
+}
+
+th__component {
+    text-align: left;
+    background-color: #409cff;
+
+}
+.th__selection {
+    text-align: left;
+    background-color: #409cff;
+    border-color: #9ABAD9;
+}
