@@ -11,7 +11,7 @@
     font-family: Helvetica;
 }
 
-th__component {
+.th__component {
     text-align: left;
     background-color: #409cff;
 
@@ -21,3 +21,29 @@ th__component {
     background-color: #409cff;
     border-color: #9ABAD9;
 }
+
+.th__price {
+    text-align: right;
+    background-color: #409cff;
+}
+
+.th__weight {
+    text-align: right;
+    background-color: #409cff;
+}
+
+.th__price-weight {
+    text-align: right;
+    background-color: #409cff;
+}
+
+.th__where {
+    text-align: right;
+    background-color: #409cff;
+}
+
+.th__remove {
+    text-align: right;
+    background-color: #409cff;
+}
+
