@@ -4,262 +4,390 @@
 <h1>BikePartPicker</h1>
 
 <div class="partlist">
-  <table class="xs-col-12">
-      <thead>
-          <tr>
-              <th class="th__component">Component</th>
-              <th></th>
-              <th class="th__selection" colspan="2">Selection</th>
-              <th class="th__price">Price</th>
-              <th class="th__weight">Weight</th>
-              <th class="th__price-weight">Price/Weight</th>
-              <th class="th__where">Where</th>
-              <th class="th__remove"></th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/cpu/">
-                  Frame
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/cpu/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+  
+  <table class="partlist-table">
+    <thead>
+      <tr>
+        <th class="th__component">Component</th>
+        <th></th>
+        <th class="th__selection" colspan="2">Selection</th>
+        <th class="th__price">Price</th>
+        <th class="th__weight">Weight</th>
+        <th class="th__price-weight">Price/Weight</th>
+        <th class="th__where">Where</th>
+        <th class="th__remove"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/frame/">
+            Frame
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/frame/" class="button  button--icon button--small">
 
-                      Choose A Frame
-                  </a>
-              </td>
-              <button class="button__removeSelection">X</button>
-          </tr>
-          <tr class="tr__product">
-            <td class="td__component">
-                <a href="/components/cpu-cooler/">
-                Rear Shock
-                </a>
-            </td>
-            <td class="td__placement--empty"></td>
-            <td class="td__addComponent" colspan="11">
-                <a href="/components/cpu-cooler/" class="button  button--icon button--small">
-                    <svg class="icon shape-add">
-                        <use xlink:href="#shape-add"/>
-                    </svg>
+            Choose A Frame
+          </a>
+        </td>
+        <button class="button__removeSelection">X</button>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/rearshock/">
+            Rear Shock
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/rearshock/" class="button  button--icon button--small">
 
-                    Choose A Rear Shock
-                </a>
-            </td>
-            <button class="button__removeSelection">X</button>
-        </tr>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/cpu-cooler/">
-                  Fork
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/cpu-cooler/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+            Choose A Rear Shock
+          </a>
+        </td>
+        <button class="button__removeSelection">X</button>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/fork/">
+            Fork
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/fork/" class="button  button--icon button--small">
+            Choose A Fork
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/rearderailleur/">
+            Rear Derailleur
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/rearderailleur/" class="button  button--icon button--small">
+            Choose A Rear Derailleur
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/frontshifter/">
+            Front Shifter
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/frontshifter/" class="button  button--icon button--small">
+            Choose A Front Shifter
+          </a>
 
-                      Choose A Fork
-                  </a>
-              </td>
-          </tr>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/motherboard/">
-                  Rear Derailleur
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/motherboard/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/rearshifter/">
+            Rear Shifter
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/rearshifter/" class="button  button--icon button--small">
 
-                      Choose A Rear Derailleur
-                  </a>
-              </td>
-          </tr>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/memory/">
-                  Memory
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/memory/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+            Choose Rear Shifter
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/crankset/">
+            Crankset
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/crankset/" class="button  button--icon button--small">
 
-                      Choose Memory
-                  </a>
 
-              </td>
-          </tr>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/internal-hard-drive/">
-                  Storage
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/internal-hard-drive/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+            Choose A Crankset
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/cassette/">
+            Cassette
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/cassette/" class="button  button--icon button--small">
 
-                      Choose Storage
-                  </a>
-              </td>
-          </tr>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/video-card/">
-                  Video Card
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/video-card/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+            Choose A Cassette
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/frontderailleur/">
+            Front Derailleur
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/frontderailleur/" class="button  button--icon button--small">
 
-                      Choose A Video Card
-                  </a>
-              </td>
-          </tr>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/case/">
-                  Case
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/case/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
 
-                      Choose A Case
-                  </a>
-              </td>
-          </tr>
+            Choose A Front Derailleur
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/chain/">
+            Chain
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/chain/" class="button  button--icon button--small">
 
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/power-supply/">
-                  Power Supply
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/power-supply/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+            Choose A Chain
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/bottombracket/">
+            Bottom Bracket
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/bottombracket/" class="button  button--icon button--small">
+            Choose A Bottom Bracket
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/rearbrake/">
+            Rear Brake
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/rearbrake/" class="button  button--icon button--small">
 
-                      Choose A Power Supply
-                  </a>
-              </td>
-          </tr>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/os/">
-                  Operating System
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/os/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+            Choose A Rear Brake
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/frontbrake/">
+            Front Brake
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/frontbrake/" class="button  button--icon button--small">
 
-                      Choose An Operating System
-                  </a>
-              </td>
-          </tr>
-          <tr class="tr__product">
-              <td class="td__component">
-                  <a href="/components/monitor/">
-                  Monitor
-                  </a>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/monitor/" class="button  button--icon button--small">
-                      <svg class="icon shape-add">
-                          <use xlink:href="#shape-add"/>
-                      </svg>
+            Choose A Front Brake
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/rotors/">
+            Brake Rotors
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/rotors/" class="button  button--icon button--small">
 
-                      Choose A Monitor
-                  </a>
-              </td>
-          </tr>
-          <tr class="">
-              <td class="td__component">
-                  <p>Expansion Cards / Networking</p>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/sound-card/">Sound Cards</a>
-                  ,
-                  <a href="/components/wired-network-card/">Wired Network Adapters</a>
-                  ,
-                  <a href="/components/wireless-network-card/">Wireless Network Adapters</a>
-              </td>
-          </tr>
-          <tr class="">
-              <td class="td__component">
-                  <p>Peripherals</p>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/headphones/">Headphones</a>
-                  ,
-                  <a href="/components/keyboard/">Keyboards</a>
-                  ,
-                  <a href="/components/mouse/">Mice</a>
-                  ,
-                  <a href="/components/speakers/">Speakers</a>
-                  ,
-                  <a href="/components/webcam/">Webcams</a>
-              </td>
-          </tr>
-          <tr class="tr__product--last">
-              <td class="td__component">
-                  <p>Accessories / Other</p>
-              </td>
-              <td class="td__placement--empty"></td>
-              <td class="td__addComponent" colspan="11">
-                  <a href="/components/case-accessory/">Case Accessories</a>
-                  ,
-                  <a href="/components/case-fan/">Case Fans</a>
-                  ,
-                  <a href="/components/fan-controller/">Fan Controllers</a>
-                  ,
-                  <a href="/components/thermal-paste/">Thermal Compound</a>
-                  ,
-                  <a href="/components/external-hard-drive/">External Storage</a>
-                  ,
-                  <a href="/components/optical-drive/">Optical Drives</a>
-                  ,
-                  <a href="/components/ups/">UPS Systems</a>
-              </td>
-          </tr>
-      </tbody>
+            Choose Brake Rotors
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/headset/">
+            Headset
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/headset/" class="button  button--icon button--small">
+
+            Choose A Headset
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/bars/">
+            Bars
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/bars/" class="button  button--icon button--small">
+
+            Choose Bars
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/stem/">
+            Stem
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/stem/" class="button  button--icon button--small">
+
+            Choose A Stem
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/grips/">
+            Grips
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/grips/" class="button  button--icon button--small">
+
+            Choose Grips
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/fronthub/">
+            Front Hub
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/fronthub/" class="button  button--icon button--small">
+
+            Choose A Front Hub
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/rearhub/">
+            Rear Hub
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/rearhub/" class="button  button--icon button--small">
+
+            Choose A Rear Hub
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/rearrim/">
+            Rear Rim
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/rearrim/" class="button  button--icon button--small">
+
+            Choose Rear Rim
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/frontrim/">
+            Front Rim
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/frontrim/" class="button  button--icon button--small">
+
+            Choose A Front Rim
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/rearspokes/">
+            Rear Wheel Spokes
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/rearspokes/" class="button  button--icon button--small">
+
+            Choose Rear Wheel Spokes
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/frontspokes/">
+            Front Wheel Spokes
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/frontspokes/" class="button  button--icon button--small">
+
+            Choose Front Wheel Spokes
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/reartire/">
+            Rear Tire
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/reartire/" class="button  button--icon button--small">
+
+            Choose A Rear Tire
+          </a>
+        </td>
+      </tr>
+      <tr class="tr__product">
+        <td class="td__component">
+          <a href="/components/fronttire/">
+            Front Tire
+          </a>
+        </td>
+        <td class="td__placement--empty"></td>
+        <td class="td__addComponent" colspan="11">
+          <a href="/components/fronttire/" class="button  button--icon button--small">
+
+            Choose A Front Tire
+          </a>
+        </td>
+      </tr>
+    </tbody>
   </table>
+</div>
+
+<div>
+  <h3 class="h3__potentialIssues">Potential Issues/Incompatibilities</h3>
 </div>
