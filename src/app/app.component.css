@@ -1,49 +1,60 @@
 .button_removeSelection {
     border: none;
     border-radius: 5px;
-    color: grey;
     background: lightgrey;
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
 }
 
-.partlist {
+title {
     font-family: Helvetica;
 }
 
-.th__component {
+.partlist {
     text-align: left;
-    background-color: #409cff;
-
-}
-.th__selection {
-    text-align: left;
-    background-color: #409cff;
-    border-color: #9ABAD9;
 }
 
-.th__price {
-    text-align: right;
-    background-color: #409cff;
+.partlist-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.th__weight {
-    text-align: right;
-    background-color: #409cff;
+.partlist-table thead tr {
+    background-color: aliceblue;
+    font-family: Helvetica;
 }
 
-.th__price-weight {
-    text-align: right;
-    background-color: #409cff;
+.partlist-table td {
+    padding: 12px 3px;
+    font-family: sans-serif;
 }
 
-.th__where {
-    text-align: right;
-    background-color: #409cff;
+.partlist-table tbody tr {
+    border-bottom: 1px solid lightgrey;
 }
 
-.th__remove {
-    text-align: right;
-    background-color: #409cff;
+/* Shade every other row */
+/* .partlist-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} */
+
+.partlist-table tbody tr:last-of-type {
+    border-bottom: 2px solid aliceblue;
 }
+
+.td__component {
+    padding: 200px 200px;
+}
+
+.h3__potentialIssues {
+    font-family: sans-serif;
+}
+
+
+
+
 
