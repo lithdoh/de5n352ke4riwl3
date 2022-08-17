@@ -13,7 +13,7 @@
 
 .partlist {
     text-align: left;
-    padding-top: 45px;
+    /* padding-top: 5px; */
 }
 
 .partlist-table {
@@ -39,13 +39,17 @@
     border-bottom: 1px solid lightgrey;
 }
 
+.partlist-table tbody tr:hover {
+    background-color: paleturquoise;
+}
+
 /* Shade every other row */
 /* .partlist-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 } */
 
 .partlist-table tbody tr:last-of-type {
-    border-bottom: 2px solid aliceblue;
+    border-bottom: 10px solid aliceblue;
 }
 
 .td__component {
