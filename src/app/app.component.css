@@ -1,60 +1,34 @@
-.button_removeSelection {
-    border: none;
-    border-radius: 5px;
-    background: lightgrey;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: x-large;
-}
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: ;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    margin: auto;
+  }
 
-title {
-    font-family: Helvetica;
-}
-
-.partlist {
-    text-align: left;
-}
-
-.partlist-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    width: 80%;
-    margin-left: auto;
+.site-name {
+    font-family: helvetica;
+    color: white;
     margin-right: auto;
+    padding-left: 10px;
 }
 
-.partlist-table thead tr {
-    background-color: aliceblue;
-    font-family: Helvetica;
+.login {
+    font-family: helvetica;
+    padding-top: 15px;
+    padding-right: 15px;
+    color: white;
 }
 
-.partlist-table td {
-    padding: 12px 3px;
-    font-family: sans-serif;
+.register {
+    font-family: helvetica;
+    padding-top: 15px;
+    padding-right: 15px;
+    color: white;
 }
-
-.partlist-table tbody tr {
-    border-bottom: 1px solid lightgrey;
-}
-
-/* Shade every other row */
-/* .partlist-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-} */
-
-.partlist-table tbody tr:last-of-type {
-    border-bottom: 2px solid aliceblue;
-}
-
-.td__component {
-    padding: 200px 200px;
-}
-
-.h3__potentialIssues {
-    font-family: sans-serif;
-}
-
-
-
-
-
