@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FrameComponent } from './parts/frame/frame.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
+import { BarsComponent } from './parts/bars/bars.component';
+import { StemComponent } from './parts/stem/stem.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { RearshockComponent } from './parts/rearshock/rearshock.component';
     HomeComponent,
     FrameComponent,
     RearshockComponent,
+    BarsComponent,
+    StemComponent,
   ],
   imports: [
     BrowserModule,
