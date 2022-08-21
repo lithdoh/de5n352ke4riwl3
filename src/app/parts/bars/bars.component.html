@@ -1,52 +1,63 @@
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Bars">
+
 <table class="partlist-table">
     <thead>
         <tr>
-            <th class="th__component">Name</th>
+            <th class="td__checkbox"></th>
+            <th class="th__name">Name</th>
             <th></th>
-            <th class="th__selection" colspan="2">Brand</th>
-            <th class="th__price">Model</th>
+            <th class="th__brand">Brand</th>
+            <th class="th__model">Model</th>
             <th class="th__color">Color</th>
             <th class="th__width">Width (mm)</th>
             <th class="th__diameter">Bar Clamp Diameter (mm)</th>
             <th class="th__material">Material</th>
             <th class="th__rise">Rise</th>
-            <th class="th__price-weight">Price/Weight</th>
+            <th class="backsweep">Backsweep</th>
+            <th class="th__price">Price</th>
+            <th class="th__weight">Weight</th>
             <th class="th__where">Where</th>
-            <th class="th__remove"></th>
+            <th class="th__add"></th>
         </tr>
     </thead>
     <tbody>
         <tr class="tr__product">
-            <td class="td__checkbox"> <input type="checkbox" class="checkbox px px1" id="px_329297" autocomplete="off">
-                <label for="px_329297"></label> </td>
-    
-            <td class="td__component">
-                <a routerLink="/parts/frame/">
-                    ATMOS CARBON FLAT BAR
-                </a>
-            </td>
+            <td class="td__checkbox"><input type="checkbox"></td>
+            <td class="td__name">ATMOS CARBON FLAT BAR</td>
+            <td></td>
             <td class="td__brand">Truvativ</td>
-            <td class="td__model">Atmos</td>
+            <td class="td__model">HB-ATMS-FC1-A1</td>
             <td class="td__color">Natural Carbon</td>
             <td class="td__width">760</td>
             <td class="td__diameter">31.8</td>
             <td class="td__material">Carbon</td>
-            <td class="td__rise">9°</td>
+            <td class="td__rise">n/a</td>
+            <td class="td__backsweep">9°</td>
+            <td class="td__price">$183</td>
+            <td class="td__weight">190g</td>
+            <td class="td__where">sram.com</td>
+            <td><button class="item__add">Add</button></td>
+            
         </tr>
         <tr class="tr__product">
-            <td class="td__component">
-                <a routerLink="/parts/frame/">
-                    Frame
-                </a>
-            </td>
-            <td class="td__placement--empty"></td>
-            <td class="td__addComponent" colspan="6">
-                <a href="/parts/frame/" class="button  button--icon button--small">
-
-                    Choose A Frame
-                </a>
-            </td>
+            <td class="td__checkbox"> <input type="checkbox"></td>
+            <td class="td__component">DESCENDANT CARBON FLAT BAR</td>
+            <td></td>
+            <td class="td__brand">Truvativ</td>
+            <td class="td__model">HB-DESC-FC1-A1</td>
+            <td class="td__color">Black</td>
+            <td class="td__width">750</td>
+            <td class="td__diameter">31.8</td>
+            <td class="td__material">Carbon</td>
+            <td class="td__rise">n/a</td>
+            <td class="td__backsweep">7°</td>
+            <td class="td__price">$161</td>
+            <td class="td__weight">--</td>
+            <td class="td__where">sram.com</td>
+            <td><button class="item__add">Add</button></td>
         </tr>
+    </tbody>
+</table>
 
 
 
