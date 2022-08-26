@@ -13,11 +13,6 @@
     font-family: Helvetica;
 }
 
-.partlist-table td {
-    padding: 12px 3px;
-    font-family: sans-serif;
-}
-
 .partlist-table tbody tr {
     border-bottom: 1px solid lightgrey;
 }
@@ -33,6 +28,11 @@
 
 .partlist-table tbody tr:last-of-type {
     border-bottom: 10px solid aliceblue;
+}
+
+.partlist-table td {
+    padding: 12px 3px;
+    font-family: sans-serif;
 }
 
 .td__component {
