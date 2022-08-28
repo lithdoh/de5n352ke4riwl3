@@ -12,4 +12,8 @@ export class BarsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  Functionclick() {
+
+  }
+
 }
