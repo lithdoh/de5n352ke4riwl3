@@ -38,3 +38,11 @@
 .td__component {
     padding: 200px 200px;
 }
+
+.partlist-table td img {
+    display: block;
+    height: 65px;
+    width: auto;
+    text-align: center;
+    background-color:#ffffff
+}
