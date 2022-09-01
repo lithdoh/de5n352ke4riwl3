@@ -4,10 +4,11 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
+  imageUrl: any;
   name: string;
   brand: string;
   model: any;
-  clampDiameter: any;
+  clamp: any;
   width: any;
   rise: any;
   color: string;
@@ -19,32 +20,67 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { name: 'Descendant 35mm Carbon Riser Bar', brand: 'Truvativ', model: 'HB-DESC-RC5-B1', clampDiameter: '35mm', width: '760mm', rise: '20mm', color: 'Black', material: 'Carbon', backsweep: '7°', price: '$194', weight: '--', where: '' },
-  { name: 'Descendant 35mm Carbon Riser Bar', brand: 'Truvativ', model: 'HB-DESC-RC5-B1', clampDiameter: '35mm', width: '760mm', rise: '20mm', color: 'Black', material: 'Carbon', backsweep: '7°', price: '$194', weight: '--', where: '' },
-  { name: 'Descendant 35mm Carbon Riser Bar', brand: 'Truvativ', model: 'HB-DESC-RC5-B1', clampDiameter: '35mm', width: '760mm', rise: '20mm', color: 'Black', material: 'Carbon', backsweep: '7°', price: '$194', weight: '--', where: '' },
-  // { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  // { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  // { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  // { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  // { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  // { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  // { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  // { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  // { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
+  {
+    imageUrl: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---riser/hb-desc-riser-35-a1/blackfrontwhor.jpg?w=1000&quality=80&format=jpg',
+    name: 'Descendant 35mm Carbon Riser Bar',
+    brand: 'Truvativ',
+    model: 'HB-DESC-RC5-B1',
+    clamp: '35mm',
+    width: '760mm',
+    rise: '20mm',
+    color: 'Black',
+    material: 'Carbon',
+    backsweep: '7°',
+    price: '$194',
+    weight: '--',
+    where: 'Sram.com',
+  },
+  {
+    imageUrl: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---flat/hb-atms-flat-carbon-318-a1/productassets_hb-atms-fc1-a1_fg/hbatmcrbnf318a1cfronth.png?w=1000&quality=80&format=jpg',
+    name: 'Descendant 35mm Carbon Riser Bar',
+    brand: 'Truvativ',
+    model: 'HB-DESC-RC5-B1',
+    clamp: '35mm',
+    width: '760mm',
+    rise: '20mm',
+    color: 'Black',
+    material: 'Carbon',
+    backsweep: '7°',
+    price: '$194',
+    weight: '--',
+    where: '',
+  },
 ];
 
+/**
+ * @title Table with sorting
+ */
 @Component({
-  selector: 'app-matbars',
-  templateUrl: './matbars.component.html',
-  styleUrls: ['./matbars.component.css'],
+  selector: 'table-sorting-example',
+  styleUrls: ['table-sorting-example.css'],
+  templateUrl: 'table-sorting-example.html',
 })
-export class MATbarsComponent implements AfterViewInit {
-  displayedColumns: any[] = ['name', 'brand', 'model', 'clampDiameter', 'width', 'rise', 'color', 'material', 'backsweep', 'price', 'weight', 'where'];
+export class TableSortingExample implements AfterViewInit {
+  displayedColumns: string[] = [
+    'imageUrl',
+    'name',
+    'brand',
+    'model',
+    'clamp',
+    'width',
+    'rise',
+    'color',
+    'material',
+    'backsweep',
+    'price',
+    'weight',
+    'where',
+  ];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
-  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatSort) sort: MatSort;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -63,3 +99,7 @@ export class MATbarsComponent implements AfterViewInit {
     }
   }
 }
+
+/**  Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license */
