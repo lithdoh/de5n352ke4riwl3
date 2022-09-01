@@ -9,6 +9,7 @@ import { FrameComponent } from './parts/frame/frame.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { BarsComponent } from './parts/bars/bars.component';
 import { StemComponent } from './parts/stem/stem.component';
+import { MATbarsComponent } from './parts/matbars/matbars.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { StemComponent } from './parts/stem/stem.component';
     RearshockComponent,
     BarsComponent,
     StemComponent,
+    MATbarsComponent,
   ],
   imports: [
     BrowserModule,
