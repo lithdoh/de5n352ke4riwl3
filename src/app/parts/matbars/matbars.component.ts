@@ -21,7 +21,8 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    imageUrl: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---riser/hb-desc-riser-35-a1/blackfrontwhor.jpg?w=1000&quality=80&format=jpg',
+    imageUrl:
+      'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---riser/hb-desc-riser-35-a1/blackfrontwhor.jpg?w=1000&quality=80&format=jpg',
     name: 'Descendant 35mm Carbon Riser Bar',
     brand: 'Truvativ',
     model: 'HB-DESC-RC5-B1',
@@ -36,12 +37,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
     where: 'Sram.com',
   },
   {
-    imageUrl: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---flat/hb-atms-flat-carbon-318-a1/productassets_hb-atms-fc1-a1_fg/hbatmcrbnf318a1cfronth.png?w=1000&quality=80&format=jpg',
+    imageUrl:
+      'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---flat/hb-atms-flat-carbon-318-a1/productassets_hb-atms-fc1-a1_fg/hbatmcrbnf318a1cfronth.png?w=1000&quality=80&format=jpg',
     name: 'Descendant 35mm Carbon Riser Bar',
     brand: 'Truvativ',
     model: 'HB-DESC-RC5-B1',
     clamp: '35mm',
-    width: '760mm',
+    width: '720mm',
     rise: '20mm',
     color: 'Black',
     material: 'Carbon',
@@ -57,10 +59,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
  */
 @Component({
   selector: 'table-sorting-example',
-  styleUrls: ['table-sorting-example.css'],
-  templateUrl: 'table-sorting-example.html',
+  styleUrls: ['./matbars.component.css'],
+  templateUrl: './matbars.component.html',
 })
-export class TableSortingExample implements AfterViewInit {
+export class MATbarsComponent implements AfterViewInit {
   displayedColumns: string[] = [
     'imageUrl',
     'name',
@@ -80,7 +82,7 @@ export class TableSortingExample implements AfterViewInit {
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
