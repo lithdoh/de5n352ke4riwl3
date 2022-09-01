@@ -13,6 +13,8 @@ const routes: Routes = [
   { path: 'parts/bars', component: BarsComponent },
   { path: 'parts/stem', component: StemComponent },
   { path: 'parts/rearbrake', component: MATbarsComponent },
+  { path: 'home', component: HomeComponent },
+
 ];
 
 @NgModule({
