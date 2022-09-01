@@ -6,6 +6,7 @@ import { FrameComponent } from './parts/frame/frame.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { StemComponent } from './parts/stem/stem.component';
 import { MATbarsComponent } from './parts/matbars/matbars.component';
+import { MatstemsComponent } from './parts/matstems/matstems.component';
 
 const routes: Routes = [
   { path: 'parts/frame', component: FrameComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'parts/stem', component: StemComponent },
   { path: 'parts/rearbrake', component: MATbarsComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'parts/frontbrake', component: MatstemsComponent },
 
 ];
 
