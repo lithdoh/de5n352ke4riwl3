@@ -3,7 +3,9 @@ table {
   margin-left: auto;
   margin-right: auto;
 }
-  
-th.mat-sort-header-sorted {
-    color: black;
-  }
+
+.mat-column-image img {
+  width:65px;
+  height:65px;    
+} 
+
