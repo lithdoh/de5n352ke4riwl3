@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { MathomeComponent } from './mathome/mathome.component';
 import { BarsComponent } from './parts/bars/bars.component';
 import { FrameComponent } from './parts/frame/frame.component';
 import { MATbarsComponent } from './parts/matbars/matbars.component';
@@ -25,6 +26,7 @@ import { StemComponent } from './parts/stem/stem.component';
     StemComponent,
     MATbarsComponent,
     MatstemsComponent,
+    MathomeComponent,
   ],
   imports: [
     BrowserModule,
