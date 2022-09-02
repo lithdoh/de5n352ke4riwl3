@@ -4,7 +4,7 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
-  imageUrl: any;
+  image: any;
   name: string;
   brand: string;
   model: any;
@@ -21,7 +21,7 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    imageUrl:
+    image:
       'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---riser/hb-desc-riser-35-a1/blackfrontwhor.jpg?w=1000&quality=80&format=jpg',
     name: 'Descendant 35mm Carbon Riser Bar',
     brand: 'Truvativ',
@@ -37,7 +37,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     where: 'Sram.com',
   },
   {
-    imageUrl:
+    image:
       'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---flat/hb-atms-flat-carbon-318-a1/productassets_hb-atms-fc1-a1_fg/hbatmcrbnf318a1cfronth.png?w=1000&quality=80&format=jpg',
     name: 'Descendant 35mm Carbon Riser Bar',
     brand: 'Truvativ',
@@ -64,7 +64,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class MATbarsComponent implements AfterViewInit {
   displayedColumns: string[] = [
-    'imageUrl',
+    'image',
     'name',
     'brand',
     'model',

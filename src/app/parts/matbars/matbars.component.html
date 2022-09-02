@@ -1,12 +1,12 @@
 <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
   class="mat-elevation-z8">
   
-  <ng-container matColumnDef="imageUrl">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by imageUrl">
-      ImageUrl
+  <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by image">
+      Image
     </th>
     <td mat-cell *matCellDef="let element">
-      <img src="{{element.imageUrl}}" />
+      <img src="{{element.image}}"  alt="{{element.name}}"/>
     </td>
   </ng-container>
 
