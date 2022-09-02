@@ -5,7 +5,10 @@ table {
 }
 
 .mat-column-image img {
-  width:65px;
-  height:65px;    
+  display: block;
+  max-width: 65px;
+  max-height:65px;
+  width: auto;
+  height: auto;   
 } 
 
