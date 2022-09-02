@@ -1,10 +1,11 @@
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatSort, Sort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { OnInit, Component, ViewChild } from '@angular/core';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
   component: string;
+  link: string;
   selection: string;
   price: string;
   weight: string;
@@ -13,9 +14,8 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {component: 'Frame', selection: 'Choose a Frame', price: '', weight: 'H', priceWeight: 'n/a', where: ''},
-  {component: 'Rear Shock', selection: 'Choose a Rear Shock', price: '', weight: 'H', priceWeight: 'n/a', where: ''},
-
+  { component: 'Bars', link: 'parts/matbars', selection: 'Choose a Frame', price: '$10', weight: '', priceWeight: '', where: '' },
+  { component: 'Stems', link: 'parts/matstems', selection: 'Choose a Rear Shock', price: '$1', weight: '', priceWeight: '', where: '' },
 ];
 
 @Component({
@@ -23,15 +23,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './mathome.component.html',
   styleUrls: ['./mathome.component.css']
 })
-export class MathomeComponent implements AfterViewInit {
-  displayedColumns: string[] = ['component', 'selection', 'price', 'weight', 'priceWeight', 'where'];
+export class MathomeComponent implements OnInit {
+  displayedColumns: string[] = ['component', 'selection', 'price', 'weight', 'priceWeight', 'where', 'add', 'remove'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer) { }
 
   @ViewChild(MatSort) sort!: MatSort;
-
-  ngAfterViewInit() {
+  
+  ngOnInit() {
     this.dataSource.sort = this.sort;
   }
 
