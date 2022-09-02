@@ -13,7 +13,7 @@ import { FrameComponent } from './parts/frame/frame.component';
 import { MATbarsComponent } from './parts/matbars/matbars.component';
 import { MatstemsComponent } from './parts/matstems/matstems.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
-import { StemComponent } from './parts/stem/stem.component';
+import { StemsComponent } from './parts/stems/stems.component';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { StemComponent } from './parts/stem/stem.component';
     FrameComponent,
     RearshockComponent,
     BarsComponent,
-    StemComponent,
+    StemsComponent,
     MATbarsComponent,
     MatstemsComponent,
     MathomeComponent,
