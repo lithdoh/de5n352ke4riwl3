@@ -21,7 +21,7 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    image: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---riser/hb-desc-riser-a1/truvativdescendantriserbaraluminumfront.jpg?w=800&quality=80&format=jpg',
+    image: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg',
     name: 'Descendant 35mm Direct Mount Stem',
     brand: 'Truvativ',
     model: 'ST-DESC-DM5-B1',
