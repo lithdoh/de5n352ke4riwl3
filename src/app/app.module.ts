@@ -14,6 +14,7 @@ import { MATbarsComponent } from './parts/matbars/matbars.component';
 import { MatstemsComponent } from './parts/matstems/matstems.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { StemsComponent } from './parts/stems/stems.component';
+import { TabletestsComponent } from './tabletests/tabletests.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { StemsComponent } from './parts/stems/stems.component';
     MATbarsComponent,
     MatstemsComponent,
     MathomeComponent,
+    TabletestsComponent,
   ],
   imports: [
     BrowserModule,
