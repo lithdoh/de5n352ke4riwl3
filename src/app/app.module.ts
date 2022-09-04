@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,8 +13,6 @@ import { MATbarsComponent } from './parts/matbars/matbars.component';
 import { MatstemsComponent } from './parts/matstems/matstems.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { StemsComponent } from './parts/stems/stems.component';
-import { TabletestsComponent } from './tabletests/tabletests.component';
-
 
 @NgModule({
   declarations: [
@@ -30,18 +25,14 @@ import { TabletestsComponent } from './tabletests/tabletests.component';
     MATbarsComponent,
     MatstemsComponent,
     MathomeComponent,
-    TabletestsComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    RouterModule,
     MatTableModule,
     MatSortModule,
-    MatFormFieldModule,
-    MatPaginatorModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
