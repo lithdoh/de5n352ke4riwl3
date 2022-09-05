@@ -2,6 +2,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MyServiceService } from '../my-service.service';
 
 export interface PeriodicElement {
   component: string;
@@ -14,8 +15,8 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { component: 'Bars', link: 'parts/matbars', selection: 'Choose Bars', price: '$10', weight: '', priceWeight: '', where: '' },
-  { component: 'Stems', link: 'parts/matstems', selection: 'Choose a Stem', price: '$1', weight: '', priceWeight: '', where: '' },
+  { component: 'Bars', link: 'parts/matbars', selection: 'Choose Bars', price: '', weight: '', priceWeight: '', where: '' },
+  { component: 'Stems', link: 'parts/matstems', selection: 'Choose a Stem', price: '', weight: '', priceWeight: '', where: '' },
 ];
 
 @Component({
@@ -27,7 +28,10 @@ export class MathomeComponent implements AfterViewInit {
   displayedColumns: string[] = ['component', 'selection', 'price', 'weight', 'priceWeight', 'where', 'add', 'remove'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) { }
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    public myService: MyServiceService
+    ) { }
 
   @ViewChild(MatSort) sort!: MatSort;
 
