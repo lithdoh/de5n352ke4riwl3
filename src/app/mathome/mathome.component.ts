@@ -15,8 +15,24 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { component: 'Bars', link: 'parts/matbars', selection: 'Choose Bars', price: '', weight: '', priceWeight: '', where: '' },
-  { component: 'Stems', link: 'parts/matstems', selection: 'Choose a Stem', price: '', weight: '', priceWeight: '', where: '' },
+  { 
+    component: 'Bars',
+    link: 'parts/matbars',
+    selection: 'Choose Bars',
+    price: '',
+    weight: '',
+    priceWeight: '',
+    where: '' 
+  },
+  { 
+    component: 'Stems', 
+    link: 'parts/matstems', 
+    selection: 'Choose a Stem', 
+    price: '',
+    weight: '',
+    priceWeight: '',
+    where: ''
+  },
 ];
 
 @Component({
