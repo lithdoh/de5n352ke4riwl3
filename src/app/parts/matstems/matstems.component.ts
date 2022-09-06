@@ -6,13 +6,13 @@ import { MatTableDataSource } from '@angular/material/table';
 export interface PeriodicElement {
   image: any;
   name: any;
-  brand: any;
+  brand: string;
   model: any;
   barClampDiameter: any;
   length: any;
   rise: any;
   steererTubeDiameter: any;
-  color: any;
+  color: string;
   material: any;
   price: any;
   weight: any;
@@ -21,7 +21,8 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    image: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg',
+    image:
+      'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg',
     name: 'Descendant 35mm Direct Mount Stem',
     brand: 'Truvativ',
     model: 'ST-DESC-DM5-B1',
@@ -36,7 +37,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     where: 'sram.com',
   },
   {
-    image: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-hussefelt-a1/2012-truvativhussefeltstem-large-en?w=800&quality=80&format=jpg',
+    image:
+      'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-hussefelt-a1/2012-truvativhussefeltstem-large-en?w=800&quality=80&format=jpg',
     name: 'Hussefelt Stem',
     brand: 'Truvativ',
     model: 'ST-HUSS-A1',
@@ -72,13 +74,12 @@ export class MatstemsComponent implements AfterViewInit {
     'price',
     'weight',
     'where',
-    'add'
+    'add',
   ];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
-  
   @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
