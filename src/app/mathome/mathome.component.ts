@@ -15,19 +15,19 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { 
+  {
     component: 'Bars',
-    link: 'parts/matbars',
+    link: '/parts/matbars',
     selection: 'Choose Bars',
     price: '',
     weight: '',
     priceWeight: '',
-    where: '' 
+    where: ''
   },
-  { 
-    component: 'Stems', 
-    link: 'parts/matstems', 
-    selection: 'Choose a Stem', 
+  {
+    component: 'Stems',
+    link: '/parts/matstems',
+    selection: 'Choose a Stem',
     price: '',
     weight: '',
     priceWeight: '',
@@ -51,7 +51,7 @@ export class MathomeComponent implements AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  
+
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
   }
