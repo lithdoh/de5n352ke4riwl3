@@ -13,6 +13,7 @@ import { MATbarsComponent } from './parts/matbars/matbars.component';
 import { MatstemsComponent } from './parts/matstems/matstems.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { StemsComponent } from './parts/stems/stems.component';
+import { AddPartsService } from './parts/add-parts.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { StemsComponent } from './parts/stems/stems.component';
     MatTableModule,
     MatSortModule,
   ],
-  providers: [],
+  providers: [AddPartsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

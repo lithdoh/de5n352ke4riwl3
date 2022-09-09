@@ -4,6 +4,7 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MyServiceService } from 'src/app/my-service.service';
+import { AddPartsService } from '../add-parts.service';
 
 export interface PeriodicElement {
   image: any;
@@ -82,6 +83,7 @@ export class MatstemsComponent implements AfterViewInit {
     private _liveAnnouncer: LiveAnnouncer,
     public myService: MyServiceService,
     private router: Router,
+    private AddPartsService: AddPartsService,
     ) {}
 
   @ViewChild(MatSort) sort!: MatSort;
@@ -106,10 +108,13 @@ export class MatstemsComponent implements AfterViewInit {
   onAddItem() {
     // “add” button calls function (event binding in matstems template)
     // function accesses the list of stems (stem component)
-    
+    this.AddPartsService.addItemsToHome(this.)
     // and adds a product to the build list (home component)
-    
+
     // route to the page
     this.router.navigate(['/parts/chain'])
   }
+
+
+
 }

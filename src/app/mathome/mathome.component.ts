@@ -3,6 +3,8 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MyServiceService } from '../my-service.service';
+import { AddPartsService } from '../parts/add-parts.service';
+import { PartInfo } from '../parts/part.model';
 
 export interface PeriodicElement {
   component: string;
@@ -46,7 +48,9 @@ export class MathomeComponent implements AfterViewInit {
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
-    public myService: MyServiceService
+    private AddPartsService: AddPartsService,
+    public myService: MyServiceService,
+
     ) { }
 
   @ViewChild(MatSort) sort!: MatSort;
@@ -54,6 +58,7 @@ export class MathomeComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+
   }
 
   /** Announce the change in sort state for assistive technology. */
@@ -68,4 +73,6 @@ export class MathomeComponent implements AfterViewInit {
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+
+  // partinfo!: PartInfo[];
 }
