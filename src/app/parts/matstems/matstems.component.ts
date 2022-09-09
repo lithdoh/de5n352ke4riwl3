@@ -2,6 +2,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { MyServiceService } from 'src/app/my-service.service';
 
 export interface PeriodicElement {
@@ -79,10 +80,10 @@ export class MatstemsComponent implements AfterViewInit {
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
-    public myService: MyServiceService
+    public myService: MyServiceService,
+    private router: Router,
     ) {}
 
-  
   @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
@@ -100,5 +101,15 @@ export class MatstemsComponent implements AfterViewInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
+  }
+
+  onAddItem() {
+    // “add” button calls function (event binding in matstems template)
+    // function accesses the list of stems (stem component)
+    
+    // and adds a product to the build list (home component)
+    
+    // route to the page
+    this.router.navigate(['/parts/chain'])
   }
 }
