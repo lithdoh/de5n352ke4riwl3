@@ -108,7 +108,7 @@ export class MatstemsComponent implements AfterViewInit {
   onAddItem() {
     // “add” button calls function (event binding in matstems template)
     // function accesses the list of stems (stem component)
-    this.AddPartsService.addItemsToHome(this.)
+
     // and adds a product to the build list (home component)
 
     // route to the page
