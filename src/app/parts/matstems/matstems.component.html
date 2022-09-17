@@ -33,21 +33,21 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by barClampDiameter">
       Bar Clamp ø
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.barClampDiameter}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.barClampDiameter | millimeter}} </td>
   </ng-container>
 
   <ng-container matColumnDef="length">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by length">
       Length
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.length}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.length | millimeter}} </td>
   </ng-container>
 
   <ng-container matColumnDef="rise">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by rise">
       Rise
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.rise}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.rise | degree}} </td>
   </ng-container>
 
   <ng-container matColumnDef="steererTubeDiameter">
@@ -75,7 +75,7 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price">
       Price
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
   </ng-container>
 
   <ng-container matColumnDef="weight">
