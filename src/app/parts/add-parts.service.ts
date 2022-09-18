@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PartInfo } from './part.model';
+import { Part } from './part.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class AddPartsService {
   //   return this.partinfo.slice();
   // }
 
-  addItemsToHome(parts: PartInfo) {
+  addItemsToHome(parts: Part) {
 
   }
 }

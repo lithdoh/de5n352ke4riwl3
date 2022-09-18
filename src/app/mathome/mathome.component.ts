@@ -4,7 +4,6 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MyServiceService } from '../my-service.service';
 import { AddPartsService } from '../parts/add-parts.service';
-import { PartInfo } from '../parts/part.model';
 
 export interface PeriodicElement {
   component: string;
