@@ -3,6 +3,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +37,7 @@ import { MillimeterPipe } from './millimeter.pipe';
     AppRoutingModule,
     MatTableModule,
     MatSortModule,
+    HttpClientModule,
   ],
   providers: [AddPartsService],
   bootstrap: [AppComponent],

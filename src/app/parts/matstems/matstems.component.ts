@@ -4,7 +4,8 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MyServiceService } from 'src/app/my-service.service';
-import { AddPartsService } from '../add-parts.service';
+import { HttpClient } from '@angular/common/http';
+import { Part } from '../part.model';
 
 export interface PeriodicElement {
   image: any;
@@ -83,7 +84,7 @@ export class MatstemsComponent implements AfterViewInit {
     private _liveAnnouncer: LiveAnnouncer,
     public myService: MyServiceService,
     private router: Router,
-    private AddPartsService: AddPartsService,
+    private http: HttpClient,
     ) {}
 
   @ViewChild(MatSort) sort!: MatSort;
@@ -115,6 +116,15 @@ export class MatstemsComponent implements AfterViewInit {
     this.router.navigate(['/parts/chain'])
   }
 
-
+  onFetchPosts() {
+    // Send Http request
+    this.http
+      .get<Part[]>(
+        'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={queryStem { brand, id, bar_clamp, color, image, length, material, model, name, price, rise, steerer_tube_diameter, weight, where }}'
+      )
+      .subscribe(responseData => {
+        console.log(responseData);
+      });
+  }
 
 }
