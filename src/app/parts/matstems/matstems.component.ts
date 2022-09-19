@@ -13,10 +13,10 @@ export interface PeriodicElement {
   name: string;
   brand: string;
   model: string;
-  bar_clamp: number;
+  barClampDiameter: number;
   length: number;
   rise: number;
-  steerer_tube_diameter: string;
+  steererTubeDiameter: string;
   color: string;
   material: string;
   price: number;
@@ -30,10 +30,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: 'Descendant 35mm Direct Mount Stem',
     brand: 'Truvativ',
     model: 'ST-DESC-DM5-B1',
-    bar_clamp: 35,
+    barClampDiameter: 35,
     length: 50,
     rise: 0,
-    steerer_tube_diameter: 'Direct Mount',
+    steererTubeDiameter: 'Direct Mount',
     color: 'Black',
     material: 'Al-7075',
     price: 81,
@@ -45,10 +45,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: 'Hussefelt Stem',
     brand: 'Truvativ',
     model: 'ST-HUSS-A1',
-    bar_clamp: 31.8,
+    barClampDiameter: 31.8,
     length: 40,
     rise: 0,
-    steerer_tube_diameter: '1-1/8 in',
+    steererTubeDiameter: '1-1/8 in',
     color: 'Blast Black',
     material: 'Al-7075',
     price: 42,
@@ -68,10 +68,10 @@ export class MatstemsComponent implements AfterViewInit {
     'name',
     'brand',
     'model',
-    'bar_clamp',
+    'barClampDiameter',
     'length',
     'rise',
-    'steerer_tube_diameter',
+    'steererTubeDiameter',
     'color',
     'material',
     'price',
@@ -120,7 +120,7 @@ export class MatstemsComponent implements AfterViewInit {
   onFetchPosts() {
     // Send Http request
     this.http
-      .get('https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={queryStem { brand, id, bar_clamp, color, image, length, material, model, name, price, rise, steerer_tube_diameter, weight, where }}')
+      .get('https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={ queryStem { barClamp brand color id image length material model name price rise steererTubeDiameter weight where } } ')
       .subscribe(posts => {
         alert(JSON.stringify(posts));
       });
