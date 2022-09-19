@@ -6,21 +6,22 @@ import { Router } from '@angular/router';
 import { MyServiceService } from 'src/app/my-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Part } from '../part.model';
+import { map } from 'rxjs/operators'
 
 export interface PeriodicElement {
-  image: any;
-  name: any;
-  brand: any;
-  model: any;
-  barClampDiameter: any;
-  length: any;
-  rise: any;
-  steererTubeDiameter: any;
-  color: any;
-  material: any;
-  price: any;
-  weight: any;
-  where: any;
+  image: string;
+  name: string;
+  brand: string;
+  model: string;
+  bar_clamp: number;
+  length: number;
+  rise: number;
+  steerer_tube_diameter: string;
+  color: string;
+  material: string;
+  price: number;
+  weight: number;
+  where: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -29,14 +30,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: 'Descendant 35mm Direct Mount Stem',
     brand: 'Truvativ',
     model: 'ST-DESC-DM5-B1',
-    barClampDiameter: '35',
-    length: '50',
-    rise: '0',
-    steererTubeDiameter: 'Direct Mount',
+    bar_clamp: 35,
+    length: 50,
+    rise: 0,
+    steerer_tube_diameter: 'Direct Mount',
     color: 'Black',
     material: 'Al-7075',
-    price: '81',
-    weight: '--',
+    price: 81,
+    weight: 233,
     where: 'sram.com',
   },
   {
@@ -44,14 +45,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: 'Hussefelt Stem',
     brand: 'Truvativ',
     model: 'ST-HUSS-A1',
-    barClampDiameter: '31.8',
-    length: '40',
-    rise: '0',
-    steererTubeDiameter: '1-1/8 in',
+    bar_clamp: 31.8,
+    length: 40,
+    rise: 0,
+    steerer_tube_diameter: '1-1/8 in',
     color: 'Blast Black',
     material: 'Al-7075',
-    price: '42',
-    weight: '--',
+    price: 42,
+    weight: 233,
     where: 'sram.com',
   },
 ];
@@ -67,10 +68,10 @@ export class MatstemsComponent implements AfterViewInit {
     'name',
     'brand',
     'model',
-    'barClampDiameter',
+    'bar_clamp',
     'length',
     'rise',
-    'steererTubeDiameter',
+    'steerer_tube_diameter',
     'color',
     'material',
     'price',
@@ -119,12 +120,19 @@ export class MatstemsComponent implements AfterViewInit {
   onFetchPosts() {
     // Send Http request
     this.http
-      .get<Part[]>(
-        'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={queryStem { brand, id, bar_clamp, color, image, length, material, model, name, price, rise, steerer_tube_diameter, weight, where }}'
-      )
-      .subscribe(responseData => {
-        console.log(responseData);
+      .get('https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={queryStem { brand, id, bar_clamp, color, image, length, material, model, name, price, rise, steerer_tube_diameter, weight, where }}')
+      .subscribe(posts => {
+        alert(JSON.stringify(posts));
       });
+      // .pipe(
+      //   map(responseData => {
+      //     const postsArray = [];
+      //     for (const key in responseData) {
+      //       if (responseData.hasOwnProperty(key))
+      //       postsArray.push({ ...responseData[key], id: key })
+      //     }
+      //     return postsArray;
+      // })
+      //   )
   }
-
 }
