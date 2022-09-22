@@ -17,6 +17,7 @@ import { StemsComponent } from './parts/stems/stems.component';
 import { AddPartsService } from './parts/add-parts.service';
 import { DegreePipe } from './degree.pipe';
 import { MillimeterPipe } from './millimeter.pipe';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MillimeterPipe } from './millimeter.pipe';
     MatTableModule,
     MatSortModule,
     HttpClientModule,
+    GraphQLModule,
   ],
   providers: [AddPartsService],
   bootstrap: [AppComponent],
