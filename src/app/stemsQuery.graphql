@@ -22,3 +22,22 @@ mutation AddStems {
     }
   }
 }
+
+
+
+type Stem  {
+	id: ID!
+  image: String!
+	name: String! @search(by:[fulltext])
+	brand: String!
+	model: String!
+	barClampDiameter: Float!
+	length: Int!
+	rise: Int
+	steererTubeDiameter: String!
+	color: String!
+	material: String
+	price: Float!
+	weight: Int
+	where: String!
+}
