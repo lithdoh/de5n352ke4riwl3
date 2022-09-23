@@ -1,7 +1,7 @@
 mutation AddStems {
   addStem(input: [
-    {image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg", name: "Descendant 35mm Direct Mount Stem", brand: "Truvativ", model: "ST-HUSS-A1", barClamp: 31.8, length: 40, rise: 0, steererTubeDiameter: "1-1/8 in", color: "Blast Black", material: "Al-7075", price: 42, weight: 89, where: "sram.com"},
-    {image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-atms-7k-318-a1/productassets_st-atms-7k1-a1_fg/amstatm7k318660118c3qs.png?w=800&quality=80&format=webp", name: "Hussefelt Stem", brand: "Truvativ", model: "ST-HUSS-A1", barClamp: 31.8, length: 40, rise: 0, steererTubeDiameter: "1-1/8 in", color: "Blast Black", material: "Al-7075", price: 42, weight: 89, where: "sram.com"},
+    {image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg", name: "Descendant 35mm Direct Mount Stem", brand: "Truvativ", model: "ST-HUSS-A1", barClampDiameter: 31.8, length: 40, rise: 0, steererTubeDiameter: "1-1/8 in", color: "Blast Black", material: "Al-7075", price: 42, weight: 89, where: "sram.com"},
+    {image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-atms-7k-318-a1/productassets_st-atms-7k1-a1_fg/amstatm7k318660118c3qs.png?w=800&quality=80&format=webp", name: "Hussefelt Stem", brand: "Truvativ", model: "ST-HUSS-A1", barClampDiameter: 31.8, length: 40, rise: 0, steererTubeDiameter: "1-1/8 in", color: "Blast Black", material: "Al-7075", price: 42, weight: 89, where: "sram.com"},
 
   ]) {
     numUids
@@ -10,7 +10,7 @@ mutation AddStems {
     name
     brand
     model
-    barClamp
+    barClampDiameter
 	  length
 	  rise
     steererTubeDiameter
