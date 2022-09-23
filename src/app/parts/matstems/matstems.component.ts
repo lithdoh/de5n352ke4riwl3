@@ -118,7 +118,7 @@ export class MatstemsComponent implements AfterViewInit {
   }
 
   posts: any;
-  
+
   onFetchPosts() {
     // Send Http request
     this.posts = this.http
