@@ -17,7 +17,7 @@ import { StemsComponent } from './parts/stems/stems.component';
 import { AddPartsService } from './parts/add-parts.service';
 import { DegreePipe } from './degree.pipe';
 import { MillimeterPipe } from './millimeter.pipe';
-import { GraphQLModule } from './graphql.module';
+import { GqlmatstemsComponent } from './gqlmatstems/gqlmatstems.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import { GraphQLModule } from './graphql.module';
     MathomeComponent,
     DegreePipe,
     MillimeterPipe,
+    GqlmatstemsComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -39,7 +40,6 @@ import { GraphQLModule } from './graphql.module';
     MatTableModule,
     MatSortModule,
     HttpClientModule,
-    GraphQLModule,
   ],
   providers: [AddPartsService],
   bootstrap: [AppComponent],

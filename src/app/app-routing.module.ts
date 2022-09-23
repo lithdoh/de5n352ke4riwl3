@@ -8,6 +8,7 @@ import { StemsComponent } from './parts/stems/stems.component';
 import { MATbarsComponent } from './parts/matbars/matbars.component';
 import { MatstemsComponent } from './parts/matstems/matstems.component';
 import { MathomeComponent } from './mathome/mathome.component';
+import { GqlmatstemsComponent } from './gqlmatstems/gqlmatstems.component';
 
 const routes: Routes = [
   { path: 'parts/frame', component: FrameComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'parts/chain', component: MathomeComponent },
   { path: 'parts/matbars', component: MATbarsComponent },
   { path: 'parts/matstems', component: MatstemsComponent },
+  { path: 'parts/grips', component: GqlmatstemsComponent },
 ];
 
 @NgModule({
