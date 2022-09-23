@@ -117,12 +117,15 @@ export class MatstemsComponent implements AfterViewInit {
     this.router.navigate(['/parts/chain'])
   }
 
+  posts: any;
+  
   onFetchPosts() {
     // Send Http request
-    this.http
-      .get('https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={ queryStem { barClamp brand color id image length material model name price rise steererTubeDiameter weight where } } ')
+    this.posts = this.http
+      .get('https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={ queryStem { barClampDiameter brand color id image length material model name price rise steererTubeDiameter weight where } } ')
+      .pipe(map((response: any) => response.data.queryStem))
       .subscribe(posts => {
-        alert(JSON.stringify(posts));
+        this.posts = posts;
       });
       // .pipe(
       //   map(responseData => {
