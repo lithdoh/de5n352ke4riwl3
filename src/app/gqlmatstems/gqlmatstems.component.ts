@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { Part } from '../parts/part.model';
 import { map } from 'rxjs/operators';
 
-export interface PeriodicElement {
+export interface Stems {
   image: string;
   name: string;
   brand: string;
@@ -24,7 +24,7 @@ export interface PeriodicElement {
   where: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const STEM_DATA: Stems[] = [
   {
     image: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg',
     name: 'Descendant 35mm Direct Mount Stem',
@@ -80,7 +80,7 @@ export class GqlmatstemsComponent implements AfterViewInit {
     'where',
     'add'
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(STEM_DATA);
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
