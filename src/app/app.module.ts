@@ -17,7 +17,6 @@ import { StemsComponent } from './parts/stems/stems.component';
 import { AddPartsService } from './parts/add-parts.service';
 import { DegreePipe } from './degree.pipe';
 import { MillimeterPipe } from './millimeter.pipe';
-import { GqlmatstemsComponent } from './gqlmatstems/gqlmatstems.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { GqlmatstemsComponent } from './gqlmatstems/gqlmatstems.component';
     MathomeComponent,
     DegreePipe,
     MillimeterPipe,
-    GqlmatstemsComponent,
   ],
   imports: [
     BrowserAnimationsModule,
