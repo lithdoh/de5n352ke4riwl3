@@ -52,6 +52,9 @@ mutation AddStems {
 }
 
 
+
+
+
 type Stem  {
 	id: ID!
   image: String!
@@ -67,4 +70,96 @@ type Stem  {
 	price: Float!
 	weight: Int
 	where: String!
+}
+
+
+
+
+// This query:
+
+query MyQuery {
+  queryStem {
+    barClampDiameter
+    brand
+    color
+    image
+    length
+    material
+    model
+    name
+    price
+    rise
+    steererTubeDiameter
+    weight
+    where
+  }
+}
+
+// Returns:
+
+{
+  "data": {
+    "queryStem": [
+      {
+        "barClampDiameter": 31.8,
+        "brand": "Truvativ",
+        "color": "Blast Black",
+        "image": "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg",
+        "length": 40,
+        "material": "Al-7075",
+        "model": "ST-HUSS-A1",
+        "name": "Descendant 35mm Direct Mount Stem",
+        "price": 42,
+        "rise": 0,
+        "steererTubeDiameter": "1-1/8 in",
+        "weight": 89,
+        "where": "sram.com"
+      },
+      {
+        "barClampDiameter": 31.8,
+        "brand": "Truvativ",
+        "color": "Blast Black",
+        "image": "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-atms-7k-318-a1/productassets_st-atms-7k1-a1_fg/amstatm7k318660118c3qs.png?w=800&quality=80&format=webp",
+        "length": 40,
+        "material": "Al-7075",
+        "model": "ST-HUSS-A1",
+        "name": "Hussefelt Stem",
+        "price": 42,
+        "rise": 0,
+        "steererTubeDiameter": "1-1/8 in",
+        "weight": 89,
+        "where": "sram.com"
+      }
+    ]
+  },
+  "extensions": {
+    "touched_uids": 28,
+    "tracing": {
+      "version": 1,
+      "startTime": "2022-09-28T16:18:23.854360428Z",
+      "endTime": "2022-09-28T16:18:23.858992612Z",
+      "duration": 4632204,
+      "execution": {
+        "resolvers": [
+          {
+            "path": [
+              "queryStem"
+            ],
+            "parentType": "Query",
+            "fieldName": "queryStem",
+            "returnType": "[Stem]",
+            "startOffset": 292083,
+            "duration": 4328931,
+            "dgraph": [
+              {
+                "label": "query",
+                "startOffset": 430835,
+                "duration": 4187509
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
