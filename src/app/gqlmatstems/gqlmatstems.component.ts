@@ -88,7 +88,7 @@ export class GqlmatstemsComponent implements AfterViewInit {
     private router: Router,
     private http: HttpClient,
   ) { }
-  
+
 
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -120,11 +120,11 @@ export class GqlmatstemsComponent implements AfterViewInit {
   }
 
   posts: any;
-  
+
   onFetchPosts() {
     // Send Http request
     this.posts = this.http
-      .get('https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={ queryStem { barClampDiameter brand color id image length material model name price rise steererTubeDiameter weight where } } ')
+      .get('https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={ queryStem { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } } ')
       .pipe(map((response: any) => response.data.queryStem))
       .subscribe(posts => {
         this.posts = posts;
