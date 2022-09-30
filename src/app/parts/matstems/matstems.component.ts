@@ -1,68 +1,21 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { DataSource } from '@angular/cdk/collections';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { MyServiceService } from 'src/app/my-service.service';
-import { HttpClient } from '@angular/common/http';
-import { Part } from '../part.model';
-import { map } from 'rxjs/operators'
-
-export interface PeriodicElement {
-  image: string;
-  name: string;
-  brand: string;
-  model: string;
-  barClampDiameter: number;
-  length: number;
-  rise: number;
-  steererTubeDiameter: string;
-  color: string;
-  material: string;
-  price: number;
-  weight: number;
-  where: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    image: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg',
-    name: 'Descendant 35mm Direct Mount Stem',
-    brand: 'Truvativ',
-    model: 'ST-DESC-DM5-B1',
-    barClampDiameter: 35,
-    length: 50,
-    rise: 0,
-    steererTubeDiameter: 'Direct Mount',
-    color: 'Black',
-    material: 'Al-7075',
-    price: 81,
-    weight: 233,
-    where: 'sram.com',
-  },
-  {
-    image: 'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-hussefelt-a1/2012-truvativhussefeltstem-large-en?w=800&quality=80&format=jpg',
-    name: 'Hussefelt Stem',
-    brand: 'Truvativ',
-    model: 'ST-HUSS-A1',
-    barClampDiameter: 31.8,
-    length: 40,
-    rise: 0,
-    steererTubeDiameter: '1-1/8 in',
-    color: 'Blast Black',
-    material: 'Al-7075',
-    price: 42,
-    weight: 233,
-    where: 'sram.com',
-  },
-];
+import { Observable } from 'rxjs';
+import { Stems } from 'src/app/models/stems.model';
+import { StemsService } from 'src/app/services/stems.service';
 
 @Component({
   selector: 'app-matstems',
   templateUrl: './matstems.component.html',
   styleUrls: ['./matstems.component.css'],
 })
-export class MatstemsComponent implements AfterViewInit {
+
+export class MatstemsComponent implements OnInit {
+  dataSource = new StemsDataSource(this.stemsService);
+
   displayedColumns: string[] = [
     'image',
     'name',
@@ -79,20 +32,17 @@ export class MatstemsComponent implements AfterViewInit {
     'where',
     'add'
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
-    public myService: MyServiceService,
     private router: Router,
-    private http: HttpClient,
+    private stemsService: StemsService,
     ) {}
 
-  @ViewChild(MatSort) sort!: MatSort;
+    ngOnInit(): void {
+    }
 
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-  }
+  @ViewChild(MatSort) sort!: MatSort;
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
@@ -116,26 +66,14 @@ export class MatstemsComponent implements AfterViewInit {
     // route to the page
     this.router.navigate(['/parts/chain'])
   }
+}
 
-  posts: any;
-
-  onFetchPosts() {
-    // Send Http request
-    this.posts = this.http
-      .get('https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={ queryStem { barClampDiameter brand color id image length material model name price rise steererTubeDiameter weight where } } ')
-      .pipe(map((response: any) => response.data.queryStem))
-      .subscribe(posts => {
-        this.posts = posts;
-      });
-      // .pipe(
-      //   map(responseData => {
-      //     const postsArray = [];
-      //     for (const key in responseData) {
-      //       if (responseData.hasOwnProperty(key))
-      //       postsArray.push({ ...responseData[key], id: key })
-      //     }
-      //     return postsArray;
-      // })
-      //   )
+export class StemsDataSource extends DataSource<any> {
+  constructor(private stemsService: StemsService) {
+    super();
   }
+  connect(): Observable<Stems[]> {
+    return this.stemsService.getStems();
+  }
+  disconnect() {}
 }
