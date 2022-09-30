@@ -14,7 +14,6 @@ import { MATbarsComponent } from './parts/matbars/matbars.component';
 import { MatstemsComponent } from './parts/matstems/matstems.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { StemsComponent } from './parts/stems/stems.component';
-import { AddPartsService } from './parts/add-parts.service';
 import { DegreePipe } from './degree.pipe';
 import { MillimeterPipe } from './millimeter.pipe';
 
@@ -39,7 +38,7 @@ import { MillimeterPipe } from './millimeter.pipe';
     MatSortModule,
     HttpClientModule,
   ],
-  providers: [AddPartsService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
