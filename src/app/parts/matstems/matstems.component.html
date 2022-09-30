@@ -104,9 +104,3 @@
 <button (click)="myService.increment()">Increment</button>
 <button (click)="onFetchPosts()">Fetch Data</button>
 
-<div class="card" *ngFor="let stem of posts">
-  <label class="content">Model: {{ stem.name }}</label>
-  <label class="content">Brand: {{ stem.brand }}</label>
-</div>
-
-<!-- So now I have the stem name and brand appearing, but how to get it into the table? -->
