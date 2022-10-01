@@ -30,6 +30,50 @@ mutation AddStems {
 	 weight: 89,
 	 where: "sram.com"},
 
+    {
+	 image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-a1/descstem50mm.jpg?w=1600&quality=80&format=webp",
+	 name: "Magic Stem",
+	 brand: "Campy",
+	 model: "ST-DESC-1-A1",
+	 barClampDiameter: 35,
+	 length: 40,
+	 rise: 0,
+	 steererTubeDiameter: "1-1/8 in",
+	 color: "Red",
+	 material: "Blue Steel",
+	 price: 55,
+	 weight: 31,
+	 where: "jenson.com"},
+
+       {
+	 image: "https://jnsn.imgix.net/globalassets/product-images---all-assets/renthal/st217a00-black~gold.jpg?w=2000&auto=format&q=70&fit=max",
+	 name: "Apex",
+	 brand: "Renthal",
+	 model: "AB-CDEF-GH",
+	 barClampDiameter: 38,
+	 length: 55,
+	 rise: 8,
+	 steererTubeDiameter: "1-1/8 in",
+	 color: "Blue",
+	 material: "Titanium",
+	 price: 99,
+	 weight: 184,
+	 where: "worldwidecyclery.com"},
+
+       {
+	 image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-atms-7k-318-a1/productassets_st-atms-7k1-a1_fg/amstatm7k318660118c3qs.png?w=800&quality=80&format=webp",
+	 name: "Split",
+	 brand: "Spank",
+	 model: "TJ-5849-DE",
+	 barClampDiameter: 39,
+	 length: 60,
+	 rise: 11,
+	 steererTubeDiameter: "1-1/8 in",
+	 color: "Red",
+	 material: "Copper",
+	 price: 88,
+	 weight: 134,
+	 where: "bikeparts.com"},
 
   ]) {
     numUids
