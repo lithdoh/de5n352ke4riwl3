@@ -14,9 +14,8 @@ import { MATbarsComponent } from './parts/matbars/matbars.component';
 import { MatstemsComponent } from './parts/matstems/matstems.component';
 import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { StemsComponent } from './parts/stems/stems.component';
-import { DegreePipe } from './degree.pipe';
-import { MillimeterPipe } from './millimeter.pipe';
-
+import { DegreePipe } from './pipes/degree.pipe';
+import { MillimeterPipe } from './pipes/millimeter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
