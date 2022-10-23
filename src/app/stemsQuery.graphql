@@ -1,7 +1,7 @@
 mutation AddStems {
   addStem(input: [
     {
-	 image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-direct-mount-35-b1/black3ql.jpg?w=800&quality=80&format=jpg",
+	 image: "assets/descendant-35mm-direct-mount-stem.jpg",
 	 name: "Descendant 35mm Direct Mount Stem",
 	 brand: "Truvativ",
 	 model: "ST-HUSS-A1",
