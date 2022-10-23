@@ -13,7 +13,9 @@ export class StemsService {
   constructor(private http: HttpClient) { }
 
   getStems(): Observable<Stems[]> {
-    const requestURL = `https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query={ queryStem { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+    const requestURL = `https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=
+    { queryStem { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+    // console.log(this.http.get<Stems[]>(requestURL));
     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   }
   // getStems(sort: string, order: SortDirection, page: number): Observable<Stems[]> {
