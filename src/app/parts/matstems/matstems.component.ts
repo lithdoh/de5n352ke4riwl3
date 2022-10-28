@@ -1,6 +1,6 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { DataSource } from '@angular/cdk/collections';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -12,11 +12,11 @@ import { StemsService } from 'src/app/services/stems.service';
   templateUrl: './matstems.component.html',
   styleUrls: ['./matstems.component.css'],
 })
-
 export class MatstemsComponent implements OnInit {
   dataSource = new StemsDataSource(this.stemsService);
 
   displayedColumns: string[] = [
+    // 'id',
     'image',
     'name',
     'brand',
@@ -30,19 +30,21 @@ export class MatstemsComponent implements OnInit {
     'price',
     'weight',
     'where',
-    'add'
+    'add',
   ];
+  
+  @Output() id: EventEmitter<any> = new EventEmitter();
+
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
-    private stemsService: StemsService,
-    ) {}
+    private stemsService: StemsService
+  ) {}
 
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {}
 
-  @ViewChild(MatSort) sort!: MatSort;
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
@@ -57,15 +59,24 @@ export class MatstemsComponent implements OnInit {
     }
   }
 
-  onAddItem() {
-    // “add” button calls function (event binding in matstems template)
+  // Adding products to the list:
+  onAddItem(id: string) {
+    // “add” button invokes function (event binding in matstems template)
     // function accesses the list of stems (stem component)
-
+    this.id.emit(id);
     // and adds a product to the build list (home component)
 
     // route to the page
-    this.router.navigate(['/parts/chain'])
+    this.router.navigate(['/parts/chain']);
   }
+
+  // Alternatively:
+  // When you click the add button, the id of the item is stored, and you are redirected to the "list" page.
+  // On the list page, a request is sent to the database for the item with the stored id.
+  // That item is displayed.
+  // Another way
+  // When you click the add button, the item whose add button you clicked is stored as an object, and you are redirected to the "list" page
+  // That item is displayed.
 }
 
 export class StemsDataSource extends DataSource<any> {
