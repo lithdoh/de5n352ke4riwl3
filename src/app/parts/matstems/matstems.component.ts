@@ -16,6 +16,7 @@ export class MatstemsComponent implements OnInit {
   dataSource = new StemsDataSource(this.stemsService);
 
   displayedColumns: string[] = [
+    // 'id',
     'image',
     'name',
     'brand',
@@ -29,7 +30,7 @@ export class MatstemsComponent implements OnInit {
     'price',
     'weight',
     'where',
-    'add',
+    'add',,
   ];
   // From talk with Steve
   // @Output() id: EventEmitter<any> = new EventEmitter();
@@ -44,6 +45,7 @@ export class MatstemsComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  @ViewChild(MatSort) sort!: MatSort;
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
