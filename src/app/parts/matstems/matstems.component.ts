@@ -30,12 +30,10 @@ export class MatstemsComponent implements OnInit {
     'price',
     'weight',
     'where',
-    'add',,
+    'add',
   ];
   // From talk with Steve
   // @Output() id: EventEmitter<any> = new EventEmitter();
-
-  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
@@ -84,12 +82,15 @@ export class MatstemsComponent implements OnInit {
   // That item is displayed.
 }
 
+
 export class StemsDataSource extends DataSource<any> {
   constructor(private stemsService: StemsService) {
     super();
   }
   connect(): Observable<Stems[]> {
-    return this.stemsService.getStems('desc');
+    // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the 
+    // arrows on the table headers are clicked
+    return this.stemsService.getStems('asc');
   }
   disconnect() {}
 }
