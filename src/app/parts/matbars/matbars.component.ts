@@ -22,7 +22,7 @@ export interface PeriodicElement {
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     image:
-      'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---riser/hb-desc-riser-35-a1/blackfrontwhor.jpg?w=1000&quality=80&format=jpg',
+      'assets/descendant-35mm-carbon-riser-bar.jpg',
     name: 'Descendant 35mm Carbon Riser Bar',
     brand: 'Truvativ',
     model: 'HB-DESC-RC5-B1',
@@ -38,8 +38,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     image:
-      'https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/handlebars/handlebars---flat/hb-atms-flat-carbon-318-a1/productassets_hb-atms-fc1-a1_fg/hbatmcrbnf318a1cfronth.png?w=1000&quality=80&format=jpg',
-    name: 'Descendant 35mm Carbon Riser Bar',
+      'assets/descendant-35mm-carbon-flat-bar.jpg',
+    name: 'Descendant 35mm Carbon Flat Bar',
     brand: 'Truvativ',
     model: 'HB-DESC-RC5-B1',
     clamp: '35mm',

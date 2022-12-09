@@ -16,7 +16,7 @@ mutation AddStems {
 	 where: "sram.com"},
 
     {
-	 image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-atms-7k-318-a1/productassets_st-atms-7k1-a1_fg/amstatm7k318660118c3qs.png?w=800&quality=80&format=webp",
+	 image: "assets/hussefelt-stem.jpg",
 	 name: "Hussefelt Stem",
 	 brand: "Truvativ",
 	 model: "ST-HUSS-A1",
@@ -31,7 +31,7 @@ mutation AddStems {
 	 where: "sram.com"},
 
     {
-	 image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-desc-a1/descstem50mm.jpg?w=1600&quality=80&format=webp",
+	 image: "assets/magic-stem.jpg",
 	 name: "Magic Stem",
 	 brand: "Campy",
 	 model: "ST-DESC-1-A1",
@@ -46,7 +46,7 @@ mutation AddStems {
 	 where: "jenson.com"},
 
        {
-	 image: "https://jnsn.imgix.net/globalassets/product-images---all-assets/renthal/st217a00-black~gold.jpg?w=2000&auto=format&q=70&fit=max",
+	 image: "assets/apex.jpg",
 	 name: "Apex",
 	 brand: "Renthal",
 	 model: "AB-CDEF-GH",
@@ -61,7 +61,7 @@ mutation AddStems {
 	 where: "worldwidecyclery.com"},
 
        {
-	 image: "https://www.sram.com/globalassets/image-hierarchy/sram-product-root-images/stems/stems/st-atms-7k-318-a1/productassets_st-atms-7k1-a1_fg/amstatm7k318660118c3qs.png?w=800&quality=80&format=webp",
+	 image: "assets/split.jpg",
 	 name: "Split",
 	 brand: "Spank",
 	 model: "TJ-5849-DE",
