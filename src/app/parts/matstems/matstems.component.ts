@@ -1,19 +1,23 @@
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { DataSource } from '@angular/cdk/collections';
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { MatSort, Sort } from '@angular/material/sort';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Stems } from 'src/app/models/stems.model';
-import { StemsService } from 'src/app/services/stems.service';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {MatSort, Sort} from '@angular/material/sort';
+import {Router} from '@angular/router';
+import {map, startWith, Subscription, switchMap, tap} from 'rxjs';
+import {StemsService} from 'src/app/services/stems.service';
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-matstems',
   templateUrl: './matstems.component.html',
   styleUrls: ['./matstems.component.css'],
 })
-export class MatstemsComponent implements OnInit {
-  dataSource = new StemsDataSource(this.stemsService);
+export class MatstemsComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild(MatSort) sort!: MatSort;
+
+  // dataSource = new StemsDataSource(this.stemsService);
+  dataSource = new MatTableDataSource();
+
+  stems$!: Subscription;
 
   displayedColumns: string[] = [
     // 'id',
@@ -41,9 +45,34 @@ export class MatstemsComponent implements OnInit {
     private stemsService: StemsService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.stemsService.getStems('asc').subscribe(data => {
+    //   this.testDataSource.data = data;
+    //   this.testDataSource.sort = this.sort;
+    // })
+  }
 
-  @ViewChild(MatSort) sort!: MatSort;
+  ngAfterViewInit() {
+    const DEFAULT_DIR = 'asc';
+    const DEFAULT_COLUMN = 'name';
+
+    this.stems$ = this.sort.sortChange.pipe(
+      startWith({}),
+      map(() => {
+        return {
+          dir: this.sort && this.sort.direction ? this.sort.direction : DEFAULT_DIR,
+          column: this.sort && this.sort.active ? this.sort.active : DEFAULT_COLUMN,
+        }
+      }),
+      switchMap(({dir, column}) => this.stemsService.getStems(dir, column)),
+      tap(stems => this.dataSource.data = stems)
+    ).subscribe();
+  }
+
+  ngOnDestroy() {
+    this.stems$.unsubscribe();
+  }
+
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
@@ -62,7 +91,7 @@ export class MatstemsComponent implements OnInit {
   onAddItem() {
     // “add” button invokes function (event binding in matstems template)
     // function accesses the list of stems (stem component)
-    
+
     /* From talk with Steve
      this.id.emit(id);
     */
@@ -83,14 +112,14 @@ export class MatstemsComponent implements OnInit {
 }
 
 
-export class StemsDataSource extends DataSource<any> {
-  constructor(private stemsService: StemsService) {
-    super();
-  }
-  connect(): Observable<Stems[]> {
-    // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the 
-    // arrows on the table headers are clicked
-    return this.stemsService.getStems('asc');
-  }
-  disconnect() {}
-}
+// export class StemsDataSource extends DataSource<any> {
+//   constructor(private stemsService: StemsService) {
+//     super();
+//   }
+//   connect(): Observable<Stems[]> {
+//     // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the
+//     // arrows on the table headers are clicked
+//     return this.stemsService.getStems('asc');
+//   }
+//   disconnect() {}
+// }
