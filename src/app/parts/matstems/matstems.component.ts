@@ -1,5 +1,5 @@
 import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {Router} from '@angular/router';
 import {Observable, startWith, switchMap} from 'rxjs';
@@ -12,8 +12,8 @@ import {DataSource} from "@angular/cdk/collections";
   templateUrl: './matstems.component.html',
   styleUrls: ['./matstems.component.css'],
 })
-export class MatstemsComponent implements OnInit, AfterViewInit {
-  @ViewChild(MatSort) sort!: MatSort;
+export class MatstemsComponent implements OnInit {
+  @ViewChild(MatSort, {static: true}) sort!: MatSort;
 
   dataSource!: StemsDataSource;
 
@@ -48,10 +48,8 @@ export class MatstemsComponent implements OnInit, AfterViewInit {
     //   this.testDataSource.data = data;
     //   this.testDataSource.sort = this.sort;
     // })
-  }
-
-  ngAfterViewInit() {
     this.dataSource = new StemsDataSource(this.stemsService, this.sort);
+
   }
 
   /** Announce the change in sort state for assistive technology. */
@@ -102,12 +100,9 @@ export class StemsDataSource extends DataSource<any> {
     // arrows on the table headers are clicked
     // return this.stemsService.getStems('asc', 'price');
 
-    const DEFAULT_DIR = 'asc';
-    const DEFAULT_COLUMN = 'name';
-
     return this.sort.sortChange.pipe(
-      startWith({direction: DEFAULT_DIR, active: DEFAULT_COLUMN} as Sort),
-      switchMap(({direction, active}: Sort) => this.stemsService.getStems(direction, active)),
+      startWith({direction: 'asc', active: 'name'} as Sort),
+      switchMap(({direction, active}) => this.stemsService.getStems(direction, active)),
     )
   }
   disconnect() {}
