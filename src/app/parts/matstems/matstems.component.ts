@@ -1,8 +1,8 @@
 import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {Router} from '@angular/router';
-import {Observable, startWith, Subscription, switchMap} from 'rxjs';
+import {Observable, startWith, switchMap} from 'rxjs';
 import {StemsService} from 'src/app/services/stems.service';
 import {Stems} from "../../models/stems.model";
 import {DataSource} from "@angular/cdk/collections";
@@ -12,12 +12,10 @@ import {DataSource} from "@angular/cdk/collections";
   templateUrl: './matstems.component.html',
   styleUrls: ['./matstems.component.css'],
 })
-export class MatstemsComponent implements OnInit, AfterViewInit, OnDestroy {
+export class MatstemsComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   dataSource!: StemsDataSource;
-
-  stems$!: Subscription;
 
   displayedColumns: string[] = [
     // 'id',
@@ -55,11 +53,6 @@ export class MatstemsComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     this.dataSource = new StemsDataSource(this.stemsService, this.sort);
   }
-
-  ngOnDestroy() {
-    this.stems$.unsubscribe();
-  }
-
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
