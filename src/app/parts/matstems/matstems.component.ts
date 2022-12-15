@@ -1,11 +1,11 @@
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { DataSource } from '@angular/cdk/collections';
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { MatSort, Sort } from '@angular/material/sort';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Stems } from 'src/app/models/stems.model';
-import { StemsService } from 'src/app/services/stems.service';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatSort, Sort} from '@angular/material/sort';
+import {Router} from '@angular/router';
+import {Observable, startWith, switchMap} from 'rxjs';
+import {StemsService} from 'src/app/services/stems.service';
+import {Stems} from "../../models/stems.model";
+import {DataSource} from "@angular/cdk/collections";
 
 @Component({
   selector: 'app-matstems',
@@ -13,7 +13,9 @@ import { StemsService } from 'src/app/services/stems.service';
   styleUrls: ['./matstems.component.css'],
 })
 export class MatstemsComponent implements OnInit {
-  dataSource = new StemsDataSource(this.stemsService);
+  @ViewChild(MatSort, {static: true}) sort!: MatSort;
+
+  dataSource!: StemsDataSource;
 
   displayedColumns: string[] = [
     // 'id',
@@ -41,9 +43,14 @@ export class MatstemsComponent implements OnInit {
     private stemsService: StemsService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.stemsService.getStems('asc').subscribe(data => {
+    //   this.testDataSource.data = data;
+    //   this.testDataSource.sort = this.sort;
+    // })
+    this.dataSource = new StemsDataSource(this.stemsService, this.sort);
 
-  @ViewChild(MatSort) sort!: MatSort;
+  }
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
@@ -62,7 +69,7 @@ export class MatstemsComponent implements OnInit {
   onAddItem() {
     // “add” button invokes function (event binding in matstems template)
     // function accesses the list of stems (stem component)
-    
+
     /* From talk with Steve
      this.id.emit(id);
     */
@@ -84,13 +91,19 @@ export class MatstemsComponent implements OnInit {
 
 
 export class StemsDataSource extends DataSource<any> {
-  constructor(private stemsService: StemsService) {
+  constructor(private stemsService: StemsService,
+              private sort: MatSort) {
     super();
   }
   connect(): Observable<Stems[]> {
-    // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the 
+    // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the
     // arrows on the table headers are clicked
-    return this.stemsService.getStems('asc');
+    // return this.stemsService.getStems('asc', 'price');
+
+    return this.sort.sortChange.pipe(
+      startWith({direction: 'asc', active: 'name'} as Sort),
+      switchMap(({direction, active}) => this.stemsService.getStems(direction, active)),
+    )
   }
   disconnect() {}
 }

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient }   from '@angular/common/http';
-import { map, Observable }   from 'rxjs';
+import {map, Observable} from 'rxjs';
 import { Stems } from '../models/stems.model';
-import { SortDirection } from '@angular/material/sort';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +17,9 @@ export class StemsService {
   //   // console.log(this.http.get<Stems[]>(requestURL));
   //   return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   // }
-  getStems(sort: string): Observable<Stems[]> {
+  getStems(sort: string, column: string): Observable<Stems[]> {
     const requestURL = `https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=
-    { queryStem(order: {${sort}: price}) { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+    { queryStem(order: {${sort}: ${column}}) { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
     console.log(requestURL);
     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   }
