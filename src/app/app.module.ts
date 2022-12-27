@@ -1,9 +1,11 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +38,8 @@ import { MillimeterPipe } from './pipes/millimeter.pipe';
     MatTableModule,
     MatSortModule,
     HttpClientModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
