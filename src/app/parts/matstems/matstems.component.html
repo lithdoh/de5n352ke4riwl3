@@ -1,6 +1,6 @@
 <table mat-table [dataSource]="dataSource" matSort matSortDisableClear (matSortChange)="announceSortChange($event)"
-    class="mat-elevation-z8">
-<!-- You could make an array with the column names and matColumnDef's and use *ngFor -->
+  class="mat-elevation-z8">
+  <!-- You could make an array with the column names and matColumnDef's and use *ngFor -->
   <ng-container matColumnDef="image">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">
@@ -100,3 +100,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<mat-paginator [length]="totalRows" [pageSize]="currentPage" [pageSizeOptions]="pageSizeOptions" (page)="getServerData($event)" aria-label="Select page">
+</mat-paginator>
