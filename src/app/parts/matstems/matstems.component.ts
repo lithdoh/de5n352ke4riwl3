@@ -1,11 +1,12 @@
 import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Input, Output, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {Router} from '@angular/router';
-import {Observable, startWith, switchMap} from 'rxjs';
-import {StemsService} from 'src/app/services/stems.service';
+import {merge, Observable, startWith, switchMap} from 'rxjs';
+import {StemsService} from '../../services/stems.service';
 import {Stems} from "../../models/stems.model";
 import {DataSource} from "@angular/cdk/collections";
+import { MatPaginator, MatPaginatorDefaultOptions, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-matstems',
@@ -14,9 +15,49 @@ import {DataSource} from "@angular/cdk/collections";
 })
 export class MatstemsComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort!: MatSort;
+  @ViewChild(PageEvent) paginator!: PageEvent;
+  
+  // @Output() page!: EventEmitter<PageEvent>;
+  // p = this.paginator.page;
+  // @Input()
+  // count: number = 0;
+
+  // @Output()
+  // change: EventEmitter < number > = new EventEmitter < number > ();
+
+  // show() {
+  //   console.log("abc");
+  //   this.count++;
+  //   this.change.emit(this.count);
+  //   console.log(this.count);
+  // }
+
+  // incrementCounter() {
+  //   this.count++;
+  //   this.change.emit(this.count)
+  // }
+
+  // decrementCounter() {
+  //   this.count--;
+  //   this.change.emit(this.count)
+  // }
+
+  getServerData($event: PageEvent) {
+    console.log($event);
+  }
+
+  logger($event: any) {
+    console.log($event);
+  }
 
   dataSource!: StemsDataSource;
 
+  isLoading = false;
+  totalRows = 0;
+  pageSize = 5;
+  currentPage = 0;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+  
   displayedColumns: string[] = [
     // 'id',
     'image',
@@ -48,10 +89,9 @@ export class MatstemsComponent implements OnInit {
     //   this.testDataSource.data = data;
     //   this.testDataSource.sort = this.sort;
     // })
-    this.dataSource = new StemsDataSource(this.stemsService, this.sort);
-
+    this.dataSource = new StemsDataSource(this.stemsService, this.sort, this.paginator);
   }
-
+  
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
     // This example uses English messages. If your application supports
@@ -90,20 +130,62 @@ export class MatstemsComponent implements OnInit {
 }
 
 
+
+
+// export class StemsDataSource extends DataSource<any> {
+//   constructor(private stemsService: StemsService,
+//     private sort: MatSort,
+//     private paginator: MatPaginator) {
+//       super();
+//     }
+//     connect(): Observable<Stems[]> {
+//       // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the
+//       // arrows on the table headers are clicked
+//       // return this.stemsService.getStems('asc', 'price');
+    
+//       return this.sort.sortChange.pipe(
+//         startWith({direction: 'asc', active: 'name'}),
+//         switchMap(({direction, active}) => this.stemsService.getStems(direction, active)),
+//         )   
+//       }
+//       disconnect() {}
+// }
 export class StemsDataSource extends DataSource<any> {
   constructor(private stemsService: StemsService,
-              private sort: MatSort) {
-    super();
-  }
-  connect(): Observable<Stems[]> {
-    // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the
-    // arrows on the table headers are clicked
-    // return this.stemsService.getStems('asc', 'price');
-
-    return this.sort.sortChange.pipe(
-      startWith({direction: 'asc', active: 'name'} as Sort),
-      switchMap(({direction, active}) => this.stemsService.getStems(direction, active)),
-    )
-  }
-  disconnect() {}
+    private sort: MatSort,
+    private paginator: PageEvent) {
+      super();
+    }
+    connect(): Observable<Stems[]> {
+      // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the
+      // arrows on the table headers are clicked
+      // return this.stemsService.getStems('asc', 'price');
+    
+      return this.paginator.pageIndex.pipe(
+        startWith({pageIndex: 0, pageSize: 50}),
+        switchMap(({pageIndex, pageSize}) => this.stemsService.getStems(pageIndex, pageSize)),
+        )   
+      }
+      disconnect() {}
 }
+
+
+// export class StemsDataSource extends DataSource<any> {
+//   constructor(private stemsService: StemsService,
+//               private sort: MatSort,
+//               private paginator: MatPaginator) {
+//     super();
+//   }
+//   connect(): Observable<Stems[]> {
+//     // here is the issue: I can manually write 'asc' or 'desc' and it works, but the sort direction needs to be changed when the
+//     // arrows on the table headers are clicked
+//     // return this.stemsService.getStems('asc', 'price');
+//     let direction: string;
+
+//     return merge(this.sort.sortChange, this.paginator.page).pipe(
+//       startWith({direction: 'asc', active: 'name', pageIndex: 0, pageSize: 50}),
+//       switchMap(({direction, active, pageIndex, pageSize}) => this.stemsService.getStems(direction, active, pageIndex, pageSize)),
+//     )
+//   }
+//   disconnect() {}
+// }
