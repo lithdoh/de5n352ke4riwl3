@@ -60,6 +60,21 @@ mutation AddStems {
 	 weight: 184,
 	 where: "worldwidecyclery.com"},
 
+        {
+	 image: "assets/sl-sprint.jpg",
+	 name: "SL SPRINT STEM",
+	 brand: "Zipp",
+	 model: "ST-SL-SPNT-A3",
+	 barClampDiameter: 31.8,
+	 length: 100,
+	 rise: 12,
+	 steererTubeDiameter: "1-1/8 in",
+	 color: "Matte with stealth decals",
+	 material: "Steel",
+	 price: 285,
+	 weight: 167,
+	 where: "sram.com"},
+
        {
 	 image: "assets/split.jpg",
 	 name: "Split",
