@@ -7,6 +7,7 @@ import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { StemsComponent } from './parts/stems/stems.component';
 import { MATbarsComponent } from './parts/matbars/matbars.component';
 import { MatstemsComponent } from './parts/matstems/matstems.component';
+import { Matstems2Component } from './parts/matstems2/matstems2.component';
 import { MathomeComponent } from './mathome/mathome.component';
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'parts/chain', component: MathomeComponent },
   { path: 'parts/matbars', component: MATbarsComponent },
   { path: 'parts/matstems', component: MatstemsComponent },
+  { path: 'parts/matstems2', component: Matstems2Component },
 ];
 
 @NgModule({

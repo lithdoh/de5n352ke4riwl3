@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSortModule } from '@angular/material/sort';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { RearshockComponent } from './parts/rearshock/rearshock.component';
 import { StemsComponent } from './parts/stems/stems.component';
 import { DegreePipe } from './pipes/degree.pipe';
 import { MillimeterPipe } from './pipes/millimeter.pipe';
+import { Matstems2Component } from './parts/matstems2/matstems2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,7 @@ import { MillimeterPipe } from './pipes/millimeter.pipe';
     MathomeComponent,
     DegreePipe,
     MillimeterPipe,
+    Matstems2Component,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -40,6 +43,7 @@ import { MillimeterPipe } from './pipes/millimeter.pipe';
     HttpClientModule,
     MatPaginatorModule,
     MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
