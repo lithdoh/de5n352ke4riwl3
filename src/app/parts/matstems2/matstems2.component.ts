@@ -49,7 +49,7 @@ export class Matstems2Component implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
-    // Could I put these initial values in the template on the MatSort directive?
+    // Can I put these initial values in the template on the MatSort directive?
     this.sort.direction = 'asc';
     this.sort.active = 'name';
 
@@ -130,6 +130,30 @@ export class Matstems2Component implements OnInit, AfterViewInit {
     // .subscribe(data => (this.data = data));
   }
 
+  /** Adding products to the list: */
+  onAddItem(x: object) {
+    // “add” button invokes function (event binding in matstems template)
+    // function accesses the list of stems (stem component)
+    console.log(x)
+
+    /* From talk with Steve
+      this.id.emit(id);
+    */
+
+    // and adds a product to the build list (home component)
+
+    // route to the page
+    // this.router.navigate(['/parts/chain']);
+  }
+
+  // Alternatively:
+  // When you click the add button, the id of the item is stored, and you are redirected to the "list" page.
+  // On the list page, a request is sent to the database for the item with the stored id.
+  // That item is displayed.
+  // Another way
+  // When you click the add button, the item whose add button you clicked is stored as an object, and you are redirected to the "list" page
+  // That item is displayed.
+
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
     // This example uses English messages. If your application supports
@@ -150,8 +174,8 @@ export class ExampleHttpDatabase {
 
   getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number): Observable<Stems[]> {
     const baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
-    const requestURL = baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-    console.log(requestURL);
+    const requestURL = baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
+    { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   }
 

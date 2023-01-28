@@ -99,7 +99,7 @@
 
     <ng-container matColumnDef="add">
         <th mat-header-cell *matHeaderCellDef> Add </th>
-        <td mat-cell *matCellDef="let element"><button style="cursor: pointer;">Add</button></td>
+        <td mat-cell *matCellDef="let element"><button style="cursor: pointer;" (click)=onAddItem($event)>Add</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
