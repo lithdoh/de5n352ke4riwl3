@@ -33,7 +33,7 @@ export class Matstems2Component implements OnInit, AfterViewInit {
   exampleDatabase!: ExampleHttpDatabase;
   data: Stems[] = [];
 
-  totalRows = 27;
+  length: number = 0;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   showFirstLastButtons = true;
   isLoadingResults = true;
@@ -52,6 +52,9 @@ export class Matstems2Component implements OnInit, AfterViewInit {
     // Could I put these initial values in the template on the MatSort directive?
     this.sort.direction = 'asc';
     this.sort.active = 'name';
+
+    // Set length of paginator
+    this.exampleDatabase.getCount().subscribe(x => this.length = x.count);
   }
   
   ngAfterViewInit() {
@@ -151,8 +154,13 @@ export class ExampleHttpDatabase {
     console.log(requestURL);
     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   }
-}
 
+  getCount() {
+    const baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
+    const requestURL = baseURL + `{ aggregateStem { count }}`;
+    return this.http.get<string>(requestURL).pipe(map((response: any) => response.data.aggregateStem));
+  }
+}
 
 // Sorting only
 // export class ExampleHttpDatabase {
