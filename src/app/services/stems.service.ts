@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SortDirection } from '@angular/material/sort';
 import { map, Observable } from 'rxjs';
 import { Stems } from '../models/stems.model';
 
@@ -11,22 +12,33 @@ export class StemsService {
 
   constructor(private http: HttpClient) { }
 
-  // getStems(): Observable<Stems[]> {
-  //   const requestURL = `https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=
-  //   { queryStem { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-  //   // console.log(this.http.get<Stems[]>(requestURL));
-  //   return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
-  // }
-  getStems(sort: string, column: string): Observable<Stems[]> {
-    const requestURL = `https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=
-    { queryStem(order: {${sort}: ${column}}) { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-    
+  // Sorting only
+  getStems(order: SortDirection, column: string): Observable<Stems[]> {
+    const baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
+    const requestURL = baseURL + `{ queryStem(order: {${order}: ${column}}) 
+    { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+    console.log(requestURL);
     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   }
-  // getStems(sort: string, order: SortDirection, page: number): Observable<Stems[]> {
-  //   const requestURL = `${this.serviceUrl}?q=repo:angular/components&sort=${sort}&order=${order}&page=${
-  //     page + 1
-  //   }`
+    
+  // Pagination only
+  // getStems(pageSize: number, pageIndex: number): Observable<Stems[]> {
+  //   const baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
+  //   const requestURL = baseURL + `{ queryStem(order: {asc: name}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
+  //   { barClampDiameter brand color image length material model name rise price steererTubeDiameter weight where } aggregateStem { count }}`;
+
+  //   // let count1;
+  //   // this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.aggregateStem)).subscribe(x => count1 = x);
+  //   // console.log(count1);
+
+  //   return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
+  // }
+
+  // Sorting and Pagination
+  // getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number): Observable<Stems[]> {
+  //   const baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
+  //   const requestURL = `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
   //   return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   // }
 }
+
