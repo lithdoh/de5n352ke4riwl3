@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="dataSource" matSort matSortDisableClear (matSortChange)="logger($event)" (matSortChange)="announceSortChange($event)"
+<table mat-table [dataSource]="dataSource" matSort matSortDisableClear (matSortChange)="announceSortChange($event)"
   class="mat-elevation-z8">
   <!-- You could make an array with the column names and matColumnDef's and use *ngFor -->
   <ng-container matColumnDef="image">
@@ -101,18 +101,4 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<mat-paginator [length]="totalRows" [pageSize]="currentPage" [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="showFirstLastButtons" (page)="getServerData($event)" aria-label="Select page">
-</mat-paginator>
-
-<!-- <mat-paginator #paginator
-               class="demo-paginator"
-               (page)="handlePageEvent($event)"
-               [length]="length"
-               [pageSize]="pageSize"
-               [disabled]="disabled"
-               [showFirstLastButtons]="showFirstLastButtons"
-               [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
-               [hidePageSize]="hidePageSize"
-               [pageIndex]="pageIndex"
-               aria-label="Select page">
-</mat-paginator> -->
+<mat-paginator [length]="totalRows" [pageSize]="currentPage" [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="showFirstLastButtons" aria-label="Select page"></mat-paginator>
