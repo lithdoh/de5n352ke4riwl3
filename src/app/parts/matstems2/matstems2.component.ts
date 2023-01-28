@@ -34,8 +34,6 @@ export class Matstems2Component implements OnInit, AfterViewInit {
   data: Stems[] = [];
 
   totalRows = 27;
-  pageSize = 5;
-  currentPage = 0;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   showFirstLastButtons = true;
   isLoadingResults = true;
@@ -51,17 +49,20 @@ export class Matstems2Component implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
+    // Could I put these initial values in the template on the MatSort directive?
+    this.sort.direction = 'asc';
+    this.sort.active = 'name';
   }
   
   ngAfterViewInit() {
-    this.exampleDatabase.getStems('asc', 'name', 5, 0).pipe(tap(x => console.log(x))).subscribe(data => (this.data = data));
-    
+    // this.exampleDatabase.getStems('asc', 'name', 5, 0).subscribe(data => (this.data = data));
+
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
 
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(
-        startWith({direction: 'asc', active: 'name'} as Sort, {pageIndex: 0, pageSize: 5} as PageEvent),
+        startWith({direction: 'asc', active: 'name', pageIndex: 0, pageSize: 5} as Sort | PageEvent),
         switchMap(() => {
           this.isLoadingResults = true;
           return this.exampleDatabase!.getStems(
@@ -71,7 +72,6 @@ export class Matstems2Component implements OnInit, AfterViewInit {
             this.paginator.pageIndex,
           ).pipe(catchError(() => of(null)));
         }),
-
         map(data => {
           this.isLoadingResults = false;
           if (data === null) {
@@ -81,6 +81,50 @@ export class Matstems2Component implements OnInit, AfterViewInit {
         }),
       )
       .subscribe(data => (this.data = data));
+
+    // Attempt to do Sorting and Pagination the way that "Sorting Only" does it (see below)
+    // merge(this.sort.sortChange, this.paginator.page)
+    //   .pipe(
+    //     startWith({direction: 'asc', active: 'name', pageIndex: 0, pageSize: 5} as Sort | PageEvent),
+    //     switchMap(({direction, active, pageIndex, pageSize}) => {
+    //       this.isLoadingResults = true;
+    //       return this.exampleDatabase!.getStems(
+    //         direction,
+    //         active,
+    //         pageSize,
+    //         pageIndex,
+    //       ).pipe(catchError(() => of(null)));
+    //     }),
+    //     map(data => {
+    //       this.isLoadingResults = false;
+    //       if (data === null) {
+    //         return [];
+    //       }
+    //       return data;
+    //     }),
+    //   )
+    //   .subscribe(data => (this.data = data));
+
+    // Sorting Only
+    // this.sort.sortChange
+    // .pipe(
+    //   startWith({direction: 'asc', active: 'name'} as Sort),
+    //   switchMap(({direction, active}) => {
+    //     this.isLoadingResults = true;
+    //     return this.exampleDatabase!.getStems(
+    //       direction,
+    //       active,
+    //     ).pipe(catchError(() => of(null)));
+    //   }),
+    //   map(data => {
+    //     this.isLoadingResults = false;
+    //     if (data === null) {
+    //       return [];
+    //     }
+    //     return data;
+    //   }),
+    // )
+    // .subscribe(data => (this.data = data));
   }
 
   /** Announce the change in sort state for assistive technology. */
@@ -97,13 +141,27 @@ export class Matstems2Component implements OnInit, AfterViewInit {
   }
 }
 
+// Sorting and Pagination
 export class ExampleHttpDatabase {
-
   constructor(private http: HttpClient) {}
 
   getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number): Observable<Stems[]> {
     const baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
     const requestURL = baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+    console.log(requestURL);
     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   }
 }
+
+
+// Sorting only
+// export class ExampleHttpDatabase {
+//   constructor(private http: HttpClient) {}
+
+//   getStems(order: SortDirection, column: string): Observable<Stems[]> {
+//     const baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
+//     const requestURL = baseURL + `{ queryStem(order: {${order}: ${column}}, first: 5, offset: 0) { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+//     console.log(requestURL);
+//     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
+//     }
+// }
