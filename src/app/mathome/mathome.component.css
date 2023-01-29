@@ -5,8 +5,8 @@ table {
     padding-top: 60px;
   }
 
-  .mat-column-image img {
-    width:65px;
-    height:65px;
-  }
+.mat-column-selection img {
+  width:65px;
+  height:65px;
+}
 
