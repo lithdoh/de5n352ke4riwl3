@@ -20,6 +20,8 @@ import { StemsComponent } from './parts/stems/stems.component';
 import { DegreePipe } from './pipes/degree.pipe';
 import { MillimeterPipe } from './pipes/millimeter.pipe';
 import { Matstems2Component } from './parts/matstems2/matstems2.component';
+import { GramsPipe } from './pipes/grams.pipe';
+import { DollarsPerGramPipe } from './pipes/dollars-per-gram.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,8 @@ import { Matstems2Component } from './parts/matstems2/matstems2.component';
     DegreePipe,
     MillimeterPipe,
     Matstems2Component,
+    GramsPipe,
+    DollarsPerGramPipe,
   ],
   imports: [
     BrowserAnimationsModule,
