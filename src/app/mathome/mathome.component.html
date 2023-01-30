@@ -34,6 +34,7 @@
       Price/Weight
     </th>
     <td mat-cell *matCellDef="let element"> {{element.priceWeight | number:'1.1-3'}} </td>
+    <!-- Why doesn't this work? <td mat-cell *matCellDef="let element"> {{element.priceWeight | number:'1.1-3' | dollarsPerGram}} </td> -->
   </ng-container>
 
   <ng-container matColumnDef="where">
