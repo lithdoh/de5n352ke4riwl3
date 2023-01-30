@@ -3,6 +3,12 @@
         <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
 
+    <!-- Why does uncommenting this make it load forever? -->
+    <!-- <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput placeholder="Ex. ium" #toTarget>
+    </mat-form-field> -->
+
     <table mat-table [dataSource]="data" matSort matSortDisableClear (matSortChange)="announceSortChange($event)"
     class="mat-elevation-z8">
     <!-- You could make an array with the column names and matColumnDef's and use *ngFor -->
@@ -98,8 +104,10 @@
     </ng-container>
 
     <ng-container matColumnDef="add">
-        <th mat-header-cell *matHeaderCellDef> Add </th>
-        <td mat-cell *matCellDef="let element"><button style="cursor: pointer;" (click)=onAddItem($event)>Add</button></td>
+        <th mat-header-cell *matHeaderCellDef>
+         Add 
+        </th>
+        <td mat-cell *matCellDef="let row"><button style="cursor: pointer;" (click)=addItem(row)>Add</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
