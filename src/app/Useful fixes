@@ -1,7 +1,8 @@
-<!-- Used to fix problem when running "ng serve" "⠋ Generating browser application bundles (phase: setup)...An unhandled exception occurred: validate is not a function
-See "/private/var/folders/tt/nk842tv55zq8r7nvcx96t9th0000gn/T/ng-jSBi6G/angular-errors.log" for further details." -->
-<!-- https://stackoverflow.com/questions/49359043/error-ts2307-cannot-find-module-angular-core -->
-<!-- npm install --save @angular/material @angular/cdk
-rm -rf node_modules
-npm install -->
+Used to fix problem when running "ng serve" "⠋ Generating browser application bundles (phase: setup)...An unhandled exception occurred: validate is not a function
+See "/private/var/folders/tt/nk842tv55zq8r7nvcx96t9th0000gn/T/ng-jSBi6G/angular-errors.log" for further details."
+https://stackoverflow.com/questions/49359043/error-ts2307-cannot-find-module-angular-core -->
+
+    npm install --save @angular/material @angular/cdk
+    rm -rf node_modules
+    npm install 
 
