@@ -7,7 +7,7 @@ export interface PeriodicElement {
   link: string;
   image: string;
   selection: string;
-  price: string | number; // I want these properties to not display anything until they have a value set to them, i.e. I want '' to display not 0
+  price: string | number; // These properties should not display anything until they have a value set to them, i.e. '' should be displayed, not 0.
   weight: string | number;
   priceWeight: string | number;
   where: string;
@@ -65,6 +65,7 @@ export class MathomeComponent implements OnInit {
   mainView = true;
   constructor() {}
   
+  // Not all of the properties from the stem in localStorage are used, so Stems_Data[1] cannot be set to the whole object
   ngOnInit() {
     const STEM: Stems = JSON.parse(localStorage.getItem('stem') || '{}');
     ELEMENT_DATA[1].image = STEM.image ? STEM.image : '';
@@ -75,7 +76,8 @@ export class MathomeComponent implements OnInit {
     ELEMENT_DATA[1].where = STEM.where ? STEM.where : '';
   }
 
-  // If there is a not stem set in local storage, display "Choose a Stem", 
+/*   If there is a not stem set in local storage, display "Choose a Stem" in the 
+  selection column and nothing in the price, weight, price/weight or where columns */
   // otherwise, display the Stem's image, name, price, weight, and where properties.
   
 }
