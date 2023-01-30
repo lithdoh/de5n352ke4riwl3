@@ -43,7 +43,7 @@ mutation AddStems {
 	 material: "Blue Steel",
 	 price: 55,
 	 weight: 31,
-	 where: "jenson.com"},
+	 where: "jensonusa.com"},
 
        {
 	 image: "assets/apex.jpg",
