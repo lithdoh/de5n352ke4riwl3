@@ -7,9 +7,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-
+import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MathomeComponent } from './mathome/mathome.component';
@@ -24,6 +24,7 @@ import { MillimeterPipe } from './pipes/millimeter.pipe';
 import { Matstems2Component } from './parts/matstems2/matstems2.component';
 import { GramsPipe } from './pipes/grams.pipe';
 import { DollarsPerGramPipe } from './pipes/dollars-per-gram.pipe';
+import {ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { DollarsPerGramPipe } from './pipes/dollars-per-gram.pipe';
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
+    CommonModule,
     MatTableModule,
     MatSortModule,
     HttpClientModule,
@@ -51,6 +53,8 @@ import { DollarsPerGramPipe } from './pipes/dollars-per-gram.pipe';
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

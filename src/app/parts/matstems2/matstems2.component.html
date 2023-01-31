@@ -4,10 +4,10 @@
     </div>
 
     <!-- Why does uncommenting this make it load forever? -->
-    <!-- <mat-form-field>
+    <mat-form-field>
         <mat-label>Filter</mat-label>
-        <input matInput placeholder="Ex. ium" #toTarget>
-    </mat-form-field> -->
+        <input matInput placeholder="Ex. ium" [formControl]="ourInput">
+    </mat-form-field>
 
     <table mat-table [dataSource]="data" matSort matSortDisableClear (matSortChange)="announceSortChange($event)"
     class="mat-elevation-z8">

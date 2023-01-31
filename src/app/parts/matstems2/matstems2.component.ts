@@ -1,10 +1,11 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormControl} from '@angular/forms';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { startWith, switchMap, catchError, map, Observable, of, merge, tap, fromEvent } from 'rxjs';
+import { startWith, switchMap, catchError, map, Observable, of, merge, tap, debounceTime } from 'rxjs';
 import { Stems } from '../../models/stems.model';
 
 @Component({
@@ -38,8 +39,9 @@ export class Matstems2Component implements OnInit, AfterViewInit {
   isLoadingResults: boolean = true;
 
   @ViewChild(MatSort, {static: true}) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  // @ViewChild('toTarget') toTarget!: ElementRef;
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
+
+  ourInput = new FormControl('');
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
@@ -56,6 +58,11 @@ export class Matstems2Component implements OnInit, AfterViewInit {
 
     // Set length of paginator, what should the type be for x?
     this.exampleDatabase.getCount().subscribe(x => this.length = x.count);
+
+    this.ourInput.valueChanges.pipe(
+      debounceTime(500),
+      tap(value => console.log('ourInput valueChanges', value))
+    ).subscribe();
   }
   
   ngAfterViewInit() {
@@ -91,7 +98,11 @@ export class Matstems2Component implements OnInit, AfterViewInit {
     // Attempt to do Sorting and Pagination the way that "Sorting Only" does it (see "Sorting Only" below)
     // merge(this.sort.sortChange, this.paginator.page)
     //   .pipe(
-    //     startWith({direction: 'asc', active: 'name', pageIndex: 0, pageSize: 5} as Sort | PageEvent),
+    //     // startWith({direction: 'asc', active: 'name', pageIndex: 0, pageSize: 5} as Sort | PageEvent),
+    //     // map((value) => {
+    //     //   return {direction: value?.direction, active: value?.active, pageIndex: value?.pageIndex, pageSize: value?.pageSize}
+    //     // }),
+    //     map(value => value as {direction?: string, active?: string, pageIndex?: number, pageSize?: number}),
     //     switchMap(({direction, active, pageIndex, pageSize}) => {
     //       this.isLoadingResults = true;
     //       return this.exampleDatabase!.getStems(
