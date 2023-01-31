@@ -15,7 +15,7 @@ export interface PeriodicElement {
 // What if you make some of these optional to solve the problem of not having the default...?
 
 // Should I use a Set instead of an Array?
-const ELEMENT_DATA: PeriodicElement[] = [
+let ELEMENT_DATA: PeriodicElement[] = [
   {
     component: 'Bars',
     link: '/parts/matbars',
@@ -59,7 +59,8 @@ export class MathomeComponent implements OnInit {
   // When this function is called, the table needs to refresh to show that the selection is now nothing. Can I use the Window: storage event?
   clearStem() {
     localStorage.removeItem('stem');
-    window.location.reload(); // Works, but should I really be reloading the whole page?
+    // window.location.reload(); // Works, but should I really be reloading the whole page?
+    ELEMENT_DATA = ELEMENT_DATA.slice(-1);
   }
 
   mainView = true;
@@ -68,12 +69,14 @@ export class MathomeComponent implements OnInit {
   // Not all of the properties from the stem in localStorage are used, so Stems_Data[1] cannot be set to the whole object
   ngOnInit() {
     const STEM: Stems = JSON.parse(localStorage.getItem('stem') || '{}');
-    ELEMENT_DATA[1].image = STEM.image ? STEM.image : '';
-    ELEMENT_DATA[1].selection = STEM.name ? STEM.name : 'Choose a Stem';
-    ELEMENT_DATA[1].price = STEM.price ? STEM.price : '';
-    ELEMENT_DATA[1].weight = STEM.weight ? STEM.weight : '';
-    ELEMENT_DATA[1].priceWeight = (STEM.price / STEM.weight) ? (STEM.price / STEM.weight) : '';
-    ELEMENT_DATA[1].where = STEM.where ? STEM.where : '';
+    const {image, name, price, weight, where} = STEM;
+
+    ELEMENT_DATA[1].image = image ? image : '';
+    ELEMENT_DATA[1].selection = name ? name : 'Choose a Stem';
+    ELEMENT_DATA[1].price = price ? price : '';
+    ELEMENT_DATA[1].weight = weight ? weight : '';
+    ELEMENT_DATA[1].priceWeight = (price / weight) ? +(price / weight) : '';
+    ELEMENT_DATA[1].where = where ? where : '';
   }
 
 /*   If there is a not stem set in local storage, display "Choose a Stem" in the 
