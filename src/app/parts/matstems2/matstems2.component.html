@@ -3,13 +3,11 @@
         <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
 
-    <!-- Why does uncommenting this make it load forever? -->
     <mat-form-field>
-        <mat-label>Filter</mat-label>
-        <input matInput placeholder="Ex. ium" [formControl]="ourInput">
+        <input matInput placeholder="Search by name" [formControl]="ourInput">
     </mat-form-field>
 
-    <table mat-table [dataSource]="data" matSort matSortDisableClear (matSortChange)="announceSortChange($event)"
+    <table mat-table [dataSource]="data" matSort [matSortActive]="matSortActive" [matSortDirection]="matSortDirection" matSortDisableClear (matSortChange)="announceSortChange($event)"
     class="mat-elevation-z8">
     <!-- You could make an array with the column names and matColumnDef's and use *ngFor -->
     <ng-container matColumnDef="image">
@@ -114,6 +112,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator [length]="length" [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="showFirstLastButtons" aria-label="Select page">
+    <mat-paginator [length]="length" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" [showFirstLastButtons]="showFirstLastButtons" aria-label="Select page">
     </mat-paginator>
 </div>

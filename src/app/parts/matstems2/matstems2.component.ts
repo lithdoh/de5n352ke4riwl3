@@ -1,11 +1,11 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/forms';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { startWith, switchMap, catchError, map, Observable, of, merge, tap, debounceTime } from 'rxjs';
+import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap } from 'rxjs';
 import { Stems } from '../../models/stems.model';
 
 @Component({
@@ -33,8 +33,14 @@ export class Matstems2Component implements OnInit, AfterViewInit {
   exampleDatabase!: ExampleHttpDatabase;
   data: Stems[] = [];
 
+  // Set defaults for matSort directive
+  matSortActive: string = 'name';
+  matSortDirection: SortDirection = 'asc';
+
+  // Set defaults for matPaginator directive
   length: number = 0;
-  pageSizeOptions: number[] = [5, 10, 25, 100];
+  pageSizeOptions: number[] = [10, 25, 100];
+  pageSize: number = 10;
   showFirstLastButtons: boolean = true;
   isLoadingResults: boolean = true;
 
@@ -51,18 +57,13 @@ export class Matstems2Component implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
-    // Can I put these initial values in the template on the MatSort directive?
+    // Can I put these initial values in the template on the MatSort directive? Yes you can.
     // I have to set these or it won't work. Why doesn't the "StartWith" set the default?
-    this.sort.direction = 'asc';
-    this.sort.active = 'name';
+    // this.sort.direction = 'asc';
+    // this.sort.active = 'name';
 
-    // Set length of paginator, what should the type be for x?
+    // Set length of paginator, what should the type be for x? How can I make 'length' update when search is performed?
     this.exampleDatabase.getCount().subscribe(x => this.length = x.count);
-
-    this.ourInput.valueChanges.pipe(
-      debounceTime(500),
-      tap(value => console.log('ourInput valueChanges', value))
-    ).subscribe();
   }
   
   ngAfterViewInit() {
@@ -70,12 +71,14 @@ export class Matstems2Component implements OnInit, AfterViewInit {
 
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
+    
+    // If the user does a search, reset back to the first page.
+    this.ourInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)))
 
-    // fromEvent(this.toTarget.nativeElement, 'keyup').subscribe(console.log);
-
-    merge(this.sort.sortChange, this.paginator.page)
+    merge(this.sort.sortChange, this.paginator.page, this.ourInput.valueChanges.pipe(
+      debounceTime(500)))
       .pipe(
-        startWith({direction: 'asc', active: 'name', pageIndex: 0, pageSize: 5} as Sort | PageEvent),
+        startWith({}),
         switchMap(() => {
           this.isLoadingResults = true;
           return this.exampleDatabase!.getStems(
@@ -83,17 +86,20 @@ export class Matstems2Component implements OnInit, AfterViewInit {
             this.sort.active,
             this.paginator.pageSize,
             this.paginator.pageIndex,
+            this.ourInput.value!
           ).pipe(catchError(() => of(null)));
         }),
         map(data => {
           this.isLoadingResults = false;
           if (data === null) {
             return [];
-          }
+          };
           return data;
         }),
       )
-      .subscribe(data => (this.data = data));
+      .subscribe(data => this.data = data)
+
+
 
     // Attempt to do Sorting and Pagination the way that "Sorting Only" does it (see "Sorting Only" below)
     // merge(this.sort.sortChange, this.paginator.page)
@@ -187,19 +193,19 @@ export class ExampleHttpDatabase {
   constructor(private http: HttpClient) {}
   baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
 
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number): Observable<Stems[]> {
+  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, filterInput: string): Observable<Stems[]> {
     // RequestURL with filtering
-    // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/an/i"}, or: {material: {regexp: "/an/i"}, or: {brand: {regexp: "/an/i"}, or: {color: {regexp: "/an/i"}, or: {model: {regexp: "/an/i"}}}}}}) 
-    // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-    
-    const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
+  const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${filterInput}/i"}}) 
     { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+    
+    // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
+    // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
   }
 
   getCount() {
     const requestURL = this.baseURL + `{ aggregateStem { count }}`;
-    console.log(this.http.get<string>(requestURL).pipe(map((response: any) => response.data.aggregateStem)))
+    // console.log(this.http.get<string>(requestURL).pipe(map((response: any) => response.data.aggregateStem)).subscribe(x => console.log(x)));
     return this.http.get<string>(requestURL).pipe(map((response: any) => response.data.aggregateStem));
   }
 }
