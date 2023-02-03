@@ -1,11 +1,11 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap } from 'rxjs';
+import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
 import { Stems } from '../../models/stems.model';
 
 @Component({
@@ -13,7 +13,7 @@ import { Stems } from '../../models/stems.model';
   templateUrl: './matstems2.component.html',
   styleUrls: ['./matstems2.component.css']
 })
-export class Matstems2Component implements OnInit, AfterViewInit {
+export class Matstems2Component implements AfterViewInit {
   displayedColumns: string[] = [
     'image',
     'name',
@@ -30,7 +30,7 @@ export class Matstems2Component implements OnInit, AfterViewInit {
     'where',
     'add',
   ];
-  exampleDatabase!: ExampleHttpDatabase;
+  exampleDatabase: ExampleHttpDatabase = new ExampleHttpDatabase(this._httpClient);
   data: Stems[] = [];
 
   // Set defaults for matSort directive
@@ -47,33 +47,38 @@ export class Matstems2Component implements OnInit, AfterViewInit {
   @ViewChild(MatSort, {static: true}) sort!: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
+  // Search input
   ourInput = new FormControl('');
+
+  // Sidenav Filters
+  brands = this._formBuilder.group({
+    renthal: false,
+    industry_nine: false,
+    truvativ: false,
+  });
+
+  testingBrands: string[] = [
+    "Renthal",
+    "Truvativ"
+  ]
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
-    private _httpClient: HttpClient
+    private _httpClient: HttpClient,
+    private _formBuilder: FormBuilder,
   ) {}
-
-  ngOnInit(): void {
-    this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
-    // Can I put these initial values in the template on the MatSort directive? Yes you can.
-    // I have to set these or it won't work. Why doesn't the "StartWith" set the default?
-    // this.sort.direction = 'asc';
-    // this.sort.active = 'name';
-
-    // Set length of paginator, what should the type be for x? How can I make 'length' update when search is performed?
-    this.exampleDatabase.getCount().subscribe(x => this.length = x.count);
-  }
   
   ngAfterViewInit() {
-    // this.exampleDatabase.getStems('asc', 'name', 5, 0).subscribe(data => (this.data = data));
-
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
     
     // If the user does a search, reset back to the first page.
-    this.ourInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)))
+    this.ourInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
+
+    this.brands.valueChanges.pipe(
+      tap(value => console.log(value))
+    ).subscribe();
 
     merge(this.sort.sortChange, this.paginator.page, this.ourInput.valueChanges.pipe(
       debounceTime(500)))
@@ -86,8 +91,10 @@ export class Matstems2Component implements OnInit, AfterViewInit {
             this.sort.active,
             this.paginator.pageSize,
             this.paginator.pageIndex,
-            this.ourInput.value!
-          ).pipe(catchError(() => of(null)));
+            this.ourInput.value!,
+            this.testingBrands
+          ).pipe(catchError(() => of(null)),
+          map((response: any) => {this.length = response.data.aggregateStem.count; return response.data.queryStem}));
         }),
         map(data => {
           this.isLoadingResults = false;
@@ -99,23 +106,25 @@ export class Matstems2Component implements OnInit, AfterViewInit {
       )
       .subscribe(data => this.data = data)
 
-
-
     // Attempt to do Sorting and Pagination the way that "Sorting Only" does it (see "Sorting Only" below)
     // merge(this.sort.sortChange, this.paginator.page)
     //   .pipe(
-    //     // startWith({direction: 'asc', active: 'name', pageIndex: 0, pageSize: 5} as Sort | PageEvent),
+    //     startWith({}),
     //     // map((value) => {
     //     //   return {direction: value?.direction, active: value?.active, pageIndex: value?.pageIndex, pageSize: value?.pageSize}
     //     // }),
-    //     map(value => value as {direction?: string, active?: string, pageIndex?: number, pageSize?: number}),
+    //     map(value => value as {direction?: SortDirection, active?: string, pageSize?: number, pageIndex?: number}),
     //     switchMap(({direction, active, pageIndex, pageSize}) => {
     //       this.isLoadingResults = true;
+    //       this.sort.direction = direction ?? this.sort.direction;
+    //       this.sort.active = active ?? this.sort.active;
+    //       this.paginator.pageSize = pageSize ?? this.paginator.pageSize;
+    //       this.paginator.pageIndex = pageIndex ?? this.paginator.pageIndex;
     //       return this.exampleDatabase!.getStems(
-    //         direction,
-    //         active,
-    //         pageSize,
-    //         pageIndex,
+    //         this.sort.direction,
+    //         this.sort.active,
+    //         this.paginator.pageSize,
+    //         this.paginator.pageIndex,
     //       ).pipe(catchError(() => of(null)));
     //     }),
     //     map(data => {
@@ -193,21 +202,27 @@ export class ExampleHttpDatabase {
   constructor(private http: HttpClient) {}
   baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
 
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, filterInput: string): Observable<Stems[]> {
+  // Sorting, Pagination, Filtering
+  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string[]): Observable<Stems[]> {
     // RequestURL with filtering
-  const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${filterInput}/i"}}) 
+  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand[0]}", "${brand[1]}"]}}) { count }
+   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand[0]}", "${brand[1]}"]}}) 
     { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-    
-    // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
-    // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-    return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
+    console.log(requestURL);
+  //   // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
+  //   // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+  //   console.log(requestURL);
+    return this.http.get<Stems[]>(requestURL);
   }
 
-  getCount() {
-    const requestURL = this.baseURL + `{ aggregateStem { count }}`;
-    // console.log(this.http.get<string>(requestURL).pipe(map((response: any) => response.data.aggregateStem)).subscribe(x => console.log(x)));
-    return this.http.get<string>(requestURL).pipe(map((response: any) => response.data.aggregateStem));
-  }
+  // No Filtering
+  // getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number): Observable<Stems[]> {
+
+  //   const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
+  //   { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+
+  //   return this.http.get<Stems[]>(requestURL);
+  // }
 }
 
 // Sorting only
