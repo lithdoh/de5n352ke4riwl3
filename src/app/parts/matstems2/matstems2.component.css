@@ -1,8 +1,11 @@
-table {
-    width: 80%;
+.example-container {
     margin-left: auto;
     margin-right: auto;
-    padding-top: 60px;
+    padding-top: 30px;
+}
+
+mat-form-field {
+  margin-left: 1%;
 }
   
 .mat-column-image img {
@@ -23,8 +26,14 @@ table {
   justify-content: center;
 }
 
-mat-paginator {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+mat-sidenav {
+  width: 250px;
+}
+
+.example-section {
+  padding: 5px;
+}
+
+.sidenav {
+  margin-top: 80px;
 }
