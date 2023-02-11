@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Stems } from '../models/stems.model';
+import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   component: string;
@@ -60,11 +61,12 @@ export class MathomeComponent implements OnInit {
   clearStem() {
     localStorage.removeItem('stem');
     // window.location.reload(); // Works, but should I really be reloading the whole page?
-    ELEMENT_DATA = ELEMENT_DATA.slice(-1);
+    // ELEMENT_DATA = ELEMENT_DATA.slice(-1);
+    this.router.navigate([this.router.url]);
   }
 
   mainView = true;
-  constructor() {}
+  constructor(private router: Router) {}
   
   // Not all of the properties from the stem in localStorage are used, so Stems_Data[1] cannot be set to the whole object
   ngOnInit() {
