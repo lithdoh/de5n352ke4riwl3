@@ -1,10 +1,19 @@
 <mat-sidenav-container class="sidenav">
     <mat-sidenav mode="side" opened>
-        <section class="example-section" [formGroup]="brands">
-            <h4>Brand:</h4>
-            <p><mat-checkbox formControlName="renthal">Renthal</mat-checkbox></p>
-            <p><mat-checkbox formControlName="industry_nine">Industry Nine</mat-checkbox></p>
-            <p><mat-checkbox formControlName="truvativ">Truvativ</mat-checkbox></p>
+        <section class="example-section">
+        <!-- <section class="example-section" [formGroup]="brands"> -->
+            <!-- <h4>Brand:</h4>
+            <p><mat-checkbox formArrayName="renthal">Renthal</mat-checkbox></p>
+            <p><mat-checkbox formArrayName="industry_nine">Industry Nine</mat-checkbox></p>
+            <p><mat-checkbox formArrayName="truvativ">Truvativ</mat-checkbox></p> -->
+            <form [formGroup]="checkoutForm">
+                <div class="item-container" formArrayName="selectedContactInfo">
+                  <ng-container *ngFor="let contactNumber of contactInfo | keyvalue; let i = index">
+                    <mat-checkbox [formControlName]="i">{{contactNumber.value}}</mat-checkbox>
+                    <br>
+                  </ng-container>
+                </div>
+              </form> 
           </section>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -17,6 +26,13 @@
             <mat-form-field>
                 <input matInput placeholder="Search by name" [formControl]="ourInput">
             </mat-form-field>
+            <!-- Trying to make "Filtered By" top bar -->
+            <!-- <div> Filtered By:
+                <p *ngIf="selectedContactInfo.length > 0">Brand: </p>
+                <button mat-stroked-button color="primary" 
+                *ngFor="let brand of selectedContactInfo; let i = index" 
+                (click)="selectedContactInfo.splice(i, 1); logger(selectedContactInfo[i])">{{selectedContactInfo[i]}}</button>
+            </div> -->
 
             <table mat-table [dataSource]="data" matSort [matSortActive]="matSortActive"
                 [matSortDirection]="matSortDirection" matSortDisableClear (matSortChange)="announceSortChange($event)"
@@ -128,7 +144,7 @@
 
                 <!-- Row shown when there is no matching data. -->
                 <tr class="mat-row" *matNoDataRow>
-                    <td class="mat-cell" colspan="100%">No data matching the filter "{{ourInput.value}}"</td>
+                    <td class="mat-cell" colspan="100%">No data matching the search: "{{ourInput.value}}"</td>
                 </tr>
             </table>
 

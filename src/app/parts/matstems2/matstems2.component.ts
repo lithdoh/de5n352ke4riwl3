@@ -1,12 +1,22 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
+import { catchError, debounceTime, map, merge, Observable, of, startWith, Subscription, switchMap, tap } from 'rxjs';
 import { Stems } from '../../models/stems.model';
+
+interface brandObject {
+  renthal: boolean;
+  industry_nine: boolean;
+  truvativ: boolean;
+}
+
+interface contact_Info {
+  [key: string]: string;
+}
 
 @Component({
   selector: 'app-matstems2',
@@ -51,16 +61,29 @@ export class Matstems2Component implements AfterViewInit {
   ourInput = new FormControl('');
 
   // Sidenav Filters
-  brands = this._formBuilder.group({
-    renthal: false,
-    industry_nine: false,
-    truvativ: false,
-  });
+  // brands = this._formBuilder.group({
+  //   renthal: false,
+  //   industry_nine: false,
+  //   truvativ: false,
+  // });
 
-  testingBrands: string[] = [
-    "Renthal",
-    "Truvativ"
-  ]
+  // testingBrands: string[] = [
+  //   "Renthal",
+  //   "Truvativ"
+  // ]
+
+  checkoutForm!: FormGroup;
+  subscription!: Subscription;
+  // Must be in alphabetical order
+  contactInfo: contact_Info = {
+    campy: "Campy",
+    industry_nine: "Industry Nine",
+    renthal: "Renthal",
+    spank: "Spank",
+    truvativ: "Truvativ",
+    zipp: "Zipp",
+  };
+  selectedContactInfo: any[] = [];
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
@@ -68,6 +91,21 @@ export class Matstems2Component implements AfterViewInit {
     private _httpClient: HttpClient,
     private _formBuilder: FormBuilder,
   ) {}
+
+  ngOnInit() {
+    this.checkoutForm = this._formBuilder.group({
+      selectedContactInfo: this._formBuilder.array(Object.keys(this.contactInfo).map(key => false))
+    });
+
+    // const control = this.checkoutForm.controls['selectedContactInfo'];
+    // this.subscription = control.valueChanges.subscribe(value => {
+    //   this.selectedContactInfo = Object.keys(this.contactInfo)
+    //   .map((contactNo, index) =>
+    //     control.value[index] ? this.contactInfo[contactNo] : null
+    //   )
+    //   .filter(contactNo => !!contactNo);
+    // });
+  }
   
   ngAfterViewInit() {
     // If the user changes the sort order, reset back to the first page.
@@ -75,13 +113,23 @@ export class Matstems2Component implements AfterViewInit {
     
     // If the user does a search, reset back to the first page.
     this.ourInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
+    
+    // If the user selects a filter option, reset back to the first page.
+    this.checkoutForm.controls['selectedContactInfo'].valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
 
-    this.brands.valueChanges.pipe(
-      tap(value => console.log(value))
-    ).subscribe();
+    // this.brands.valueChanges.pipe(
+    //   tap(value => console.log(value))
+    // ).subscribe();
 
     merge(this.sort.sortChange, this.paginator.page, this.ourInput.valueChanges.pipe(
-      debounceTime(500)))
+      debounceTime(500)), this.checkoutForm.controls['selectedContactInfo'].valueChanges.pipe(map((value) => {
+        const control = this.checkoutForm.controls['selectedContactInfo'];
+        this.selectedContactInfo = Object.keys(this.contactInfo)
+          .map((contactNo, index) =>
+            control.value[index] ? this.contactInfo[contactNo] : null
+          )
+          .filter((contactNo) => !!contactNo);
+      })))
       .pipe(
         startWith({}),
         switchMap(() => {
@@ -92,7 +140,7 @@ export class Matstems2Component implements AfterViewInit {
             this.paginator.pageSize,
             this.paginator.pageIndex,
             this.ourInput.value!,
-            this.testingBrands
+            this.selectedContactInfo
           ).pipe(catchError(() => of(null)),
           map((response: any) => {this.length = response.data.aggregateStem.count; return response.data.queryStem}));
         }),
@@ -195,6 +243,10 @@ export class Matstems2Component implements AfterViewInit {
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+
+  logger(x: any) {
+    console.log(x);
+  }
 }
 
 // Sorting and Pagination
@@ -203,15 +255,27 @@ export class ExampleHttpDatabase {
   baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
 
   // Sorting, Pagination, Filtering
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string[]): Observable<Stems[]> {
+  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[]): Observable<Stems[]> {
     // RequestURL with filtering
-  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand[0]}", "${brand[1]}"]}}) { count }
-   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand[0]}", "${brand[1]}"]}}) 
-    { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-    console.log(requestURL);
+
+  // // Fixed brands
+  // const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: {in: ["Renthal", "Industry Nine", "Truvativ"]}}) { count }
+  //  queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["Renthal", "Industry Nine", "Truvativ"]}}) 
+  //   { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+  //   console.log(requestURL);
   //   // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
   //   // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
   //   console.log(requestURL);
+  //   return this.http.get<Stems[]>(requestURL);
+  // }
+  
+  // Request with checkbox filtering via FormArray
+  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}}) { count }
+   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}}) 
+    { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+    console.log(requestURL);
+    // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
+    // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
     return this.http.get<Stems[]>(requestURL);
   }
 
