@@ -12,9 +12,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InMemoryCache } from '@apollo/client/core';
-import { APOLLO_OPTIONS } from 'apollo-angular';
-import { HttpLink } from 'apollo-angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -31,6 +28,8 @@ import { DegreePipe } from './pipes/degree.pipe';
 import { DollarsPerGramPipe } from './pipes/dollars-per-gram.pipe';
 import { GramsPipe } from './pipes/grams.pipe';
 import { MillimeterPipe } from './pipes/millimeter.pipe';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -66,20 +65,10 @@ import { MillimeterPipe } from './pipes/millimeter.pipe';
     ReactiveFormsModule,
     MatSidenavModule,
     MatCheckboxModule,
+    MatButtonModule
 
   ],
-  providers: [    {
-    provide: APOLLO_OPTIONS,
-    useFactory(httpLink: HttpLink) {
-      return {
-        cache: new InMemoryCache(),
-        link: httpLink.create({
-          uri: 'https://48p1r2roz4.sse.codesandbox.io'
-        })
-      }
-    },
-    deps: [HttpLink]
-  }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
