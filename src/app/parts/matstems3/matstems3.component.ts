@@ -7,7 +7,6 @@ import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
 import { Stems } from '../../models/stems.model';
-import { Apollo, gql } from 'apollo-angular'
 
 @Component({
   selector: 'app-matstems3',
@@ -57,11 +56,14 @@ export class Matstems3Component implements AfterViewInit {
     industry_nine: false,
     truvativ: false,
   });
+  
 
   testingBrands: string[] = [
     "Renthal",
     "Truvativ"
   ]
+
+  brandTest2: string[] = [];
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
@@ -78,11 +80,12 @@ export class Matstems3Component implements AfterViewInit {
     this.ourInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
 
     this.brands.valueChanges.pipe(
-      tap(value => console.log(value))
-    ).subscribe();
+
+      tap(console.log)
+    ).subscribe((x) => this.brandTest2.push(x));
 
     merge(this.sort.sortChange, this.paginator.page, this.ourInput.valueChanges.pipe(
-      debounceTime(500)))
+      debounceTime(500)), this.brands.valueChanges)
       .pipe(
         startWith({}),
         switchMap(() => {
@@ -151,16 +154,29 @@ export class ExampleHttpDatabase {
   constructor(private http: HttpClient) {}
   baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
 
-  // Sorting, Pagination, Filtering
+  // Sorting, Pagination, Filtering using brand.join
   getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string[]): Observable<Stems[]> {
     // RequestURL with filtering
-  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand[0]}", "${brand[1]}"]}}) { count }
-   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand[0]}", "${brand[1]}"]}}) 
+  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand.join('", "')}"]}}) { count }
+   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand.join('", "')}"]}}) 
     { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-    console.log(requestURL);
+    // console.log(requestURL);
   //   // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
   //   // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
   //   console.log(requestURL);
     return this.http.get<Stems[]>(requestURL);
   }
+
+  // Sorting, Pagination, Filtering
+  // getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string): Observable<Stems[]> {
+  //   // RequestURL with filtering
+  // const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand}}) { count }
+  //  queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["${brand}"]}}) 
+  //   { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+  //   console.log(requestURL);
+  // //   // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
+  // //   // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+  // //   console.log(requestURL);
+  //   return this.http.get<Stems[]>(requestURL);
+  // }
 }
