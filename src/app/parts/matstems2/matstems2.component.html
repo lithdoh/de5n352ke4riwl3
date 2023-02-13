@@ -17,7 +17,7 @@
           </section>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="example-container">
+        <div class="mat-elevation-z8">
             <div class="example-loading-shade" *ngIf="isLoadingResults">
                 <!-- Pointless ngIf? -->
                 <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
@@ -27,7 +27,7 @@
                 <input matInput placeholder="Search by name" [formControl]="ourInput">
             </mat-form-field>
             <!-- Trying to make "Filtered By" top bar -->
-            <!-- <div> Filtered By:
+            <!-- <div *ngIf="selectedContactInfo.length > 0"> Filtered By:
                 <p *ngIf="selectedContactInfo.length > 0">Brand: </p>
                 <button mat-stroked-button color="primary" 
                 *ngFor="let brand of selectedContactInfo; let i = index" 
@@ -35,8 +35,7 @@
             </div> -->
 
             <table mat-table [dataSource]="data" matSort [matSortActive]="matSortActive"
-                [matSortDirection]="matSortDirection" matSortDisableClear (matSortChange)="announceSortChange($event)"
-                class="mat-elevation-z8">
+                [matSortDirection]="matSortDirection" matSortDisableClear (matSortChange)="announceSortChange($event)">
                 <!-- You could make an array with the column names and matColumnDef's and use *ngFor -->
                 <ng-container matColumnDef="image">
                     <th mat-header-cell *matHeaderCellDef></th>
