@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -29,8 +29,7 @@ import { DollarsPerGramPipe } from './pipes/dollars-per-gram.pipe';
 import { GramsPipe } from './pipes/grams.pipe';
 import { MillimeterPipe } from './pipes/millimeter.pipe';
 import {MatButtonModule} from '@angular/material/button';
-
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -65,8 +64,9 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     MatSidenavModule,
     MatCheckboxModule,
-    MatButtonModule
-
+    MatButtonModule,
+    MatExpansionModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
