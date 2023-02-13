@@ -5,18 +5,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/f
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { catchError, debounceTime, map, merge, Observable, of, startWith, Subscription, switchMap, tap } from 'rxjs';
+import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
 import { Stems } from '../../models/stems.model';
-
-interface brandObject {
-  renthal: boolean;
-  industry_nine: boolean;
-  truvativ: boolean;
-}
-
-interface contact_Info {
-  [key: string]: string;
-}
 
 @Component({
   selector: 'app-matstems2',
@@ -58,7 +48,7 @@ export class Matstems2Component implements AfterViewInit {
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
   // Search input
-  ourInput = new FormControl('');
+  searchInput = new FormControl('');
 
   // Sidenav Filters
   profileForm = this.fb.group({
@@ -100,16 +90,12 @@ export class Matstems2Component implements AfterViewInit {
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
     
     // If the user does a search, reset back to the first page.
-    this.ourInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
+    this.searchInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
     
     // If the user selects a filter option, reset back to the first page.
     this.profileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
 
-    // this.brands.valueChanges.pipe(
-    //   tap(value => console.log(value))
-    // ).subscribe();
-
-    merge(this.sort.sortChange, this.paginator.page, this.ourInput.valueChanges.pipe(
+    merge(this.sort.sortChange, this.paginator.page, this.searchInput.valueChanges.pipe(
       debounceTime(500)), this.profileForm.valueChanges
       .pipe(
         map((x) => {
@@ -129,7 +115,7 @@ export class Matstems2Component implements AfterViewInit {
             this.sort.active,
             this.paginator.pageSize,
             this.paginator.pageIndex,
-            this.ourInput.value!,
+            this.searchInput.value!,
             this.testlist
           ).pipe(catchError(() => of(null)),
           map((response: any) => {this.length = response.data.aggregateStem.count; return response.data.queryStem}));
@@ -142,77 +128,20 @@ export class Matstems2Component implements AfterViewInit {
           return data;
         }),
       )
-      .subscribe(data => this.data = data)
-
-    // Attempt to do Sorting and Pagination the way that "Sorting Only" does it (see "Sorting Only" below)
-    // merge(this.sort.sortChange, this.paginator.page)
-    //   .pipe(
-    //     startWith({}),
-    //     // map((value) => {
-    //     //   return {direction: value?.direction, active: value?.active, pageIndex: value?.pageIndex, pageSize: value?.pageSize}
-    //     // }),
-    //     map(value => value as {direction?: SortDirection, active?: string, pageSize?: number, pageIndex?: number}),
-    //     switchMap(({direction, active, pageIndex, pageSize}) => {
-    //       this.isLoadingResults = true;
-    //       this.sort.direction = direction ?? this.sort.direction;
-    //       this.sort.active = active ?? this.sort.active;
-    //       this.paginator.pageSize = pageSize ?? this.paginator.pageSize;
-    //       this.paginator.pageIndex = pageIndex ?? this.paginator.pageIndex;
-    //       return this.exampleDatabase!.getStems(
-    //         this.sort.direction,
-    //         this.sort.active,
-    //         this.paginator.pageSize,
-    //         this.paginator.pageIndex,
-    //       ).pipe(catchError(() => of(null)));
-    //     }),
-    //     map(data => {
-    //       this.isLoadingResults = false;
-    //       if (data === null) {
-    //         return [];
-    //       }
-    //       return data;
-    //     }),
-    //   )
-    //   .subscribe(data => (this.data = data));
-
-    // Sorting Only
-    // this.sort.sortChange
-    // .pipe(
-    //   startWith({direction: 'asc', active: 'name'} as Sort),
-    //   switchMap(({direction, active}) => {
-    //     this.isLoadingResults = true;
-    //     return this.exampleDatabase!.getStems(
-    //       direction,
-    //       active,
-    //     ).pipe(catchError(() => of(null)));
-    //   }),
-    //   map(data => {
-    //     this.isLoadingResults = false;
-    //     if (data === null) {
-    //       return [];
-    //     }
-    //     return data;
-    //   }),
-    // )
-    // .subscribe(data => (this.data = data));
+      .subscribe(data => this.data = data);
   }
 
   /** Adding products to the list: */
   addItem(stemObject: object) {
-    // “add” button invokes function (event binding in matstems template)
-    // function accesses the list of stems (stem component)
-    
+
     const stemString: string = JSON.stringify(stemObject);
+
     /*   Should I put this in a "try...catch" block because it says 
     "Throws a "QuotaExceededError" DOMException exception if the new value couldn't be set."? */
     localStorage.setItem('stem', stemString);
 
-    // and adds a product to the build list (home component)
-
-    // route to the page
     this.router.navigate(['/parts/chain']);
   }
-
   /* Alternatively:
   When you click the add button, the id of the item is stored, and you are redirected to the "list" page.
   On the list page, a request is sent to the database for the item with the stored id.
@@ -220,6 +149,7 @@ export class Matstems2Component implements AfterViewInit {
   Another way
   When you click the add button, the item whose add button you clicked is stored as an object, and you are redirected to the "list" page
   That item is displayed. */
+
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
@@ -278,15 +208,3 @@ export class ExampleHttpDatabase {
   //   return this.http.get<Stems[]>(requestURL);
   // }
 }
-
-// Sorting only
-// export class ExampleHttpDatabase {
-//   constructor(private http: HttpClient) {}
-
-//   getStems(order: SortDirection, column: string): Observable<Stems[]> {
-//     const baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
-//     const requestURL = baseURL + `{ queryStem(order: {${order}: ${column}}, first: 5, offset: 0) { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
-//     console.log(requestURL);
-//     return this.http.get<Stems[]>(requestURL).pipe(map((response: any) => response.data.queryStem));
-//     }
-// }
