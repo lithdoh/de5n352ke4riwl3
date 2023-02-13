@@ -96,6 +96,7 @@ export class Matstems2Component implements AfterViewInit {
     this.checkoutForm = this._formBuilder.group({
       selectedContactInfo: this._formBuilder.array(Object.keys(this.contactInfo).map(key => false))
     });
+    console.log(this.checkoutForm)
 
     // const control = this.checkoutForm.controls['selectedContactInfo'];
     // this.subscription = control.valueChanges.subscribe(value => {
@@ -105,6 +106,10 @@ export class Matstems2Component implements AfterViewInit {
     //   )
     //   .filter(contactNo => !!contactNo);
     // });
+
+    // Logs array of "true" and "false" values corresponding to the checkbox form's state
+    // this.checkoutForm.controls['selectedContactInfo'].valueChanges.subscribe(x => console.log(x));
+
   }
   
   ngAfterViewInit() {
@@ -123,6 +128,7 @@ export class Matstems2Component implements AfterViewInit {
 
     merge(this.sort.sortChange, this.paginator.page, this.ourInput.valueChanges.pipe(
       debounceTime(500)), this.checkoutForm.controls['selectedContactInfo'].valueChanges.pipe(map((value) => {
+        // RxJS map operator converts ["true, false, true..."] to ["Renthal", "Truvativ"]
         const control = this.checkoutForm.controls['selectedContactInfo'];
         this.selectedContactInfo = Object.keys(this.contactInfo)
           .map((contactNo, index) =>
