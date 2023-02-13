@@ -61,56 +61,39 @@ export class Matstems2Component implements AfterViewInit {
   ourInput = new FormControl('');
 
   // Sidenav Filters
-  // brands = this._formBuilder.group({
-  //   renthal: false,
-  //   industry_nine: false,
-  //   truvativ: false,
-  // });
+  profileForm = this.fb.group({
+    Renthal: false,
+    Truvativ: false,
+    'Industry Nine': false,
+    Campy: false,
+    Zipp: false,
+    Spank: false,
+  });
+  brandArray: string[] = Object.keys(this.profileForm.value).sort();
 
-  // testingBrands: string[] = [
-  //   "Renthal",
-  //   "Truvativ"
-  // ]
+  someComplete(): boolean {
+    return Object.values(this.profileForm.value).every((x) => x === false);
+  }
 
-  checkoutForm!: FormGroup;
-  subscription!: Subscription;
-  // Must be in alphabetical order
-  contactInfo: contact_Info = {
-    campy: "Campy",
-    industry_nine: "Industry Nine",
-    renthal: "Renthal",
-    spank: "Spank",
-    truvativ: "Truvativ",
-    zipp: "Zipp",
-  };
-  selectedContactInfo: any[] = [];
+  uncheckAll() {
+    this.profileForm.setValue({
+      Renthal: false,
+      Truvativ: false,
+      'Industry Nine': false,
+      Campy: false,
+      Zipp: false,
+      Spank: false,
+    });
+  }
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
     private _httpClient: HttpClient,
-    private _formBuilder: FormBuilder,
+    private fb: FormBuilder,
   ) {}
 
-  ngOnInit() {
-    this.checkoutForm = this._formBuilder.group({
-      selectedContactInfo: this._formBuilder.array(Object.keys(this.contactInfo).map(key => false))
-    });
-    console.log(this.checkoutForm)
-
-    // const control = this.checkoutForm.controls['selectedContactInfo'];
-    // this.subscription = control.valueChanges.subscribe(value => {
-    //   this.selectedContactInfo = Object.keys(this.contactInfo)
-    //   .map((contactNo, index) =>
-    //     control.value[index] ? this.contactInfo[contactNo] : null
-    //   )
-    //   .filter(contactNo => !!contactNo);
-    // });
-
-    // Logs array of "true" and "false" values corresponding to the checkbox form's state
-    // this.checkoutForm.controls['selectedContactInfo'].valueChanges.subscribe(x => console.log(x));
-
-  }
+  testlist: string[] = [];
   
   ngAfterViewInit() {
     // If the user changes the sort order, reset back to the first page.
@@ -120,22 +103,23 @@ export class Matstems2Component implements AfterViewInit {
     this.ourInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
     
     // If the user selects a filter option, reset back to the first page.
-    this.checkoutForm.controls['selectedContactInfo'].valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
+    this.profileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
 
     // this.brands.valueChanges.pipe(
     //   tap(value => console.log(value))
     // ).subscribe();
 
     merge(this.sort.sortChange, this.paginator.page, this.ourInput.valueChanges.pipe(
-      debounceTime(500)), this.checkoutForm.controls['selectedContactInfo'].valueChanges.pipe(map((value) => {
-        // RxJS map operator converts ["true, false, true..."] to ["Renthal", "Truvativ"]
-        const control = this.checkoutForm.controls['selectedContactInfo'];
-        this.selectedContactInfo = Object.keys(this.contactInfo)
-          .map((contactNo, index) =>
-            control.value[index] ? this.contactInfo[contactNo] : null
-          )
-          .filter((contactNo) => !!contactNo);
-      })))
+      debounceTime(500)), this.profileForm.valueChanges
+      .pipe(
+        map((x) => {
+          this.testlist = Object.entries(x)
+            .filter(([_, isSelected]) => isSelected)
+            .map(([key]) => key);
+          return this.testlist;
+          }
+        )
+      ))
       .pipe(
         startWith({}),
         switchMap(() => {
@@ -146,7 +130,7 @@ export class Matstems2Component implements AfterViewInit {
             this.paginator.pageSize,
             this.paginator.pageIndex,
             this.ourInput.value!,
-            this.selectedContactInfo
+            this.testlist
           ).pipe(catchError(() => of(null)),
           map((response: any) => {this.length = response.data.aggregateStem.count; return response.data.queryStem}));
         }),
