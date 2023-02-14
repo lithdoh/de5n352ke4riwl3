@@ -30,6 +30,9 @@ import { GramsPipe } from './pipes/grams.pipe';
 import { MillimeterPipe } from './pipes/millimeter.pipe';
 import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
@@ -66,7 +69,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCheckboxModule,
     MatButtonModule,
     MatExpansionModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
