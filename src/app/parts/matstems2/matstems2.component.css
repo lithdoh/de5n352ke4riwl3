@@ -1,7 +1,9 @@
-
+.product_count {
+  padding: 10px;
+}
 
 mat-form-field {
-  margin-left: 1%;
+  margin-left: 85%;
 }
 
 .mat-cell {
@@ -11,6 +13,31 @@ mat-form-field {
 .mat-column-image img {
   width: 55px;
   height: 55px;
+}
+
+.remove_selection {
+  margin: 2px;
+  border-width: 1pt;
+  border-radius: 3px;
+}
+
+.remove_selection:hover {
+  border-color: red;
+  border-radius: 3px;
+}
+
+.remove_selection:hover .mat-icon {
+  color:red;
+}
+
+.mat-icon {
+  justify-content: center;
+  align-items: center;
+  transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  -moz-transform: translateY(10%);
+  -webkit-transform: translateY(10%);
+  -o-transform: translateY(10%);
 }
 
 .example-loading-shade {
