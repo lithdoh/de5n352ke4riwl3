@@ -50,7 +50,7 @@ export class Matstems2Component implements AfterViewInit {
   // Search input
   searchInput = new FormControl('');
 
-  // Sidenav Filters
+  // Brand Filter
   profileForm = this.fb.group({
     Renthal: false,
     Truvativ: false,
@@ -74,6 +74,11 @@ export class Matstems2Component implements AfterViewInit {
       Zipp: false,
       Spank: false,
     });
+    // this.profileForm.reset() doesn't work because it sets all the values to null
+  }
+
+  removeSelection(selection: string) {
+    this.profileForm.get(selection)?.setValue(false);
   }
 
   constructor(
@@ -86,6 +91,7 @@ export class Matstems2Component implements AfterViewInit {
   testlist: string[] = [];
   
   ngAfterViewInit() {
+    console.log(this.profileForm.value)
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
     
@@ -99,7 +105,7 @@ export class Matstems2Component implements AfterViewInit {
       debounceTime(500)), this.profileForm.valueChanges
       .pipe(
         map((x) => {
-          this.testlist = Object.entries(x)
+          this.testlist = Object.entries(x).sort()
             .filter(([_, isSelected]) => isSelected)
             .map(([key]) => key);
           return this.testlist;

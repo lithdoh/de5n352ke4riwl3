@@ -6,7 +6,7 @@
                 <mat-panel-title> Brand </mat-panel-title>
               </mat-expansion-panel-header>
               <section class="example-section">
-                  <mat-checkbox (change)="uncheckAll()" [checked]="someComplete()" [disabled]="someComplete()">All</mat-checkbox>
+                  <mat-checkbox (change)="uncheckAll()" [checked]="someComplete()" [disabled]="someComplete()" color="primary">All</mat-checkbox>
                   <form [formGroup]="profileForm">
                       <ng-container *ngFor="let brand of brandArray">
                         <mat-checkbox formControlName="{{brand}}" color="primary">{{brand}}</mat-checkbox>
@@ -23,17 +23,19 @@
                 <!-- Pointless ngIf? -->
                 <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
             </div>
-
+            
+            <!-- <h2 class="product_count">{{length}} Products</h2> -->
             <mat-form-field>
                 <input matInput placeholder="Search by name" [formControl]="searchInput">
             </mat-form-field>
+            <hr>
             <!-- Trying to make "Filtered By" top bar -->
-            <!-- <div *ngIf="selectedContactInfo.length > 0"> Filtered By:
-                <p *ngIf="selectedContactInfo.length > 0">Brand: </p>
-                <button mat-stroked-button color="primary" 
-                *ngFor="let brand of selectedContactInfo; let i = index" 
-                (click)="selectedContactInfo.splice(i, 1); logger(selectedContactInfo[i])">{{selectedContactInfo[i]}}</button>
-            </div> -->
+            <div *ngIf="testlist.length > 0"> Filtered By:
+                <div *ngIf="testlist.length > 0"> Brand:
+                    <button class="remove_selection" *ngFor="let brand of testlist;"
+                    (click)="removeSelection(brand)">{{brand}} <mat-icon inline aria-hidden="true">cancel</mat-icon></button>
+                </div>
+            </div>
 
             <table mat-table [dataSource]="data" matSort [matSortActive]="matSortActive"
                 [matSortDirection]="matSortDirection" matSortDisableClear (matSortChange)="announceSortChange($event)">
