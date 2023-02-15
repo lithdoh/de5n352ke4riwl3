@@ -81,6 +81,35 @@ export class Matstems2Component implements AfterViewInit {
     this.profileForm.get(selection)?.setValue(false);
   }
 
+  // Color Filter begin -- VIOLATES DRY
+  colorProfileForm = this.fb.group({
+    Red: false,
+    Blue: false,
+    Lime: false,
+    "Matte with stealth decals": false,
+    "Blast Black": false,
+  });
+  colorArray: string[] = Object.keys(this.colorProfileForm.value).sort();
+
+  colorSomeComplete(): boolean {
+    return Object.values(this.colorProfileForm.value).every((x) => x === false);
+  }
+
+  colorUncheckAll() {
+    this.colorProfileForm.setValue({
+      Red: false,
+      Blue: false,
+      Lime: false,
+      "Matte with stealth decals": false,
+      "Blast Black": false,
+    });
+  }
+
+  colorRemoveSelection(selection: string) {
+    this.colorProfileForm.get(selection)?.setValue(false);
+  }
+  // Color Filter end
+
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
@@ -89,9 +118,9 @@ export class Matstems2Component implements AfterViewInit {
   ) {}
 
   testlist: string[] = [];
+  colorTestlist: string[] = []; // VIOLATES DRY
   
   ngAfterViewInit() {
-    console.log(this.profileForm.value)
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
     
@@ -101,6 +130,9 @@ export class Matstems2Component implements AfterViewInit {
     // If the user selects a filter option, reset back to the first page.
     this.profileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
 
+    // If the user selects a COLOR filter option, reset back to the first page.
+    this.colorProfileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0))); // VIOLATES DRY
+
     merge(this.sort.sortChange, this.paginator.page, this.searchInput.valueChanges.pipe(
       debounceTime(500)), this.profileForm.valueChanges
       .pipe(
@@ -109,6 +141,15 @@ export class Matstems2Component implements AfterViewInit {
             .filter(([_, isSelected]) => isSelected)
             .map(([key]) => key);
           return this.testlist;
+          }
+        )
+      ), this.colorProfileForm.valueChanges // VIOLATES DRY?
+      .pipe(
+        map((x) => {
+          this.colorTestlist = Object.entries(x).sort() 
+            .filter(([_, isSelected]) => isSelected)
+            .map(([key]) => key);
+          return this.colorTestlist;
           }
         )
       ))
@@ -122,7 +163,8 @@ export class Matstems2Component implements AfterViewInit {
             this.paginator.pageSize,
             this.paginator.pageIndex,
             this.searchInput.value!,
-            this.testlist
+            this.testlist,
+            this.colorTestlist
           ).pipe(catchError(() => of(null)),
           map((response: any) => {this.length = response.data.aggregateStem.count; return response.data.queryStem}));
         }),
@@ -181,7 +223,7 @@ export class ExampleHttpDatabase {
   baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
 
   // Sorting, Pagination, Filtering
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[]): Observable<Stems[]> {
+  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[], color: any[]): Observable<Stems[]> {
     // RequestURL with filtering
 
   // // Fixed brands
@@ -196,8 +238,8 @@ export class ExampleHttpDatabase {
   // }
   
   // Request with checkbox filtering via FormArray
-  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}}) { count }
-   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}}) 
+  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}}) { count }
+   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}}) 
     { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
     console.log(requestURL);
     // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
