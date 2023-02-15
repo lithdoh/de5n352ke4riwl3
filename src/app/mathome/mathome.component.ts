@@ -61,7 +61,6 @@ export class MathomeComponent implements OnInit {
   clearStem() {
     localStorage.removeItem('stem');
     // window.location.reload(); // Works, but should I really be reloading the whole page?
-    // ELEMENT_DATA = ELEMENT_DATA.slice(-1);
     this.router.navigate([this.router.url]);
   }
 
@@ -77,7 +76,7 @@ export class MathomeComponent implements OnInit {
     ELEMENT_DATA[1].selection = name ? name : 'Choose a Stem';
     ELEMENT_DATA[1].price = price ? price : '';
     ELEMENT_DATA[1].weight = weight ? weight : '';
-    ELEMENT_DATA[1].priceWeight = (price / weight) ? +(price / weight) : '';
+    ELEMENT_DATA[1].priceWeight = (price / weight) ? price / weight : '';
     ELEMENT_DATA[1].where = where ? where : '';
   }
 
