@@ -18,16 +18,14 @@ export class Matstems2Component implements AfterViewInit {
     'image',
     'name',
     'brand',
-    'model',
-    'barClampDiameter',
     'length',
     'rise',
-    'steererTubeDiameter',
+    'clampDiameter',
+    'steererDiameter',
     'color',
     'material',
-    'price',
     'weight',
-    'where',
+    'price',
     'add',
   ];
   exampleDatabase: ExampleHttpDatabase = new ExampleHttpDatabase(this._httpClient);
@@ -74,7 +72,7 @@ export class Matstems2Component implements AfterViewInit {
       Zipp: false,
       Spank: false,
     });
-    // this.profileForm.reset() doesn't work because it sets all the values to null
+    // this.profileForm.reset() doesn't work because it sets all the values to null, how to set the defaults to false?
   }
 
   removeSelection(selection: string) {
@@ -119,15 +117,15 @@ export class Matstems2Component implements AfterViewInit {
 
   testlist: string[] = [];
   colorTestlist: string[] = []; // VIOLATES DRY
-  
+
   ngAfterViewInit() {
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
-    
+
     // If the user does a search, reset back to the first page.
     this.searchInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
-    
-    // If the user selects a filter option, reset back to the first page.
+
+    // If the user selects a BRAND filter option, reset back to the first page.
     this.profileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
 
     // If the user selects a COLOR filter option, reset back to the first page.
@@ -143,10 +141,10 @@ export class Matstems2Component implements AfterViewInit {
           return this.testlist;
           }
         )
-      ), this.colorProfileForm.valueChanges // VIOLATES DRY?
+      ), this.colorProfileForm.valueChanges // VIOLATES DRY? Not sure if it would be possible to not repeat this
       .pipe(
         map((x) => {
-          this.colorTestlist = Object.entries(x).sort() 
+          this.colorTestlist = Object.entries(x).sort()
             .filter(([_, isSelected]) => isSelected)
             .map(([key]) => key);
           return this.colorTestlist;
@@ -180,11 +178,10 @@ export class Matstems2Component implements AfterViewInit {
   }
 
   /** Adding products to the list: */
-  addItem(stemObject: object) {
-
+  addItem(stemObject: Stems) {
     const stemString: string = JSON.stringify(stemObject);
 
-    /*   Should I put this in a "try...catch" block because it says 
+    /*   Should I put this in a "try...catch" block because it says
     "Throws a "QuotaExceededError" DOMException exception if the new value couldn't be set."? */
     localStorage.setItem('stem', stemString);
 
@@ -197,6 +194,8 @@ export class Matstems2Component implements AfterViewInit {
   Another way
   When you click the add button, the item whose add button you clicked is stored as an object, and you are redirected to the "list" page
   That item is displayed. */
+  // This would allow you to use the edges of the database to make the compatibility features,
+  // because without using the ID you just have the data from the item and not the actual item... right?
 
 
   /** Announce the change in sort state for assistive technology. */
@@ -228,30 +227,30 @@ export class ExampleHttpDatabase {
 
   // // Fixed brands
   // const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: {in: ["Renthal", "Industry Nine", "Truvativ"]}}) { count }
-  //  queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["Renthal", "Industry Nine", "Truvativ"]}}) 
-  //   { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+  //  queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["Renthal", "Industry Nine", "Truvativ"]}})
+  //   { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
   //   console.log(requestURL);
-  //   // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
-  //   // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+  //   // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize})
+  //   // { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
   //   console.log(requestURL);
   //   return this.http.get<Stems[]>(requestURL);
   // }
-  
+
   // Request with checkbox filtering via FormArray
   const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}}) { count }
-   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}}) 
-    { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}})
+    { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
     console.log(requestURL);
-    // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
-    // { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+    // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize})
+    // { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
     return this.http.get<Stems[]>(requestURL);
   }
 
   // No Filtering
   // getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number): Observable<Stems[]> {
 
-  //   const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}) 
-  //   { barClampDiameter brand color image length material model name price rise steererTubeDiameter weight where } }`;
+  //   const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize})
+  //   { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
 
   //   return this.http.get<Stems[]>(requestURL);
   // }
