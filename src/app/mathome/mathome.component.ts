@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   component: string;
-  link: string;
+  routeLink: string;
   image: string;
   selection: string;
   price: string | number; // These properties should not display anything until they have a value set to them, i.e. '' should be displayed, not 0.
   weight: string | number;
   priceWeight: string | number;
-  where: string;
+  link: string;
 }
 // What if you make some of these optional to solve the problem of not having the default...?
 
@@ -19,23 +19,23 @@ export interface PeriodicElement {
 let ELEMENT_DATA: PeriodicElement[] = [
   {
     component: 'Bars',
-    link: '/parts/matbars',
+    routeLink: '/parts/matbars',
     image: '',
     selection: 'Choose Bars',
     price: '',
     weight: '',
     priceWeight: '',
-    where: '',
+    link: '',
   },
   {
     component: 'Stems',
-    link: '/parts/matstems2',
+    routeLink: '/parts/matstems2',
     image: '',
     selection: 'Choose a Stem',
     price: '',
     weight: '',
     priceWeight: '',
-    where: '',
+    link: '',
   },
 ];
 
@@ -50,8 +50,7 @@ export class MathomeComponent implements OnInit {
     'selection',
     'price',
     'weight',
-    'priceWeight',
-    'where',
+    // 'priceWeight',
     'add',
     'remove',
   ];
@@ -66,22 +65,23 @@ export class MathomeComponent implements OnInit {
 
   mainView = true;
   constructor(private router: Router) {}
-  
+
   // Not all of the properties from the stem in localStorage are used, so Stems_Data[1] cannot be set to the whole object
   ngOnInit() {
     const STEM: Stems = JSON.parse(localStorage.getItem('stem') || '{}');
-    const {image, name, price, weight, where} = STEM;
+    const {image, name, price, weight, link} = STEM;
 
     ELEMENT_DATA[1].image = image ? image : '';
     ELEMENT_DATA[1].selection = name ? name : 'Choose a Stem';
     ELEMENT_DATA[1].price = price ? price : '';
     ELEMENT_DATA[1].weight = weight ? weight : '';
     ELEMENT_DATA[1].priceWeight = (price / weight) ? price / weight : '';
-    ELEMENT_DATA[1].where = where ? where : '';
+    ELEMENT_DATA[1].link = link;
+    console.log(ELEMENT_DATA[1].link);
   }
 
-/*   If there is a not stem set in local storage, display "Choose a Stem" in the 
+/*   If there is a not stem set in local storage, display "Choose a Stem" in the
   selection column and nothing in the price, weight, price/weight or where columns */
   // otherwise, display the Stem's image, name, price, weight, and where properties.
-  
+
 }
