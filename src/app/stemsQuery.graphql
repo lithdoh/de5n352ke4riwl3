@@ -1,7 +1,7 @@
 mutation AddStems {
   addStem(input: [
     {
-	 image: "assets/descendant-35mm-direct-mount-stem.jpg",
+	 image: "assets/originals/descendant-35mm-direct-mount-stem.jpg",
 	 name: "Descendant 35mm Direct Mount Stem",
 	 brand: "Truvativ",
 	 model: "ST-HUSS-A1",
@@ -16,7 +16,7 @@ mutation AddStems {
 	 where: "sram.com"},
 
     {
-	 image: "assets/hussefelt-stem.jpg",
+	 image: "assets/originals/hussefelt-stem.jpg",
 	 name: "Hussefelt Stem",
 	 brand: "Truvativ",
 	 model: "ST-HUSS-A1",
@@ -31,7 +31,7 @@ mutation AddStems {
 	 where: "sram.com"},
 
     {
-	 image: "assets/magic-stem.jpg",
+	 image: "assets/originals/magic-stem.jpg",
 	 name: "Magic Stem",
 	 brand: "Campy",
 	 model: "ST-DESC-1-A1",
@@ -46,7 +46,7 @@ mutation AddStems {
 	 where: "jensonusa.com"},
 
        {
-	 image: "assets/apex.jpg",
+	 image: "assets/originals/apex.jpg",
 	 name: "Apex",
 	 brand: "Renthal",
 	 model: "AB-CDEF-GH",
@@ -61,7 +61,7 @@ mutation AddStems {
 	 where: "worldwidecyclery.com"},
 
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -75,7 +75,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -89,7 +89,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -103,7 +103,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -117,7 +117,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -131,7 +131,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -145,7 +145,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -159,7 +159,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -173,7 +173,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -187,7 +187,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -201,7 +201,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -215,7 +215,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -229,7 +229,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -243,7 +243,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -257,7 +257,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -271,7 +271,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -285,7 +285,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -299,7 +299,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -313,7 +313,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -327,7 +327,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -341,7 +341,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -355,7 +355,7 @@ mutation AddStems {
 	 weight: 167,
 	 where: "sram.com"},
         {
-	 image: "assets/sl-sprint.jpg",
+	 image: "assets/originals/sl-sprint.jpg",
 	 name: "SL SPRINT STEM",
 	 brand: "Zipp",
 	 model: "ST-SL-SPNT-A3",
@@ -370,7 +370,7 @@ mutation AddStems {
 	 where: "sram.com"},
 
        {
-	 image: "assets/split.jpg",
+	 image: "assets/originals/split.jpg",
 	 name: "Split",
 	 brand: "Spank",
 	 model: "TJ-5849-DE",
