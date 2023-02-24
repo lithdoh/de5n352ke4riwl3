@@ -1,0 +1,14 @@
+<mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title> Brand </mat-panel-title>
+  </mat-expansion-panel-header>
+  <section class="example-section">
+      <mat-checkbox (change)="uncheckAll()" [checked]="someComplete()" [disabled]="someComplete()" color="primary">All</mat-checkbox>
+      <form [formGroup]="profileForm">
+          <ng-container *ngFor="let brand of brandArray">
+            <mat-checkbox formControlName="{{brand}}" color="primary">{{brand}}</mat-checkbox>
+            <br />
+          </ng-container>
+      </form>
+  </section>
+</mat-expansion-panel>

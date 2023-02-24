@@ -31,6 +31,7 @@ import { MillimeterPipe } from './pipes/millimeter.pipe';
 import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
+import { SidebarFilterComponent } from './sidebar-filter/sidebar-filter.component';
 
 
 
@@ -51,6 +52,7 @@ import {MatIconModule} from '@angular/material/icon';
     GramsPipe,
     DollarsPerGramPipe,
     Matstems3Component,
+    SidebarFilterComponent,
   ],
   imports: [
     BrowserAnimationsModule,
