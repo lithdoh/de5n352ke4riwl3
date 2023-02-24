@@ -8,5 +8,9 @@ table {
 .mat-column-selection img {
   width:65px;
   height:65px;
+  vertical-align: middle;
 }
 
+.selection_title {
+  padding-right: 10px;
+}
