@@ -1,0 +1,15 @@
+type Stem  {
+	id: ID! 
+	link: String! 
+	image: String! 
+	name: String! @search(by:[regexp]) 
+	length: Int! @search 
+	rise: String! @search(by:[exact]) 
+	clampDiameter: Float! @search 
+	steererDiameter: String! @search(by:[exact]) 
+	color: String! @search(by:[exact]) 
+	material: String! @search(by:[exact]) 
+	price: Float! @search 
+	weight: Int! @search 
+	brand: String! @search(by:[exact]) 
+}
