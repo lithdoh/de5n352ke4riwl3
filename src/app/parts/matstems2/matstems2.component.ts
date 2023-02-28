@@ -1,6 +1,6 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Output, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
@@ -37,8 +37,8 @@ export class Matstems2Component implements AfterViewInit {
 
   // Set defaults for matPaginator directive
   length: number = 0;
-  pageSizeOptions: number[] = [10, 25, 100];
-  pageSize: number = 10;
+  pageSizeOptions: number[] = [25, 50, 100];
+  pageSize: number = 25;
   showFirstLastButtons: boolean = true;
   isLoadingResults: boolean = true;
 
@@ -47,6 +47,9 @@ export class Matstems2Component implements AfterViewInit {
 
   // Search input
   searchInput = new FormControl('');
+
+
+//______________________________________________________________________________________________
 
   // Brand Filter
   profileForm = this.fb.group({
@@ -78,6 +81,8 @@ export class Matstems2Component implements AfterViewInit {
   removeSelection(selection: string) {
     this.profileForm.get(selection)?.setValue(false);
   }
+
+//______________________________________________________________________________________________
 
   // Color Filter begin -- VIOLATES DRY
   colorProfileForm = this.fb.group({
@@ -117,6 +122,15 @@ export class Matstems2Component implements AfterViewInit {
 
   testlist: string[] = [];
   colorTestlist: string[] = []; // VIOLATES DRY
+
+  @Output() testingProfForm: FormGroup = this.fb.group({
+    Renthal: false,
+    Truvativ: false,
+    'Industry Nine': false,
+    Campy: false,
+    Zipp: false,
+    Spank: false,
+  });
 
   ngAfterViewInit() {
     // If the user changes the sort order, reset back to the first page.
@@ -219,7 +233,9 @@ export class Matstems2Component implements AfterViewInit {
 // Sorting and Pagination
 export class ExampleHttpDatabase {
   constructor(private http: HttpClient) {}
-  baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query=';
+
+  baseURL = 'http://localhost:8080/graphql?query='; // local
+  // baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query='; // Dgraph Cloud
 
   // Sorting, Pagination, Filtering
   getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[], color: any[]): Observable<Stems[]> {

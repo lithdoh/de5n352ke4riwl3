@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sidebar-filter',
@@ -12,14 +12,8 @@ export class SidebarFilterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  profileForm = this.fb.group({
-    Renthal: false,
-    Truvativ: false,
-    'Industry Nine': false,
-    Campy: false,
-    Zipp: false,
-    Spank: false,
-  });
+  @Input() profileForm!: FormGroup;
+  
   brandArray: string[] = Object.keys(this.profileForm.value).sort();
 
   someComplete(): boolean {
@@ -42,4 +36,5 @@ export class SidebarFilterComponent implements OnInit {
     this.profileForm.get(selection)?.setValue(false);
   }
 
+  // testlist: string[] = [];
 }
