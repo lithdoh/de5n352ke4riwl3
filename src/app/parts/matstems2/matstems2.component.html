@@ -1,6 +1,7 @@
 <mat-sidenav-container class="sidenav">
     <mat-sidenav mode="side" opened>
         <mat-accordion displayMode="flat" multi>
+            <!-- <app-sidebar-filter [profileForm]="testingProfForm"></app-sidebar-filter> -->
             <mat-expansion-panel [expanded]="true">
               <mat-expansion-panel-header>
                 <mat-panel-title> Brand </mat-panel-title>
@@ -15,7 +16,7 @@
                   </form>
               </section>
             </mat-expansion-panel>
-            <mat-expansion-panel [expanded]="true"> <!-- VIOLATES DRY-->
+            <mat-expansion-panel [expanded]="true"> <!-- NOT DRY BEGIN-->
               <mat-expansion-panel-header>
                 <mat-panel-title> Color </mat-panel-title>
               </mat-expansion-panel-header>
@@ -28,14 +29,14 @@
                       </ng-container>
                   </form>
               </section>
-            </mat-expansion-panel> <!-- VIOLATES DRY-->
+            </mat-expansion-panel> <!-- NOT DRY END-->
           </mat-accordion>
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="mat-elevation-z8">
             <div class="example-loading-shade" *ngIf="isLoadingResults">
                 <!-- Pointless ngIf? -->
-                <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+                <mat-spinner></mat-spinner>
             </div>
 
             <!-- <h2 class="product_count">{{length}} Products</h2> -->
@@ -49,10 +50,10 @@
                     <button class="remove_selection" *ngFor="let brand of testlist;"
                     (click)="removeSelection(brand)">{{brand}} <mat-icon inline aria-hidden="true">cancel</mat-icon></button>
                 </div>
-                <div *ngIf="colorTestlist.length > 0"> Color: <!-- VIOLATES DRY-->
+                <div *ngIf="colorTestlist.length > 0"> Color: <!-- NOT DRY BEGIN-->
                     <button class="remove_selection" *ngFor="let color of colorTestlist;"
                     (click)="colorRemoveSelection(color)">{{color}} <mat-icon inline aria-hidden="true">cancel</mat-icon></button>
-                </div> <!-- VIOLATES DRY-->
+                </div> <!-- NOT DRY END-->
             </div>
 
             <table mat-table [dataSource]="data" matSort [matSortActive]="matSortActive"
@@ -83,7 +84,7 @@
                   <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by length">
                     Length
                   </th>
-                  <td mat-cell *matCellDef="let element"> {{element.length }} </td>
+                  <td mat-cell *matCellDef="let element"> {{element.length ? element.length + 'mm' : '--'}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="rise">
@@ -98,7 +99,7 @@
                         sortActionDescription="Sort by clampDiameter">
                         Bar Clamp ø
                     </th>
-                    <td mat-cell *matCellDef="let element"> {{element.clampDiameter }} </td>
+                    <td mat-cell *matCellDef="let element">{{element.clampDiameter ? element.clampDiameter + 'mm' : '--'}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="steererDiameter">
@@ -127,14 +128,14 @@
                     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
                         Weight
                     </th>
-                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                    <td mat-cell *matCellDef="let element">{{element.weight ? element.weight + 'g' : '--'}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="price">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price">
                         Price
                     </th>
-                    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                    <td mat-cell *matCellDef="let element"> ${{element.price | number:'1.2-2'}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="add">
