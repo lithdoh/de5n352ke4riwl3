@@ -2,40 +2,80 @@
     <mat-sidenav mode="side" opened>
         <mat-accordion displayMode="flat" multi>
             <!-- <app-sidebar-filter [profileForm]="testingProfForm"></app-sidebar-filter> -->
-            <mat-expansion-panel [expanded]="true">
-              <mat-expansion-panel-header>
-                <mat-panel-title> Brand </mat-panel-title>
-              </mat-expansion-panel-header>
-              <section class="example-section">
-                  <mat-checkbox (change)="uncheckAll()" [checked]="someComplete()" [disabled]="someComplete()" color="primary">All</mat-checkbox>
-                  <form [formGroup]="profileForm">
-                      <ng-container *ngFor="let brand of brandArray">
-                        <mat-checkbox formControlName="{{brand}}" color="primary">{{brand}}</mat-checkbox>
-                        <br />
-                      </ng-container>
+            <section>
+                <mat-expansion-panel [expanded]="true">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title> Brand </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-checkbox
+                    (change)="uncheckAll('brands')"
+                    [checked]="someComplete('brands')"
+                    [disabled]="someComplete('brands')"
+                    >All</mat-checkbox
+                  >
+                  <form [formGroup]="profileForm.controls.brands">
+                    <ng-container
+                      *ngFor="let item of profileForm.controls.brands.value | keyvalue"
+                    >
+                      <mat-checkbox formControlName="{{item.key}}" color="primary"
+                        >{{item.key}}</mat-checkbox
+                      >
+                      <br />
+                    </ng-container>
                   </form>
+                </mat-expansion-panel>
               </section>
-            </mat-expansion-panel>
-            <mat-expansion-panel [expanded]="true"> <!-- NOT DRY BEGIN-->
-              <mat-expansion-panel-header>
-                <mat-panel-title> Color </mat-panel-title>
-              </mat-expansion-panel-header>
-              <section class="example-section">
-                  <mat-checkbox (change)="colorUncheckAll()" [checked]="colorSomeComplete()" [disabled]="colorSomeComplete()" color="primary">All</mat-checkbox>
-                  <form [formGroup]="colorProfileForm">
-                      <ng-container *ngFor="let color of colorArray">
-                        <mat-checkbox formControlName="{{color}}" color="primary">{{color}}</mat-checkbox>
-                        <br />
-                      </ng-container>
+              <section>
+                <mat-expansion-panel [expanded]="true">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title> Color </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-checkbox
+                    (change)="uncheckAll('colors')"
+                    [checked]="someComplete('colors')"
+                    [disabled]="someComplete('colors')"
+                    >All</mat-checkbox
+                  >
+                  <form [formGroup]="profileForm.controls.colors">
+                    <ng-container
+                      *ngFor="let item of profileForm.controls.colors.value | keyvalue"
+                    >
+                      <mat-checkbox formControlName="{{item.key}}" color="primary"
+                        >{{item.key}}</mat-checkbox
+                      >
+                      <br />
+                    </ng-container>
                   </form>
+                </mat-expansion-panel>
               </section>
-            </mat-expansion-panel> <!-- NOT DRY END-->
+              <section>
+                <mat-expansion-panel [expanded]="true">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title> Material </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-checkbox
+                    (change)="uncheckAll('materials')"
+                    [checked]="someComplete('materials')"
+                    [disabled]="someComplete('materials')"
+                    >All</mat-checkbox
+                  >
+                  <form [formGroup]="profileForm.controls.materials">
+                    <ng-container
+                      *ngFor="let item of profileForm.controls.materials.value | keyvalue"
+                    >
+                      <mat-checkbox formControlName="{{item.key}}" color="primary"
+                        >{{item.key}}</mat-checkbox
+                      >
+                      <br />
+                    </ng-container>
+                  </form>
+                </mat-expansion-panel>
+              </section>
           </mat-accordion>
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="mat-elevation-z8">
             <div class="example-loading-shade" *ngIf="isLoadingResults">
-                <!-- Pointless ngIf? -->
                 <mat-spinner></mat-spinner>
             </div>
 
@@ -45,15 +85,19 @@
             </mat-form-field>
             <hr>
             <!-- Trying to make "Filtered By" top bar -->
-            <div *ngIf="testlist.length > 0 || colorTestlist.length > 0"> Filters:
-                <div *ngIf="testlist.length > 0"> Brand:
-                    <button class="remove_selection" *ngFor="let brand of testlist;"
-                    (click)="removeSelection(brand)">{{brand}} <mat-icon inline aria-hidden="true">cancel</mat-icon></button>
+            <div *ngIf="brandsList.length > 0 || colorsList.length > 0"> Filters:
+                <div *ngIf="brandsList.length > 0"> Brand:
+                    <button class="remove_selection" *ngFor="let brand of brandsList;"
+                    (click)="removeSelection('brands', brand)">{{brand}} <mat-icon inline aria-hidden="true">cancel</mat-icon></button>
                 </div>
-                <div *ngIf="colorTestlist.length > 0"> Color: <!-- NOT DRY BEGIN-->
-                    <button class="remove_selection" *ngFor="let color of colorTestlist;"
-                    (click)="colorRemoveSelection(color)">{{color}} <mat-icon inline aria-hidden="true">cancel</mat-icon></button>
-                </div> <!-- NOT DRY END-->
+                <div *ngIf="colorsList.length > 0"> Color:
+                    <button class="remove_selection" *ngFor="let color of colorsList;"
+                    (click)="removeSelection('colors', color)">{{color}} <mat-icon inline aria-hidden="true">cancel</mat-icon></button>
+                </div>
+                <div *ngIf="materialsList.length > 0"> Material:
+                    <button class="remove_selection" *ngFor="let material of materialsList;"
+                    (click)="removeSelection('materials', material)">{{material}} <mat-icon inline aria-hidden="true">cancel</mat-icon></button>
+                </div>
             </div>
 
             <table mat-table [dataSource]="data" matSort [matSortActive]="matSortActive"

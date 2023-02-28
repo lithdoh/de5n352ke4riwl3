@@ -51,67 +51,90 @@ export class Matstems2Component implements AfterViewInit {
 
 //______________________________________________________________________________________________
 
-  // Brand Filter
-  profileForm = this.fb.group({
+  brandsDefault = {
     Renthal: false,
     Truvativ: false,
     'Industry Nine': false,
     Campy: false,
     Zipp: false,
     Spank: false,
-  });
-  brandArray: string[] = Object.keys(this.profileForm.value).sort();
+  };
 
-  someComplete(): boolean {
-    return Object.values(this.profileForm.value).every((x) => x === false);
-  }
-
-  uncheckAll() {
-    this.profileForm.setValue({
-      Renthal: false,
-      Truvativ: false,
-      'Industry Nine': false,
-      Campy: false,
-      Zipp: false,
-      Spank: false,
-    });
-    // this.profileForm.reset() doesn't work because it sets all the values to null, how to set the defaults to false?
-  }
-
-  removeSelection(selection: string) {
-    this.profileForm.get(selection)?.setValue(false);
-  }
-
-//______________________________________________________________________________________________
-
-  // Color Filter begin -- VIOLATES DRY
-  colorProfileForm = this.fb.group({
+  colorsDefault = {
     Red: false,
     Blue: false,
     Lime: false,
-    "Matte with stealth decals": false,
-    "Blast Black": false,
+    'Matte with stealth decals': false,
+    'Blast Black': false,
+  };
+
+  materialsDefault = {
+    Titanium: false,
+    Steel: false,
+    'Al-7075': false,
+    'Blue Steel': false,
+    Copper: false,
+    '7075 Machined Aluminum': false,
+  };
+
+  // Using Form Builder
+  profileForm = this.fb.group({
+    brands: this.fb.group(this.brandsDefault),
+    colors: this.fb.group(this.colorsDefault),
+    materials: this.fb.group(this.materialsDefault),
   });
-  colorArray: string[] = Object.keys(this.colorProfileForm.value).sort();
 
-  colorSomeComplete(): boolean {
-    return Object.values(this.colorProfileForm.value).every((x) => x === false);
+
+  someComplete(section: string): boolean {
+    switch (section) {
+      case 'brands':
+        return Object.values(this.profileForm.controls.brands.value).every(
+          (x) => x === false
+        );
+      case 'colors':
+        return Object.values(this.profileForm.controls.colors.value).every(
+          (x) => x === false
+        );
+      case 'materials':
+        return Object.values(this.profileForm.controls.materials.value).every(
+          (x) => x === false
+        );
+      default:
+        return true;
+    }
   }
 
-  colorUncheckAll() {
-    this.colorProfileForm.setValue({
-      Red: false,
-      Blue: false,
-      Lime: false,
-      "Matte with stealth decals": false,
-      "Blast Black": false,
-    });
+  uncheckAll(section: string) {
+    switch (section) {
+      case 'brands':
+        this.profileForm.controls.brands.setValue(this.brandsDefault);
+        break;
+      case 'colors':
+        this.profileForm.controls.colors.setValue(this.colorsDefault);
+        break;
+      case 'materials':
+        this.profileForm.controls.materials.setValue(this.materialsDefault);
+    }
   }
 
-  colorRemoveSelection(selection: string) {
-    this.colorProfileForm.get(selection)?.setValue(false);
+  removeSelection(section: string, selection: string) {
+    switch (section) {
+      case 'brands':
+        this.profileForm.controls.brands.get(selection)?.setValue(false);
+        break;
+      case 'colors':
+        this.profileForm.controls.colors.get(selection)?.setValue(false);
+        break;
+      case 'materials':
+        this.profileForm.controls.materials.get(selection)?.setValue(false);
+    }
   }
-  // Color Filter end
+
+  brandsList: string[] = [];
+  colorsList: string[] = [];
+  materialsList: string[] = [];
+
+//______________________________________________________________________________________________
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
@@ -119,9 +142,6 @@ export class Matstems2Component implements AfterViewInit {
     private _httpClient: HttpClient,
     private fb: FormBuilder,
   ) {}
-
-  testlist: string[] = [];
-  colorTestlist: string[] = []; // VIOLATES DRY
 
   @Output() testingProfForm: FormGroup = this.fb.group({
     Renthal: false,
@@ -142,26 +162,35 @@ export class Matstems2Component implements AfterViewInit {
     // If the user selects a BRAND filter option, reset back to the first page.
     this.profileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
 
-    // If the user selects a COLOR filter option, reset back to the first page.
-    this.colorProfileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0))); // VIOLATES DRY
-
     merge(this.sort.sortChange, this.paginator.page, this.searchInput.valueChanges.pipe(
-      debounceTime(500)), this.profileForm.valueChanges
+      debounceTime(500)), 
+      this.profileForm.controls.brands.valueChanges
       .pipe(
         map((x) => {
-          this.testlist = Object.entries(x).sort()
+          this.brandsList = Object.entries(x).sort()
             .filter(([_, isSelected]) => isSelected)
             .map(([key]) => key);
-          return this.testlist;
+          return this.brandsList;
           }
         )
-      ), this.colorProfileForm.valueChanges // VIOLATES DRY? Not sure if it would be possible to not repeat this
+      ), 
+      this.profileForm.controls.colors.valueChanges
       .pipe(
         map((x) => {
-          this.colorTestlist = Object.entries(x).sort()
+          this.colorsList = Object.entries(x).sort()
             .filter(([_, isSelected]) => isSelected)
             .map(([key]) => key);
-          return this.colorTestlist;
+          return this.colorsList;
+          }
+        )
+      ),
+      this.profileForm.controls.materials.valueChanges
+      .pipe(
+        map((x) => {
+          this.materialsList = Object.entries(x).sort()
+            .filter(([_, isSelected]) => isSelected)
+            .map(([key]) => key);
+          return this.materialsList;
           }
         )
       ))
@@ -175,8 +204,9 @@ export class Matstems2Component implements AfterViewInit {
             this.paginator.pageSize,
             this.paginator.pageIndex,
             this.searchInput.value!,
-            this.testlist,
-            this.colorTestlist
+            this.brandsList,
+            this.colorsList,
+            this.materialsList
           ).pipe(catchError(() => of(null)),
           map((response: any) => {this.length = response.data.aggregateStem.count; return response.data.queryStem}));
         }),
@@ -238,7 +268,7 @@ export class ExampleHttpDatabase {
   // baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query='; // Dgraph Cloud
 
   // Sorting, Pagination, Filtering
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[], color: any[]): Observable<Stems[]> {
+  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[], color: any[], material: any[]): Observable<Stems[]> {
     // RequestURL with filtering
 
   // // Fixed brands
@@ -253,7 +283,7 @@ export class ExampleHttpDatabase {
   // }
 
   // Request with checkbox filtering via FormArray
-  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}}) { count }
+  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}}) { count }
    queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}})
     { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
     console.log(requestURL);
