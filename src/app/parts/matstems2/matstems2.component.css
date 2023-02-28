@@ -10,6 +10,10 @@ mat-form-field {
   padding-right: 10px;
 }
 
+.mat-header-cell {
+  width: 140px;
+}
+
 .mat-column-image img {
   width: 55px;
   height: 55px;
