@@ -4,7 +4,7 @@ type Stem  {
 	image: String! 
 	name: String! @search(by:[regexp]) 
 	length: Int! @search 
-	rise: String! @search(by:[exact]) 
+	rise: Int! @search 
 	clampDiameter: Float! @search 
 	steererDiameter: String! @search(by:[exact]) 
 	color: String! @search(by:[exact]) 
