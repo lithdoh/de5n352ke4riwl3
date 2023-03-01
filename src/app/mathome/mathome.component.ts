@@ -77,7 +77,6 @@ export class MathomeComponent implements OnInit {
     ELEMENT_DATA[1].weight = weight ? weight : '';
     ELEMENT_DATA[1].priceWeight = (price / weight) && isFinite(price/weight) ? price / weight : '';
     ELEMENT_DATA[1].link = link;
-    console.log(ELEMENT_DATA[1].link);
   }
 
 /*   If there is a not stem set in local storage, display "Choose a Stem" in the
