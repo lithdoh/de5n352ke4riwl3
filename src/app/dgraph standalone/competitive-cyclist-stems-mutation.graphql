@@ -152,7 +152,6 @@ mutation MyMutation {
     clampDiameter: 31.8,
     steererDiameter: "1-1/8in",
     material: "aluminum",
-    weight: 0,
     price: 81
   },
   {
@@ -179,7 +178,6 @@ mutation MyMutation {
     clampDiameter: 35,
     steererDiameter: "1-1/8in",
     material: "6061 alloy",
-    weight: 0,
     price: 132.3
   },
   {
@@ -207,7 +205,6 @@ mutation MyMutation {
     clampDiameter: 35,
     steererDiameter: "1-1/8in",
     material: "6061 alloy",
-    weight: 0,
     price: 132.3
   },
   {
@@ -221,7 +218,6 @@ mutation MyMutation {
     clampDiameter: 35,
     steererDiameter: "1-1/8in",
     material: "6061 alloy",
-    weight: 0,
     price: 132.3
   },
   {
@@ -344,7 +340,6 @@ mutation MyMutation {
     rise: 0,
     clampDiameter: 31.8,
     material: "7075 aluminum, [bolts] steel",
-    weight: 0,
     price: 43.4
   },
   {
@@ -397,7 +392,6 @@ mutation MyMutation {
     clampDiameter: 35,
     steererDiameter: "1-1/8in",
     material: "cold-forged, precision-machined, premium-grade aluminum",
-    weight: 0,
     price: 140
   },
   {
@@ -410,7 +404,6 @@ mutation MyMutation {
     clampDiameter: 35,
     steererDiameter: "1-1/8in",
     material: "cold-forged, precision-machined, premium-grade aluminum",
-    weight: 0,
     price: 140
   },
   {
@@ -423,7 +416,6 @@ mutation MyMutation {
     clampDiameter: 35,
     steererDiameter: "1-1/8in",
     material: "cold-forged, precision-machined, premium-grade aluminum",
-    weight: 0,
     price: 140
   },
   {
@@ -1110,7 +1102,6 @@ mutation MyMutation {
     clampDiameter: 35,
     steererDiameter: "1-1/8in",
     material: "6061-T6 aluminum",
-    weight: 0,
     price: 89.5
   },
   {
