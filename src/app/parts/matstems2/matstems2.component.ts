@@ -46,49 +46,67 @@ export class Matstems2Component implements AfterViewInit {
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
   // Search input
-  searchInput = new FormControl('');
+  searchInput: FormControl = new FormControl('');
 
 
 //______________________________________________________________________________________________
 
   brandsDefault = {
-    Renthal: false,
-    Truvativ: false,
-    'Industry Nine': false,
-    Campy: false,
-    Zipp: false,
-    Spank: false,
+    "Deity Components": false,
+    "Industry Nine": false,
+    "FSA": false,
+    "Chromag": false,
+    "OneUp Components": false,
+    "Renthal": false,
+    "PNW Components": false,
+    "Race Face": false,
+  };
+
+  lengthsDefault = {
+    30: false,
+    32: false,
+    35: false,
+    40: false,
+    50: false,
+    60: false,
+    65: false,
   };
 
   colorsDefault = {
-    Red: false,
-    Blue: false,
-    Lime: false,
-    'Matte with stealth decals': false,
-    'Blast Black': false,
+    "Purple": false,
+    "Lime": false,
+    "Red": false,
+    "Black": false,
+    "Ano Orange": false,
+    "Blue": false,
   };
 
   materialsDefault = {
-    Titanium: false,
-    Steel: false,
-    'Al-7075': false,
-    'Blue Steel': false,
-    Copper: false,
-    '7075 Machined Aluminum': false,
+    "6061 T6 aluminum": false,
+    "[stem] 7075 aluminum, [bolts] 316 stainless steel": false,
+    "CNC machined 6061 T6 aluminum": false,
+    "2014-series aluminum": false,
+    "[body] carbon fiber, [face plate] aluminum, [hardware] titanium": false,
+    "EA70 aluminum": false,
+    "aluminum": false
   };
 
   // Using Form Builder
   profileForm = this.fb.group({
     brands: this.fb.group(this.brandsDefault),
+    lengths: this.fb.group(this.lengthsDefault),
     colors: this.fb.group(this.colorsDefault),
     materials: this.fb.group(this.materialsDefault),
   });
-
 
   someComplete(section: string): boolean {
     switch (section) {
       case 'brands':
         return Object.values(this.profileForm.controls.brands.value).every(
+          (x) => x === false
+        );
+      case 'lengths':
+        return Object.values(this.profileForm.controls.lengths.value).every(
           (x) => x === false
         );
       case 'colors':
@@ -109,6 +127,9 @@ export class Matstems2Component implements AfterViewInit {
       case 'brands':
         this.profileForm.controls.brands.setValue(this.brandsDefault);
         break;
+      case 'lengths':
+        this.profileForm.controls.lengths.setValue(this.lengthsDefault);
+        break;
       case 'colors':
         this.profileForm.controls.colors.setValue(this.colorsDefault);
         break;
@@ -122,6 +143,9 @@ export class Matstems2Component implements AfterViewInit {
       case 'brands':
         this.profileForm.controls.brands.get(selection)?.setValue(false);
         break;
+      case 'lengths':
+        this.profileForm.controls.lengths.get(selection)?.setValue(false);
+        break;
       case 'colors':
         this.profileForm.controls.colors.get(selection)?.setValue(false);
         break;
@@ -131,6 +155,7 @@ export class Matstems2Component implements AfterViewInit {
   }
 
   brandsList: string[] = [];
+  lengthsList: string[] = [];
   colorsList: string[] = [];
   materialsList: string[] = [];
 
@@ -174,6 +199,16 @@ export class Matstems2Component implements AfterViewInit {
           }
         )
       ), 
+      this.profileForm.controls.lengths.valueChanges
+      .pipe(
+        map((x) => {
+          this.lengthsList = Object.entries(x).sort()
+            .filter(([_, isSelected]) => isSelected)
+            .map(([key]) => key);
+          return this.lengthsList;
+          }
+        )
+      ), 
       this.profileForm.controls.colors.valueChanges
       .pipe(
         map((x) => {
@@ -205,10 +240,11 @@ export class Matstems2Component implements AfterViewInit {
             this.paginator.pageIndex,
             this.searchInput.value!,
             this.brandsList,
+            this.lengthsList,
             this.colorsList,
             this.materialsList
           ).pipe(catchError(() => of(null)),
-          map((response: any) => {this.length = response.data.aggregateStem.count; return response.data.queryStem}));
+          map((response: any) => {this.length = response.data.aggregateStems.count; return response.data.queryStems}));
         }),
         map(data => {
           this.isLoadingResults = false;
@@ -264,40 +300,22 @@ export class Matstems2Component implements AfterViewInit {
 export class ExampleHttpDatabase {
   constructor(private http: HttpClient) {}
 
-  baseURL = 'http://localhost:8080/graphql?query='; // local
-  // baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query='; // Dgraph Cloud
+  // baseURL = 'http://localhost:8080/graphql?query='; // local
+  baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query='; // Dgraph Cloud
 
-  // Sorting, Pagination, Filtering
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[], color: any[], material: any[]): Observable<Stems[]> {
-    // RequestURL with filtering
-
-  // // Fixed brands
-  // const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: {in: ["Renthal", "Industry Nine", "Truvativ"]}}) { count }
-  //  queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: {in: ["Renthal", "Industry Nine", "Truvativ"]}})
-  //   { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
-  //   console.log(requestURL);
-  //   // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize})
-  //   // { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
-  //   console.log(requestURL);
-  //   return this.http.get<Stems[]>(requestURL);
-  // }
-
-  // Request with checkbox filtering via FormArray
-  const requestURL = this.baseURL + `{ aggregateStem(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}}) { count }
-   queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}})
-    { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
-    console.log(requestURL);
-    // const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize})
-    // { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
+  getFilterNames(): Observable<Stems[]> {
+    const requestURL = this.baseURL + `{queryStems { brand color length material rise steererDiameter weight clampDiameter price }}`;
     return this.http.get<Stems[]>(requestURL);
   }
 
-  // No Filtering
-  // getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number): Observable<Stems[]> {
+  // Sorting, Pagination, Filtering
+  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[], length: any[], color: any[], material: any[]): Observable<Stems[]> {
 
-  //   const requestURL = this.baseURL + `{ queryStem(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize})
-  //   { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
-
-  //   return this.http.get<Stems[]>(requestURL);
-  // }
+  const requestURL = this.baseURL + `{ aggregateStems(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}}) { count }
+   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}})
+    { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
+    // Why doesn't this work?
+    // this.http.get('data-from-cyclery/competitive-cyclist-stems.json').subscribe(x => console.log(x));
+    return this.http.get<Stems[]>(requestURL);
+  }
 }
