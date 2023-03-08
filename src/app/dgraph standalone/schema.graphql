@@ -1,11 +1,27 @@
-type Stem  {
+type Bars  {
+	id: ID! 
+	image: String 
+	name: String 
+	brand: String 
+	diameter: String 
+	material: String 
+	rise: String 
+	backsweep: String 
+	upsweep: String 
+	width: String 
+	color: String 
+	weight: String 
+	price: String 
+}
+
+type Stems  {
 	id: ID! 
 	link: String! 
 	image: String! 
 	name: String! @search(by:[regexp]) 
-	length: Int! @search 
-	rise: Int! @search 
-	clampDiameter: Float! @search 
+	length: Int @search 
+	rise: Int @search 
+	clampDiameter: Float @search 
 	steererDiameter: String! @search(by:[exact]) 
 	color: String! @search(by:[exact]) 
 	material: String! @search(by:[exact]) 
