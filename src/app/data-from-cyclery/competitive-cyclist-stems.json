@@ -5,13 +5,12 @@
     "name": "Gradient 35mm Stem",
     "color": "Black",
     "brand": "FSA",
-    "length": "35mm",
-    "rise": "--",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "4.3oz (123g)",
-    "price": "$55.76"
+    "weight": 123,
+    "price": 55.76
   },
   {
     "link": "https://www.competitivecyclist.com/fsa-gradient-35mm-stem",
@@ -19,97 +18,88 @@
     "name": "Gradient 35mm Stem",
     "color": "Black",
     "brand": "FSA",
-    "length": "50mm",
-    "rise": "--",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "5.5oz (157g)",
-    "price": "$55.76"
+    "weight": 157,
+    "price": 55.76
   },
   {
     "link": "https://www.competitivecyclist.com/renthal-apex-stem",
     "image": "assets/competitive-cyclist-stems/renthal-apex-stem_BLA.jpg",
     "name": "Apex Stem",
-    "color": "--",
     "brand": "Renthal",
-    "length": "60mm",
-    "rise": "6°",
-    "clampDiameter": "31.8mm",
+    "length": 60,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "2014-series aluminum",
-    "weight": "4.8oz (136g)",
-    "price": "$140.45"
+    "weight": 136,
+    "price": 140.45
   },
   {
     "link": "https://www.competitivecyclist.com/syntace-force-109",
     "image": "assets/competitive-cyclist-stems/syntace-force-109_BK.jpg",
     "name": "Force 109",
-    "color": "--",
     "brand": "Syntace",
-    "length": "135mm",
-    "rise": "6°",
-    "clampDiameter": "--",
+    "length": 135,
+    "rise": 6,
     "steererDiameter": "1-1/8in",
     "material": "[body] aluminum, [bolts] titanium",
-    "weight": "4.6oz (129g)",
-    "price": "$62.12"
+    "weight": 129,
+    "price": 62.12
   },
   {
     "link": "https://www.competitivecyclist.com/syntace-megaforce2-stem",
     "image": "assets/competitive-cyclist-stems/syntace-megaforce2-stem_BK.jpg",
     "name": "Megaforce2 Stem",
-    "color": "--",
     "brand": "Syntace",
-    "length": "70mm",
-    "rise": "6°",
-    "clampDiameter": "--",
+    "length": 70,
+    "rise": 6,
     "steererDiameter": "1-1/8in",
     "material": "[body] alloy, [bolts] titanium",
-    "weight": "4.7oz (132g)",
-    "price": "$94.97"
+    "weight": 132,
+    "price": 94.97
   },
   {
     "link": "https://www.competitivecyclist.com/easton-ea70-stem",
     "image": "assets/competitive-cyclist-stems/easton-ea70-stem_BK.jpg",
     "name": "EA70 Stem",
-    "color": "--",
     "brand": "Easton",
-    "length": "100mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 100,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "EA70 aluminum",
-    "weight": "5.1oz (145g)",
-    "price": "$55.99"
+    "weight": 145,
+    "price": 55.99
   },
   {
     "link": "https://www.competitivecyclist.com/easton-ea90-stem",
     "image": "assets/competitive-cyclist-stems/easton-ea90-stem_BK.jpg",
     "name": "EA90 Stem",
-    "color": "--",
     "brand": "Easton",
-    "length": "100mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 100,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "EA90 Alloy",
-    "weight": "4.2oz (120g)",
-    "price": "$84.99"
+    "weight": 120,
+    "price": 84.99
   },
   {
     "link": "https://www.competitivecyclist.com/thomson-x4-stem",
     "image": "assets/competitive-cyclist-stems/thomson-x4-stem_BK.jpg",
     "name": "X4 Stem",
-    "color": "--",
     "brand": "Thomson",
-    "length": "50mm",
-    "rise": "10°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 10,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "5.9oz (167g)",
-    "price": "$121.95"
+    "weight": 167,
+    "price": 121.95
   },
   {
     "link": "https://www.competitivecyclist.com/renthal-apex-35-stem",
@@ -117,13 +107,13 @@
     "name": "Apex 35 Stem",
     "color": "Black/Gold",
     "brand": "Renthal",
-    "length": "33mm",
-    "rise": "- 6 / +6°",
-    "clampDiameter": "35mm",
+    "length": 33,
+    "rise": 6,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "alloy",
-    "weight": "4oz (112g)",
-    "price": "$140.45"
+    "weight": 112,
+    "price": 140.45
   },
   {
     "link": "https://www.competitivecyclist.com/renthal-apex-35-stem",
@@ -131,13 +121,13 @@
     "name": "Apex 35 Stem",
     "color": "Black/Gold",
     "brand": "Renthal",
-    "length": "40mm",
-    "rise": "- 6 / +6°",
-    "clampDiameter": "35mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "alloy",
-    "weight": "4.3oz (122g)",
-    "price": "$140.45"
+    "weight": 122,
+    "price": 140.45
   },
   {
     "link": "https://www.competitivecyclist.com/renthal-apex-35-stem",
@@ -145,41 +135,37 @@
     "name": "Apex 35 Stem",
     "color": "Black/Gold",
     "brand": "Renthal",
-    "length": "50mm",
-    "rise": "- 6 / +6°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 6,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "alloy",
-    "weight": "4.8oz (136g)",
-    "price": "$140.45"
+    "weight": 136,
+    "price": 140.45
   },
   {
     "link": "https://www.competitivecyclist.com/truvativ-atmos-7k-stem",
     "image": "assets/competitive-cyclist-stems/truvativ-atmos-7k-stem_BLA.jpg",
     "name": "ATMOS 7K Stem",
-    "color": "--",
     "brand": "TruVativ",
-    "length": "--",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "--",
-    "price": "$81.00"
+    "weight": 0,
+    "price": 81
   },
   {
     "link": "https://www.competitivecyclist.com/enve-m7-stem",
     "image": "assets/competitive-cyclist-stems/enve-m7-stem_BK.jpg",
     "name": "M7 Stem",
-    "color": "--",
     "brand": "ENVE",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "unidirectional carbon fiber",
-    "weight": "3oz (85g)",
-    "price": "$300.00"
+    "weight": 85,
+    "price": 300
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-bza-35-stem",
@@ -187,13 +173,13 @@
     "name": "BZA 35 Stem",
     "color": "Black",
     "brand": "Chromag",
-    "length": "35mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 alloy",
-    "weight": "--",
-    "price": "$132.30"
+    "weight": 0,
+    "price": 132.3
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-bza-35-stem",
@@ -201,13 +187,13 @@
     "name": "BZA 35 Stem",
     "color": "Black",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 alloy",
-    "weight": "184g",
-    "price": "$132.30"
+    "weight": 184,
+    "price": 132.3
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-bza-35-stem",
@@ -215,13 +201,13 @@
     "name": "BZA 35 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "35mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 alloy",
-    "weight": "--",
-    "price": "$132.30"
+    "weight": 0,
+    "price": 132.3
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-bza-35-stem",
@@ -229,13 +215,13 @@
     "name": "BZA 35 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "35mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 alloy",
-    "weight": "--",
-    "price": "$132.30"
+    "weight": 0,
+    "price": 132.3
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-bza-35-stem",
@@ -243,13 +229,13 @@
     "name": "BZA 35 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 alloy",
-    "weight": "184g",
-    "price": "$132.30"
+    "weight": 184,
+    "price": 132.3
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-bza-35-stem",
@@ -257,13 +243,13 @@
     "name": "BZA 35 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 alloy",
-    "weight": "184g",
-    "price": "$132.30"
+    "weight": 184,
+    "price": 132.3
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-35-stem",
@@ -271,13 +257,13 @@
     "name": "HIFI 35 Stem",
     "color": "Black",
     "brand": "Chromag",
-    "length": "35mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.2oz (203g)",
-    "price": "$95.40"
+    "weight": 203,
+    "price": 95.4
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-35-stem",
@@ -285,13 +271,13 @@
     "name": "HIFI 35 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "35mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.2oz (203g)",
-    "price": "$95.40"
+    "weight": 203,
+    "price": 95.4
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-35-stem",
@@ -299,13 +285,13 @@
     "name": "HIFI 35 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "35mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.2oz (203g)",
-    "price": "$95.40"
+    "weight": 203,
+    "price": 95.4
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-35-stem",
@@ -313,13 +299,13 @@
     "name": "HIFI 35 Stem",
     "color": "Black",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.2oz (203g)",
-    "price": "$95.40"
+    "weight": 203,
+    "price": 95.4
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-35-stem",
@@ -327,13 +313,13 @@
     "name": "HIFI 35 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.2oz (203g)",
-    "price": "$95.40"
+    "weight": 203,
+    "price": 95.4
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-35-stem",
@@ -341,27 +327,24 @@
     "name": "HIFI 35 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.2oz (203g)",
-    "price": "$95.40"
+    "weight": 203,
+    "price": 95.4
   },
   {
     "link": "https://www.competitivecyclist.com/truvativ-descendant-stem",
     "image": "assets/competitive-cyclist-stems/truvativ-descendant-stem_BK.jpg",
     "name": "Descendant Stem",
-    "color": "--",
     "brand": "TruVativ",
-    "length": "--",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "rise": 0,
+    "clampDiameter": 31.8,
     "material": "7075 aluminum, [bolts] steel",
-    "weight": "--",
-    "price": "$43.40"
+    "weight": 0,
+    "price": 43.4
   },
   {
     "link": "https://www.competitivecyclist.com/pnw-components-range-v3-35-stem",
@@ -369,13 +352,13 @@
     "name": "Range v3 35 Stem",
     "color": "Black",
     "brand": "PNW Components",
-    "length": "40mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm, 35mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "6061 aluminum",
-    "weight": "145g",
-    "price": "$79.00"
+    "weight": 145,
+    "price": 79
   },
   {
     "link": "https://www.competitivecyclist.com/pnw-components-range-v3-35-stem",
@@ -383,27 +366,25 @@
     "name": "Range v3 35 Stem",
     "color": "Black",
     "brand": "PNW Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm, 35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "6061 aluminum",
-    "weight": "165g",
-    "price": "$79.00"
+    "weight": 165,
+    "price": 79
   },
   {
     "link": "https://www.competitivecyclist.com/race-face-atlas-stem",
     "image": "assets/competitive-cyclist-stems/race-face-atlas-stem_0DE.jpg",
     "name": "Atlas Stem",
-    "color": "--",
     "brand": "Race Face",
-    "length": "65mm",
-    "rise": "0°",
-    "clampDiameter": "--",
+    "length": 65,
+    "rise": 0,
     "steererDiameter": "1-1/8in",
     "material": "6061 aluminum",
-    "weight": "6oz (170g)",
-    "price": "$99.99"
+    "weight": 170,
+    "price": 99.99
   },
   {
     "link": "https://www.competitivecyclist.com/enve-d35-alloy-stem",
@@ -411,13 +392,12 @@
     "name": "35 Alloy Mountain Stem",
     "color": "Black",
     "brand": "ENVE",
-    "length": "35mm",
-    "rise": "--",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "cold-forged, precision-machined, premium-grade aluminum",
-    "weight": "--",
-    "price": "$140.00"
+    "weight": 0,
+    "price": 140
   },
   {
     "link": "https://www.competitivecyclist.com/enve-d35-alloy-stem",
@@ -425,13 +405,12 @@
     "name": "35 Alloy Mountain Stem",
     "color": "Black",
     "brand": "ENVE",
-    "length": "50mm",
-    "rise": "--",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "cold-forged, precision-machined, premium-grade aluminum",
-    "weight": "--",
-    "price": "$140.00"
+    "weight": 0,
+    "price": 140
   },
   {
     "link": "https://www.competitivecyclist.com/enve-d35-alloy-stem",
@@ -439,55 +418,50 @@
     "name": "35 Alloy Mountain Stem",
     "color": "Black",
     "brand": "ENVE",
-    "length": "65mm",
-    "rise": "--",
-    "clampDiameter": "35mm",
+    "length": 65,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "cold-forged, precision-machined, premium-grade aluminum",
-    "weight": "--",
-    "price": "$140.00"
+    "weight": 0,
+    "price": 140
   },
   {
     "link": "https://www.competitivecyclist.com/race-face-aeffect-r-35-stem",
     "image": "assets/competitive-cyclist-stems/race-face-aeffect-r-35-stem_BK.jpg",
     "name": "Aeffect R 35 Stem",
-    "color": "--",
     "brand": "Race Face",
-    "length": "--",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 aluminum",
-    "weight": "5.6oz (160g)",
-    "price": "$64.99"
+    "weight": 160,
+    "price": 64.99
   },
   {
     "link": "https://www.competitivecyclist.com/race-face-ride-xc-stem",
     "image": "assets/competitive-cyclist-stems/race-face-ride-xc-stem_BK.jpg",
     "name": "Ride XC Stem",
-    "color": "--",
     "brand": "Race Face",
-    "length": "60mm",
-    "rise": "--",
-    "clampDiameter": "--",
+    "length": 60,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "6061 aluminum",
-    "weight": "4.9oz (140g)",
-    "price": "$29.99"
+    "weight": 140,
+    "price": 29.99
   },
   {
     "link": "https://www.competitivecyclist.com/race-face-turbine-35-stem",
     "image": "assets/competitive-cyclist-stems/race-face-turbine-35-stem_BK.jpg",
     "name": "Turbine 35mm Stem",
-    "color": "--",
     "brand": "Race Face",
-    "length": "60mm",
-    "rise": "6°",
-    "clampDiameter": "35mm",
+    "length": 60,
+    "rise": 6,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "7075 aluminum",
-    "weight": "5.3oz (150g)",
-    "price": "$76.99"
+    "weight": 150,
+    "price": 76.99
   },
   {
     "link": "https://www.competitivecyclist.com/race-face-atlas-35-stem",
@@ -495,13 +469,13 @@
     "name": "Atlas 35 Stem",
     "color": "Black",
     "brand": "Race Face",
-    "length": "50mm",
-    "rise": "0-°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 Aluminum",
-    "weight": "5.6oz (160g)",
-    "price": "$109.99"
+    "weight": 160,
+    "price": 109.99
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -509,13 +483,13 @@
     "name": "Ranger V2 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "31mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 31,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -523,13 +497,13 @@
     "name": "Ranger V2 Stem",
     "color": "Purple",
     "brand": "Chromag",
-    "length": "31mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 31,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -537,13 +511,13 @@
     "name": "Ranger V2 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "31mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 31,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -551,13 +525,13 @@
     "name": "Ranger V2 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "40mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -565,13 +539,13 @@
     "name": "Ranger V2 Stem",
     "color": "Purple",
     "brand": "Chromag",
-    "length": "40mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -579,13 +553,13 @@
     "name": "Ranger V2 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "40mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -593,13 +567,13 @@
     "name": "Ranger V2 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "60mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 60,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -607,13 +581,13 @@
     "name": "Ranger V2 Stem",
     "color": "Purple",
     "brand": "Chromag",
-    "length": "60mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 60,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -621,13 +595,13 @@
     "name": "Ranger V2 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "60mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 60,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -635,13 +609,13 @@
     "name": "Ranger V2 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "70mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 70,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -649,13 +623,13 @@
     "name": "Ranger V2 Stem",
     "color": "Purple",
     "brand": "Chromag",
-    "length": "70mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 70,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-ranger-v2-stem",
@@ -663,13 +637,13 @@
     "name": "Ranger V2 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "70mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 70,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "6.2oz (175g)",
-    "price": "$112.50"
+    "weight": 175,
+    "price": 112.5
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -677,13 +651,13 @@
     "name": "HIFI V2 Stem",
     "color": "Ano Orange",
     "brand": "Chromag",
-    "length": "31mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 31,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -691,13 +665,13 @@
     "name": "HIFI V2 Stem",
     "color": "Black",
     "brand": "Chromag",
-    "length": "31mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 31,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -705,13 +679,13 @@
     "name": "HIFI V2 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "31mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 31,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -719,13 +693,13 @@
     "name": "HIFI V2 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "31mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 31,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -733,13 +707,13 @@
     "name": "HIFI V2 Stem",
     "color": "Silver",
     "brand": "Chromag",
-    "length": "31mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 31,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -747,13 +721,13 @@
     "name": "HIFI V2 Stem",
     "color": "Ano Orange",
     "brand": "Chromag",
-    "length": "40mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -761,13 +735,13 @@
     "name": "HIFI V2 Stem",
     "color": "Black",
     "brand": "Chromag",
-    "length": "40mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -775,13 +749,13 @@
     "name": "HIFI V2 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "40mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -789,13 +763,13 @@
     "name": "HIFI V2 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "40mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -803,13 +777,13 @@
     "name": "HIFI V2 Stem",
     "color": "Silver",
     "brand": "Chromag",
-    "length": "40mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -817,13 +791,13 @@
     "name": "HIFI V2 Stem",
     "color": "Ano Orange",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -831,13 +805,13 @@
     "name": "HIFI V2 Stem",
     "color": "Black",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -845,13 +819,13 @@
     "name": "HIFI V2 Stem",
     "color": "Blue",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -859,13 +833,13 @@
     "name": "HIFI V2 Stem",
     "color": "Red",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/chromag-hifi-v2-stem",
@@ -873,13 +847,13 @@
     "name": "HIFI V2 Stem",
     "color": "Silver",
     "brand": "Chromag",
-    "length": "50mm",
-    "rise": "0º",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "7.1oz (200g)",
-    "price": "$91.80"
+    "weight": 200,
+    "price": 91.8
   },
   {
     "link": "https://www.competitivecyclist.com/pnw-components-range-v3-stem",
@@ -887,13 +861,13 @@
     "name": "Range v3 Stem",
     "color": "Black",
     "brand": "PNW Components",
-    "length": "40mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC aluminum",
-    "weight": "148g",
-    "price": "$79.00"
+    "weight": 148,
+    "price": 79
   },
   {
     "link": "https://www.competitivecyclist.com/pnw-components-range-v3-stem",
@@ -901,27 +875,25 @@
     "name": "Range v3 Stem",
     "color": "Black",
     "brand": "PNW Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC aluminum",
-    "weight": "170g",
-    "price": "$79.00"
+    "weight": 170,
+    "price": 79
   },
   {
     "link": "https://www.competitivecyclist.com/race-face-turbine-stem",
     "image": "assets/competitive-cyclist-stems/race-face-turbine-stem_BK.jpg",
     "name": "Turbine Stem",
-    "color": "--",
     "brand": "Race Face",
-    "length": "90mm",
-    "rise": "0°",
-    "clampDiameter": "--",
+    "length": 90,
+    "rise": 0,
     "steererDiameter": "1-1/8in",
     "material": "aerospace 7075-aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$76.99"
+    "weight": 135,
+    "price": 76.99
   },
   {
     "link": "https://www.competitivecyclist.com/pnw-components-the-coast-stem",
@@ -929,27 +901,26 @@
     "name": "The Coast Stem",
     "color": "Black",
     "brand": "PNW Components",
-    "length": "70mm",
-    "rise": "7°",
-    "clampDiameter": "31.8mm",
+    "length": 70,
+    "rise": 7,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "aluminum",
-    "weight": "4.1oz (117g)",
-    "price": "$69.00"
+    "weight": 117,
+    "price": 69
   },
   {
     "link": "https://www.competitivecyclist.com/truvativ-descendant-35-stem",
     "image": "assets/competitive-cyclist-stems/truvativ-descendant-35-stem_BLA.jpg",
     "name": "Descendant 35mm Stem",
-    "color": "--",
     "brand": "TruVativ",
-    "length": "40mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 40,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "3D-forged CNC-machined 7075 aluminum",
-    "weight": "4.6oz (129g)",
-    "price": "$53.90"
+    "weight": 129,
+    "price": 53.9
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -957,13 +928,11 @@
     "name": "Cavity Stem",
     "color": "Black",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 35,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "5.3oz (150g)",
-    "price": "$94.99"
+    "weight": 150,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -971,13 +940,11 @@
     "name": "Cavity Stem",
     "color": "Platinum Silver",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 35,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "5.3oz (150g)",
-    "price": "$94.99"
+    "weight": 150,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -985,13 +952,11 @@
     "name": "Cavity Stem",
     "color": "Red",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 35,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "5.3oz (150g)",
-    "price": "$94.99"
+    "weight": 150,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -999,13 +964,11 @@
     "name": "Cavity Stem",
     "color": "Purple",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 35,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "5.3oz (150g)",
-    "price": "$94.99"
+    "weight": 150,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -1013,13 +976,11 @@
     "name": "Cavity Stem",
     "color": "Blue",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 35,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "5.3oz (150g)",
-    "price": "$94.99"
+    "weight": 150,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -1027,13 +988,11 @@
     "name": "Cavity Stem",
     "color": "Black",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 50,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "6.1oz (173g)",
-    "price": "$94.99"
+    "weight": 173,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -1041,13 +1000,11 @@
     "name": "Cavity Stem",
     "color": "Platinum Silver",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 50,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "6.1oz (173g)",
-    "price": "$94.99"
+    "weight": 173,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -1055,13 +1012,11 @@
     "name": "Cavity Stem",
     "color": "Red",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 50,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "6.1oz (173g)",
-    "price": "$94.99"
+    "weight": 173,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -1069,13 +1024,11 @@
     "name": "Cavity Stem",
     "color": "Purple",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 50,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "6.1oz (173g)",
-    "price": "$94.99"
+    "weight": 173,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-cavity-stem",
@@ -1083,13 +1036,11 @@
     "name": "Cavity Stem",
     "color": "Blue",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "--",
-    "clampDiameter": "31.8mm",
-    "steererDiameter": "--",
+    "length": 50,
+    "clampDiameter": 31.8,
     "material": "6061 T6 aluminum",
-    "weight": "6.1oz (173g)",
-    "price": "$94.99"
+    "weight": 173,
+    "price": 94.99
   },
   {
     "link": "https://www.competitivecyclist.com/enve-d31-alloy-stem",
@@ -1097,13 +1048,13 @@
     "name": "31.8 Alloy Mountain Stem",
     "color": "Black",
     "brand": "ENVE",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "cold-forged, precision-machined, premium-grade aluminum",
-    "weight": "4oz",
-    "price": "$140.00"
+    "weight": 113,
+    "price": 140
   },
   {
     "link": "https://www.competitivecyclist.com/enve-d31-alloy-stem",
@@ -1111,13 +1062,13 @@
     "name": "31.8 Alloy Mountain Stem",
     "color": "Black",
     "brand": "ENVE",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "cold-forged, precision-machined, premium-grade aluminum",
-    "weight": "4.9oz",
-    "price": "$140.00"
+    "weight": 139,
+    "price": 140
   },
   {
     "link": "https://www.competitivecyclist.com/enve-d31-alloy-stem",
@@ -1125,13 +1076,13 @@
     "name": "31.8 Alloy Mountain Stem",
     "color": "Black",
     "brand": "ENVE",
-    "length": "65mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 65,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "cold-forged, precision-machined, premium-grade aluminum",
-    "weight": "5.6oz",
-    "price": "$140.00"
+    "weight": 159,
+    "price": 140
   },
   {
     "link": "https://www.competitivecyclist.com/oneup-components-edc-stem",
@@ -1139,13 +1090,13 @@
     "name": "Stem",
     "color": "Black",
     "brand": "OneUp Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061-T6 aluminum",
-    "weight": "5.5oz (157g)",
-    "price": "$89.50"
+    "weight": 157,
+    "price": 89.5
   },
   {
     "link": "https://www.competitivecyclist.com/oneup-components-edc-stem",
@@ -1153,13 +1104,13 @@
     "name": "Stem",
     "color": "Black",
     "brand": "OneUp Components",
-    "length": "42mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 42,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061-T6 aluminum",
-    "weight": "--",
-    "price": "$89.50"
+    "weight": 0,
+    "price": 89.5
   },
   {
     "link": "https://www.competitivecyclist.com/oneup-components-edc-stem",
@@ -1167,13 +1118,13 @@
     "name": "Stem",
     "color": "Black",
     "brand": "OneUp Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061-T6 aluminum",
-    "weight": "6.1oz (173g)",
-    "price": "$89.50"
+    "weight": 173,
+    "price": 89.5
   },
   {
     "link": "https://www.competitivecyclist.com/enve-m6-v2-stem",
@@ -1181,13 +1132,13 @@
     "name": "M6 Stem",
     "color": "Black",
     "brand": "ENVE",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[body] carbon fiber, [face plate] aluminum, [hardware] titanium",
-    "weight": "3oz (85g)",
-    "price": "$300.00"
+    "weight": 85,
+    "price": 300
   },
   {
     "link": "https://www.competitivecyclist.com/enve-m6-v2-stem",
@@ -1195,13 +1146,13 @@
     "name": "M6 Stem",
     "color": "Black",
     "brand": "ENVE",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[body] carbon fiber, [face plate] aluminum, [hardware] titanium",
-    "weight": "3.3oz (94g)",
-    "price": "$300.00"
+    "weight": 94,
+    "price": 300
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1209,13 +1160,13 @@
     "name": "Copperhead Stem",
     "color": "Platinum",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1223,13 +1174,13 @@
     "name": "Copperhead Stem",
     "color": "Black",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1237,13 +1188,13 @@
     "name": "Copperhead Stem",
     "color": "Purple",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1251,13 +1202,13 @@
     "name": "Copperhead Stem",
     "color": "Red",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1265,13 +1216,13 @@
     "name": "Copperhead Stem",
     "color": "Blue",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1279,13 +1230,13 @@
     "name": "Copperhead Stem",
     "color": "Orange",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1293,13 +1244,13 @@
     "name": "Copperhead Stem",
     "color": "Bronze",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1307,13 +1258,13 @@
     "name": "Copperhead Stem",
     "color": "Platinum",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1321,13 +1272,13 @@
     "name": "Copperhead Stem",
     "color": "Black",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1335,13 +1286,13 @@
     "name": "Copperhead Stem",
     "color": "Purple",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1349,13 +1300,13 @@
     "name": "Copperhead Stem",
     "color": "Red",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1363,13 +1314,13 @@
     "name": "Copperhead Stem",
     "color": "Blue",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1377,13 +1328,13 @@
     "name": "Copperhead Stem",
     "color": "Orange",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-stem",
@@ -1391,27 +1342,26 @@
     "name": "Copperhead Stem",
     "color": "Bronze",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "CNC machined 6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/race-face-turbine-r-35-stem",
     "image": "assets/competitive-cyclist-stems/race-face-turbine-r-35-stem_BLU.jpg",
     "name": "Turbine-R 35 Stem",
-    "color": "--",
     "brand": "Race Face",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "7075 aluminum",
-    "weight": "5oz (138g)",
-    "price": "$109.99"
+    "weight": 138,
+    "price": 109.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1419,13 +1369,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Black",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1433,13 +1383,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Red",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1447,13 +1397,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Purple",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1461,13 +1411,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Blue",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1475,13 +1425,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Orange",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1489,13 +1439,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Platinum",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1503,13 +1453,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Bronze",
     "brand": "Deity Components",
-    "length": "35mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 35,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "4.8oz (135g)",
-    "price": "$104.99"
+    "weight": 135,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1517,13 +1467,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Black",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1531,13 +1481,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Red",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1545,13 +1495,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Purple",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1559,13 +1509,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Blue",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1573,13 +1523,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Orange",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1587,13 +1537,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Platinum",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/deity-components-copperhead-35mm-stem",
@@ -1601,13 +1551,13 @@
     "name": "Copperhead 35mm Stem",
     "color": "Bronze",
     "brand": "Deity Components",
-    "length": "50mm",
-    "rise": "0°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 0,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "6061 T6 aluminum",
-    "weight": "5.7oz (161g)",
-    "price": "$104.99"
+    "weight": 161,
+    "price": 104.99
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1615,13 +1565,13 @@
     "name": "A318 Stem",
     "color": "Blue",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1629,13 +1579,13 @@
     "name": "A318 Stem",
     "color": "Gold",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1643,13 +1593,13 @@
     "name": "A318 Stem",
     "color": "Green",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1657,13 +1607,13 @@
     "name": "A318 Stem",
     "color": "Lime",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1671,13 +1621,13 @@
     "name": "A318 Stem",
     "color": "Orange",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1685,13 +1635,13 @@
     "name": "A318 Stem",
     "color": "Pink",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1699,13 +1649,13 @@
     "name": "A318 Stem",
     "color": "Purple",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1713,13 +1663,13 @@
     "name": "A318 Stem",
     "color": "Red",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1727,13 +1677,13 @@
     "name": "A318 Stem",
     "color": "Silver",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1741,13 +1691,13 @@
     "name": "A318 Stem",
     "color": "Turquoise",
     "brand": "Industry Nine",
-    "length": "30mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "31.8mm",
+    "length": 30,
+    "rise": 8,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (127g)",
-    "price": "$116.25"
+    "weight": 127,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1755,13 +1705,13 @@
     "name": "A318 Stem",
     "color": "Blue",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1769,13 +1719,13 @@
     "name": "A318 Stem",
     "color": "Gold",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1783,13 +1733,13 @@
     "name": "A318 Stem",
     "color": "Green",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1797,13 +1747,13 @@
     "name": "A318 Stem",
     "color": "Lime",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1811,13 +1761,13 @@
     "name": "A318 Stem",
     "color": "Orange",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1825,13 +1775,13 @@
     "name": "A318 Stem",
     "color": "Pink",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1839,13 +1789,13 @@
     "name": "A318 Stem",
     "color": "Purple",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1853,13 +1803,13 @@
     "name": "A318 Stem",
     "color": "Red",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1867,13 +1817,13 @@
     "name": "A318 Stem",
     "color": "Silver",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1881,13 +1831,13 @@
     "name": "A318 Stem",
     "color": "Turquoise",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-6 / +6°",
-    "clampDiameter": "31.8mm",
+    "length": 40,
+    "rise": 6,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (136g)",
-    "price": "$116.25"
+    "weight": 136,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1895,13 +1845,13 @@
     "name": "A318 Stem",
     "color": "Blue",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1909,13 +1859,13 @@
     "name": "A318 Stem",
     "color": "Gold",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1923,13 +1873,13 @@
     "name": "A318 Stem",
     "color": "Green",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1937,13 +1887,13 @@
     "name": "A318 Stem",
     "color": "Lime",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1951,13 +1901,13 @@
     "name": "A318 Stem",
     "color": "Orange",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1965,13 +1915,13 @@
     "name": "A318 Stem",
     "color": "Pink",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1979,13 +1929,13 @@
     "name": "A318 Stem",
     "color": "Purple",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -1993,13 +1943,13 @@
     "name": "A318 Stem",
     "color": "Red",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -2007,13 +1957,13 @@
     "name": "A318 Stem",
     "color": "Silver",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a318-stem",
@@ -2021,13 +1971,13 @@
     "name": "A318 Stem",
     "color": "Turquoise",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-5 / +5°",
-    "clampDiameter": "31.8mm",
+    "length": 50,
+    "rise": 5,
+    "clampDiameter": 31.8,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.5oz (155g)",
-    "price": "$116.25"
+    "weight": 155,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2035,13 +1985,13 @@
     "name": "A35 Stem",
     "color": "Turquoise",
     "brand": "Industry Nine",
-    "length": "32mm",
-    "rise": "-9 / +9°",
-    "clampDiameter": "35mm",
+    "length": 32,
+    "rise": 9,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (128g)",
-    "price": "$116.25"
+    "weight": 128,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2049,13 +1999,13 @@
     "name": "A35 Stem",
     "color": "Lime",
     "brand": "Industry Nine",
-    "length": "32mm",
-    "rise": "-9 / +9°",
-    "clampDiameter": "35mm",
+    "length": 32,
+    "rise": 9,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (128g)",
-    "price": "$116.25"
+    "weight": 128,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2063,13 +2013,13 @@
     "name": "A35 Stem",
     "color": "Red",
     "brand": "Industry Nine",
-    "length": "32mm",
-    "rise": "-9 / +9°",
-    "clampDiameter": "35mm",
+    "length": 32,
+    "rise": 9,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (128g)",
-    "price": "$116.25"
+    "weight": 128,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2077,13 +2027,13 @@
     "name": "A35 Stem",
     "color": "Purple",
     "brand": "Industry Nine",
-    "length": "32mm",
-    "rise": "-9 / +9°",
-    "clampDiameter": "35mm",
+    "length": 32,
+    "rise": 9,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (128g)",
-    "price": "$116.25"
+    "weight": 128,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2091,13 +2041,13 @@
     "name": "A35 Stem",
     "color": "Pink",
     "brand": "Industry Nine",
-    "length": "32mm",
-    "rise": "-9 / +9°",
-    "clampDiameter": "35mm",
+    "length": 32,
+    "rise": 9,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (128g)",
-    "price": "$116.25"
+    "weight": 128,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2105,13 +2055,13 @@
     "name": "A35 Stem",
     "color": "Green",
     "brand": "Industry Nine",
-    "length": "32mm",
-    "rise": "-9 / +9°",
-    "clampDiameter": "35mm",
+    "length": 32,
+    "rise": 9,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.5oz (128g)",
-    "price": "$116.25"
+    "weight": 128,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2119,13 +2069,13 @@
     "name": "A35 Stem",
     "color": "Turquoise",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "35mm",
+    "length": 40,
+    "rise": 8,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (135g)",
-    "price": "$116.25"
+    "weight": 135,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2133,13 +2083,13 @@
     "name": "A35 Stem",
     "color": "Lime",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "35mm",
+    "length": 40,
+    "rise": 8,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (135g)",
-    "price": "$116.25"
+    "weight": 135,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2147,13 +2097,13 @@
     "name": "A35 Stem",
     "color": "Red",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "35mm",
+    "length": 40,
+    "rise": 8,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (135g)",
-    "price": "$116.25"
+    "weight": 135,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2161,13 +2111,13 @@
     "name": "A35 Stem",
     "color": "Purple",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "35mm",
+    "length": 40,
+    "rise": 8,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (135g)",
-    "price": "$116.25"
+    "weight": 135,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2175,13 +2125,13 @@
     "name": "A35 Stem",
     "color": "Pink",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "35mm",
+    "length": 40,
+    "rise": 8,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (135g)",
-    "price": "$116.25"
+    "weight": 135,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2189,13 +2139,13 @@
     "name": "A35 Stem",
     "color": "Green",
     "brand": "Industry Nine",
-    "length": "40mm",
-    "rise": "-8 / +8°",
-    "clampDiameter": "35mm",
+    "length": 40,
+    "rise": 8,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "4.8oz (135g)",
-    "price": "$116.25"
+    "weight": 135,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2203,13 +2153,13 @@
     "name": "A35 Stem",
     "color": "Turquoise",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-7 / +7°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 7,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.3oz (150g)",
-    "price": "$116.25"
+    "weight": 150,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2217,13 +2167,13 @@
     "name": "A35 Stem",
     "color": "Lime",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-7 / +7°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 7,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.3oz (150g)",
-    "price": "$116.25"
+    "weight": 150,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2231,13 +2181,13 @@
     "name": "A35 Stem",
     "color": "Red",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-7 / +7°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 7,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.3oz (150g)",
-    "price": "$116.25"
+    "weight": 150,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2245,13 +2195,13 @@
     "name": "A35 Stem",
     "color": "Purple",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-7 / +7°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 7,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.3oz (150g)",
-    "price": "$116.25"
+    "weight": 150,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2259,13 +2209,13 @@
     "name": "A35 Stem",
     "color": "Pink",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-7 / +7°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 7,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.3oz (150g)",
-    "price": "$116.25"
+    "weight": 150,
+    "price": 116.25
   },
   {
     "link": "https://www.competitivecyclist.com/industry-nine-a35-stem",
@@ -2273,12 +2223,12 @@
     "name": "A35 Stem",
     "color": "Green",
     "brand": "Industry Nine",
-    "length": "50mm",
-    "rise": "-7 / +7°",
-    "clampDiameter": "35mm",
+    "length": 50,
+    "rise": 7,
+    "clampDiameter": 35,
     "steererDiameter": "1-1/8in",
     "material": "[stem] 7075 aluminum, [bolts] 316 stainless steel",
-    "weight": "5.3oz (150g)",
-    "price": "$116.25"
+    "weight": 150,
+    "price": 116.25
   }
- ]
+]
