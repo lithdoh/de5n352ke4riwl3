@@ -311,8 +311,12 @@ export class ExampleHttpDatabase {
   // Sorting, Pagination, Filtering
   getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[], length: any[], color: any[], material: any[]): Observable<Stems[]> {
 
-  const requestURL = this.baseURL + `{ aggregateStems(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}}) { count }
-   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}})
+  const requestURL = this.baseURL + `{ aggregateStems(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
+  length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
+  material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}}) { count }
+   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, 
+   brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
+   color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}})
     { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
     // Why doesn't this work?
     // this.http.get('data-from-cyclery/competitive-cyclist-stems.json').subscribe(x => console.log(x));
