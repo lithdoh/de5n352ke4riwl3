@@ -76,7 +76,8 @@
       </mat-form-field>
       <hr>
       <!-- Trying to make "Filtered By" top bar -->
-      <div *ngIf="brandsList.length > 0 || lengthsList.length > 0 || colorsList.length > 0 || materialsList.length > 0"> Filters:
+      <div *ngIf="brandsList.length > 0 || lengthsList.length > 0 || colorsList.length > 0 || materialsList.length > 0">
+        Filters:
         <div *ngIf="brandsList.length > 0"> Brand:
           <button class="remove_selection" *ngFor="let brand of brandsList;"
             (click)="removeSelection('brands', brand)">{{brand}} <mat-icon inline
@@ -141,21 +142,22 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by clampDiameter">
             Bar Clamp ø
           </th>
-          <td mat-cell *matCellDef="let element">{{element.clampDiameter ? element.clampDiameter + 'mm' : '--'}}</td>
+          <td mat-cell *matCellDef="let element">{{element.clampDiameter === null ? '--' : element.clampDiameter +
+            'mm'}}</td>
         </ng-container>
 
         <ng-container matColumnDef="steererDiameter">
           <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by steererDiameter">
             Steerer Tube Diameter
           </th>
-          <td mat-cell *matCellDef="let element"> {{element.steererDiameter}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.steererDiameter ?? '--'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="color">
           <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by color">
             Color
           </th>
-          <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.color ?? '--'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="material">
@@ -169,7 +171,7 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
             Weight
           </th>
-          <td mat-cell *matCellDef="let element">{{element.weight ? element.weight + 'g' : '--'}}</td>
+          <td mat-cell *matCellDef="let element">{{element.weight === null ? '--' : element.weight + 'g'}}</td>
         </ng-container>
 
         <ng-container matColumnDef="price">
