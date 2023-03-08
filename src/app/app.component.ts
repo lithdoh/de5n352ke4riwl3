@@ -5,6 +5,7 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  // providers: [{provide: RouteReuseStrategy, useClass: MyStrategy}] is this what the deprecated warning says to do?
 })
 export class AppComponent {
   title = 'BikePartPicker';
