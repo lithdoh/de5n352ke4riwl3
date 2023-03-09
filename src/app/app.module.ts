@@ -32,8 +32,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import { SidebarFilterComponent } from './sidebar-filter/sidebar-filter.component';
-
-
+import { Matstems4Component } from './parts/matstems4/matstems4.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +52,7 @@ import { SidebarFilterComponent } from './sidebar-filter/sidebar-filter.componen
     DollarsPerGramPipe,
     Matstems3Component,
     SidebarFilterComponent,
+    Matstems4Component,
   ],
   imports: [
     BrowserAnimationsModule,

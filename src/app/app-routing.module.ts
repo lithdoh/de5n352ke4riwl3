@@ -10,6 +10,7 @@ import { MatstemsComponent } from './parts/matstems/matstems.component';
 import { Matstems2Component } from './parts/matstems2/matstems2.component';
 import { MathomeComponent } from './mathome/mathome.component';
 import { Matstems3Component } from './parts/matstems3/matstems3.component';
+import { Matstems4Component } from './parts/matstems4/matstems4.component';
 
 const routes: Routes = [
   { path: 'parts/frame', component: FrameComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'parts/matstems', component: MatstemsComponent },
   { path: 'parts/matstems2', component: Matstems2Component },
   { path: 'parts/matstems3', component: Matstems3Component },
+  { path: 'parts/matstems4', component: Matstems4Component },
 ];
 
 @NgModule({
