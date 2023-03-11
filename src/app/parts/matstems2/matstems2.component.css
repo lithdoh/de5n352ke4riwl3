@@ -68,3 +68,8 @@ mat-sidenav {
 .sidenav {
   margin-top: 80px;
 }
+
+.price-range {
+  margin-left: 0px;
+  width: 50px;
+}
