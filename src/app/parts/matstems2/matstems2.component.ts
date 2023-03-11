@@ -91,7 +91,11 @@ export class Matstems2Component implements AfterViewInit {
     "aluminum": false
   };
 
-  // Using Form Builder
+  // pricesDefault = {
+  //   minimum: 0,
+  //   maximum: 1000000000000000,
+  // }
+
   profileForm = this.fb.group({
     brands: this.fb.group(this.brandsDefault),
     lengths: this.fb.group(this.lengthsDefault),
@@ -154,10 +158,18 @@ export class Matstems2Component implements AfterViewInit {
     }
   }
 
+  // These are used for writing the requestURL and also the "Filtered By:" feature
   brandsList: string[] = [];
   lengthsList: string[] = [];
   colorsList: string[] = [];
   materialsList: string[] = [];
+
+  priceRange = this.fb.group({
+    priceMin: this.fb.control(0),
+    priceMax: this.fb.control(1000000000000000),
+  })
+
+  // pricesArray: number[] = [];
 
 //______________________________________________________________________________________________
 
@@ -168,24 +180,27 @@ export class Matstems2Component implements AfterViewInit {
     private fb: FormBuilder,
   ) {}
 
-  @Output() testingProfForm: FormGroup = this.fb.group({
-    Renthal: false,
-    Truvativ: false,
-    'Industry Nine': false,
-    Campy: false,
-    Zipp: false,
-    Spank: false,
-  });
+  // @Output() testingProfForm: FormGroup = this.fb.group({
+  //   Renthal: false,
+  //   Truvativ: false,
+  //   'Industry Nine': false,
+  //   Campy: false,
+  //   Zipp: false,
+  //   Spank: false,
+  // });
 
   ngAfterViewInit() {
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
 
     // If the user does a search, reset back to the first page.
-    this.searchInput.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
+    this.searchInput.valueChanges.pipe(debounceTime(500)).subscribe(() => ((this.paginator.pageIndex = 0)));
 
-    // If the user selects a BRAND filter option, reset back to the first page.
+    // If the user selects any filter option, reset back to the first page.
     this.profileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
+
+    // If the user enters a minimum or maximum price, reset back to the first page.
+    // this.priceRange.valueChanges.pipe(debounceTime(500)).subscribe(() => ((this.paginator.pageIndex = 0)));
 
     merge(this.sort.sortChange, this.paginator.page, this.searchInput.valueChanges.pipe(
       debounceTime(500)), 
@@ -320,6 +335,7 @@ export class ExampleHttpDatabase {
     { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
     // Why doesn't this work?
     // this.http.get('data-from-cyclery/competitive-cyclist-stems.json').subscribe(x => console.log(x));
+    console.log(requestURL);
     return this.http.get<Stems[]>(requestURL);
   }
 }
