@@ -1,5 +1,5 @@
 mutation MyMutation {
-  addStem(input: [
+  addStems(input: [
   {
     link: "https://www.competitivecyclist.com/fsa-gradient-35mm-stem",
     image: "assets/competitive-cyclist-stems/fsa-gradient-35mm-stem_BLA.jpg",
