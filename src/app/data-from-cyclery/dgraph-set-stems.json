@@ -1,0 +1,67 @@
+{
+  "set": [
+    {
+      "link": "https://www.competitivecyclist.com/fsa-gradient-35mm-stem",
+      "image": "assets/competitive-cyclist-stems/fsa-gradient-35mm-stem_BLA.jpg",
+      "name": "Gradient 35mm Stem",
+      "color": "Black",
+      "brand": "FSA",
+      "length": 35,
+      "clampDiameter": 35,
+      "steererDiameter": "1-1/8in",
+      "material": "aluminum",
+      "weight": 123,
+      "price": 55.76
+    },
+    {
+      "link": "https://www.competitivecyclist.com/fsa-gradient-35mm-stem",
+      "image": "assets/competitive-cyclist-stems/fsa-gradient-35mm-stem_BLA.jpg",
+      "name": "Gradient 35mm Stem",
+      "color": "Black",
+      "brand": "FSA",
+      "length": 50,
+      "clampDiameter": 35,
+      "steererDiameter": "1-1/8in",
+      "material": "aluminum",
+      "weight": 157,
+      "price": 55.76
+    },
+    {
+      "link": "https://www.competitivecyclist.com/renthal-apex-stem",
+      "image": "assets/competitive-cyclist-stems/renthal-apex-stem_BLA.jpg",
+      "name": "Apex Stem",
+      "brand": "Renthal",
+      "length": 60,
+      "rise": 6,
+      "clampDiameter": 31.8,
+      "steererDiameter": "1-1/8in",
+      "material": "2014-series aluminum",
+      "weight": 136,
+      "price": 140.45
+    },
+    {
+      "link": "https://www.competitivecyclist.com/syntace-force-109",
+      "image": "assets/competitive-cyclist-stems/syntace-force-109_BK.jpg",
+      "name": "Force 109",
+      "brand": "Syntace",
+      "length": 135,
+      "rise": 6,
+      "steererDiameter": "1-1/8in",
+      "material": "[body] aluminum, [bolts] titanium",
+      "weight": 129,
+      "price": 62.12
+    },
+    {
+      "link": "https://www.competitivecyclist.com/syntace-megaforce2-stem",
+      "image": "assets/competitive-cyclist-stems/syntace-megaforce2-stem_BK.jpg",
+      "name": "Megaforce2 Stem",
+      "brand": "Syntace",
+      "length": 70,
+      "rise": 6,
+      "steererDiameter": "1-1/8in",
+      "material": "[body] alloy, [bolts] titanium",
+      "weight": 132,
+      "price": 94.97
+    }
+  ]
+}

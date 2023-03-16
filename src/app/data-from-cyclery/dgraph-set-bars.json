@@ -1,0 +1,83 @@
+{
+  "set": [
+    {
+      "link": "https://www.competitivecyclist.com/truvativ-descendant-35mm-handlebar",
+      "image": "assets/truvativ-descendant-35mm-handlebar_BK.jpg",
+      "name": "Descendant 35mm Handlebar",
+      "brand": "TruVativ",
+      "material": "aluminum",
+      "diameter": 35,
+      "rise": 25,
+      "backsweep": 9,
+      "width": 800,
+      "color": "Black",
+      "weight": 310,
+      "price": 54,
+      "dgraph.type": "Bar"
+    },
+    {
+      "link": "https://www.competitivecyclist.com/race-face-sixc-dh-handlebar",
+      "image": "assets/race-face-sixc-dh-handlebar_TU.jpg",
+      "name": "SIXC DH Handlebar",
+      "brand": "Race Face",
+      "material": "carbon fiber",
+      "diameter": 31.8,
+      "rise": 19,
+      "backsweep": 8,
+      "upsweep": 4,
+      "width": 785,
+      "color": "Turquoise",
+      "weight": 220,
+      "price": 147.59,
+      "dgraph.type": "Bar"
+    },
+    {
+      "link": "https://www.competitivecyclist.com/race-face-sixc-dh-handlebar",
+      "image": "assets/race-face-sixc-dh-handlebar_RD.jpg",
+      "name": "SIXC DH Handlebar",
+      "brand": "Race Face",
+      "material": "carbon fiber",
+      "diameter": 31.8,
+      "rise": 19,
+      "backsweep": 8,
+      "upsweep": 4,
+      "width": 785,
+      "color": "Red",
+      "weight": 220,
+      "price": 147.59,
+      "dgraph.type": "Bar"
+    },
+    {
+      "link": "https://www.competitivecyclist.com/race-face-turbine-r-35-35mm-rise-handlebar",
+      "image": "assets/race-face-turbine-r-35-35mm-rise-handlebar_STE.jpg",
+      "name": "Turbine R 35 35mm Rise Handlebar",
+      "brand": "Race Face",
+      "material": "7075 aluminum",
+      "diameter": 35,
+      "rise": 35,
+      "backsweep": 8,
+      "upsweep": 5,
+      "width": 800,
+      "color": "Stealth",
+      "weight": 300,
+      "price": 89.99,
+      "dgraph.type": "Bar"
+    },
+    {
+      "link": "https://www.competitivecyclist.com/race-face-sixc-35-35mm-rise-handlebar",
+      "image": "assets/race-face-sixc-35-35mm-rise-handlebar_CAR.jpg",
+      "name": "SIXC 35 35mm Rise Handlebar",
+      "brand": "Race Face",
+      "material": "unidirectional carbon fiber",
+      "diameter": 35,
+      "rise": 35,
+      "backsweep": 8,
+      "upsweep": 5,
+      "width": 800,
+      "color": "Carbon/Silver/White",
+      "weight": 210,
+      "price": 184.99,
+      "dgraph.type": "Bar"
+    }
+  ]
+}
