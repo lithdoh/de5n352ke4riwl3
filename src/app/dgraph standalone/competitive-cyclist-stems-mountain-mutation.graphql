@@ -2225,7 +2225,7 @@ mutation MyMutation {
   }
 ]) {
     numUids
-    stem {
+    stems {
       image
       name
       brand
