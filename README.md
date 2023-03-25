@@ -3,11 +3,11 @@
 Cycle Selector is a website I'm working on to help people determine bike part compatibility.
 It makes use of reactive principals on things like the sort headers, paginator, filters, search input, receiving data from backend, etc.
 
-Features server-side sorting and filtering:
+Features server-side sorting, filtering and pagination:
 
 ![BikePartPicker Sorting:Filtering](https://user-images.githubusercontent.com/100744679/227733989-859f9d42-794d-49dd-b386-73bb7a220ccf.jpg)
 
-Server-side pagination:
+Pagination:
 
 ![BikePartPicker-pagination](https://user-images.githubusercontent.com/100744679/227734069-9477ffaa-b7dc-4b22-8571-3367a1f49eea.jpg)
 
