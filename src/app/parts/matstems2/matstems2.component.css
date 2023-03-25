@@ -69,7 +69,16 @@ mat-sidenav {
   margin-top: 80px;
 }
 
-.price-range {
+.numeric-filter {
+  width: 100%;
+  height:100%;
+}
+
+.minmax-range {
   margin-left: 0px;
-  width: 50px;
+  width: 150px;
+}
+
+.dollar-sign-span, .max-input {
+  display: inline-block;
 }
