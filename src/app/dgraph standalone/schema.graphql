@@ -1,31 +1,61 @@
 type Bars  {
-	id: ID! 
-	image: String 
-	name: String 
-	brand: String 
-	diameter: String 
-	material: String 
-	rise: String 
-	backsweep: String 
-	upsweep: String 
-	width: String 
-	color: String 
-	weight: String 
-	price: String 
+	id: ID!
+	link: String!
+	image: String! 
+	name: String! @search(by:[fulltext]) 
+	brand: String! @search(by:[hash]) 
+	diameter: Float! @search 
+	material: String! @search(by:[hash]) 
+	rise: Float! @search 
+	backsweep: Int @search 
+	upsweep: Int @search 
+	width: Int! @search 
+	color: String! @search(by:[hash]) 
+	weight: Int @search 
+	price: Float! @search 
 }
 
 type Stems  {
 	id: ID! 
 	link: String! 
 	image: String! 
-	name: String! @search(by:[regexp]) 
-	length: Int @search 
+	name: String! @search(by:[fulltext])
+	length: Int @search
 	rise: Int @search 
 	clampDiameter: Float @search 
-	steererDiameter: String! @search(by:[exact]) 
-	color: String! @search(by:[exact]) 
-	material: String! @search(by:[exact]) 
+	steererDiameter: String @search(by:[hash]) 
+	color: String @search(by:[hash]) 
+	material: String! @search(by:[hash]) 
 	price: Float! @search 
-	weight: Int! @search 
-	brand: String! @search(by:[exact]) 
+	weight: Int @search 
+	brand: String! @search(by:[hash]) 
+}
+
+type Frames  {
+	id: ID! 
+	link: String! 
+	image: String! 
+	name: String! @search(by:[regexp]) 
+	brand: String! @search(by:[hash]) 
+	wheel_size: String! @search(by:[hash]) 
+	rear_shock: String @search(by:[hash]) 
+	rear_travel: Int @search 
+	fork_travel: String @search(by:[hash]) 
+	head_tube_diameter: String @search(by:[hash]) 
+	headset_included: String @search(by:[hash]) 
+	bottom_bracket_type: String! @search(by:[hash]) 
+	ISCG_tabs: String @search(by:[hash]) 
+	cable_routing: String! @search(by:[hash]) 
+	front_derailleur_mount: String @search(by:[hash]) 
+	brake_type: String @search(by:[hash]) 
+	seatpost_diameter: Float @search 
+	rear_axle: String @search(by:[hash]) 
+	rear_tire_clearance: String @search(by:[hash]) 
+	manufacturer_warranty: String! @search(by:[hash]) 
+	color: String @search(by:[hash]) 
+	material: String! @search(by:[hash]) 
+	size: String @search(by:[hash]) 
+	weight: String @search(by:[hash]) 
+	price: Float! @search 
+	intended_use: String @search(by:[hash]) 
 }
