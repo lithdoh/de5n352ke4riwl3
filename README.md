@@ -1,4 +1,4 @@
-**Don't worry about the repo name 🤨**
+**Don't worry about the repo name. 🤨**
 
 Cycle Selector is a website I'm working on to help people determine bike part compatibility.
 It makes use of reactive principals on things like the sort headers, paginator, filters, search input, receiving data from backend, etc.
