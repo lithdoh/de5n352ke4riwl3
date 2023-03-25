@@ -36,6 +36,7 @@ users can select parts and see whether they are compatible or not. I think it wo
 Two parts might be technically compatible, but there may be drawbacks to using them. If you use a Shimano cassette and a SRAM chain, you're shifting might be suboptimal compared to using the same brands for both parts. Similarly, you _can_ use a 2.8" tire on a 28mm rim, but the tire shape becomes too tall and round, which can result in reduced cornering performance and tire squirm.
 
 **Database of Completes, Not Just Parts:**
+
 I'd like to keep a database of completed builds that companies have sold, for three reasons:
 1. Users can enter their Brand, Model, and Year instead of manually entering their bike’s components.
 2. If a user builds a bike that is already being sold as a complete, show them the complete because it will probably be cheaper than the sum of the part costs, not to mention labor for the build.
