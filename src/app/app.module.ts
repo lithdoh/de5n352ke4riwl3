@@ -33,6 +33,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import { SidebarFilterComponent } from './sidebar-filter/sidebar-filter.component';
 import { Matstems4Component } from './parts/matstems4/matstems4.component';
+import { Matstems5Component } from './parts/matstems5/matstems5.component';
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { Matstems4Component } from './parts/matstems4/matstems4.component';
     Matstems3Component,
     SidebarFilterComponent,
     Matstems4Component,
+    Matstems5Component,
+    StatusComponent,
   ],
   imports: [
     BrowserAnimationsModule,
