@@ -1,3 +1,19 @@
+
+Features server-side sorting and filtering:
+
+![BikePartPicker Sorting:Filtering](https://user-images.githubusercontent.com/100744679/227733989-859f9d42-794d-49dd-b386-73bb7a220ccf.jpg)
+
+Server-side pagination:
+
+![BikePartPicker-pagination](https://user-images.githubusercontent.com/100744679/227734069-9477ffaa-b7dc-4b22-8571-3367a1f49eea.jpg)
+
+Build selections page with localStorage:
+
+![BikePartPicker mathome](https://user-images.githubusercontent.com/100744679/227734154-ec4e505f-2e15-4e08-a697-99beaa1fd271.jpg)
+
+
+
+
 # de5n352ke4riwl3
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
