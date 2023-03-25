@@ -65,9 +65,7 @@ Speaking of those pages, I need a way to make a generic one. Each type of part w
 
 **Future Plans:**
 
-URL Parameters:
-
-When you select filters, adjust the URL parameters so that you can share the link to that product page with the filters already set.
+URL Parameters --> When you select filters, adjust the URL parameters so that you can share the link to that product page with the filters already set.
 
 
 
