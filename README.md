@@ -25,7 +25,14 @@ https://www.wtb.com/pages/tire-rim-fit-chart
 https://www.ceramicspeed.com/media/3napv0hg/webposter_bbmatrix2021_web.pdf
 https://productinfo.shimano.com/#/com
 
-Users can simply enter the parts they currently have (or in the future, their build, and the parts from the build will be entered automatically) and see whether they are compatible or not. I also think it would be cool if the rule(s) that determines the compatibility of parts is made available. This would a great help in an educational sense, but it would also allow users to verify that the verdict is sensible. It will be difficult to get every last rule pinned down, so if people can verify rules and submit update suggestions, the community can be leveraged to make a really useful tool.
+The basic concept: users can select parts and see whether they are compatible or not. I think it would be cool if the rule(s) that determines the compatibility of parts is/are made available. This would a great help in an educational sense, but it would also allow users to verify that the verdict is sensible. Because it will be difficult to get every last rule pinned down, I think it would be good to have a way for people to verify rules and submit update suggestions. Compatibility is not always straightforward. For example, if you have a chain and rear derailleur that are the same speed, they still might not be compatible because it's a flattop chain and the rear derailleur is SRAM Eagle and hence is not compatible because of the RD pulley. 
+
+Two parts might be technically compatible, but there may be drawbacks to using them. If you use a Shimano cassette and a SRAM chain, you're shifting might be suboptimal compared to using the same brands for both of these parts. Similarly, you _can_ use a 2.8" tire on a 28mm rim, but the tire shape becomes too tall and round, which can result in reduced cornering performance and tire squirm.
+
+I'd like to keep a database of completed builds that companies have sold, for three reasons:
+1. Users can enter their Brand, Model, and Year instead of manually entering their bike’s components.
+2. If a user builds a bike that is already being sold as a complete, show them the complete because it will probably be cheaper than the sum of the part costs, not to mention labor for the build.
+3. Knowing that a combination of parts has been used by a brand in a complete bike is confidence-boosting.
 
 # de5n352ke4riwl3
 
