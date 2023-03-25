@@ -65,15 +65,34 @@
       <section>
         <mat-expansion-panel [expanded]="true">
           <mat-expansion-panel-header>
-            <mat-panel-title> Price </mat-panel-title>
+            <mat-panel-title> Weight (g) </mat-panel-title>
           </mat-expansion-panel-header>
-          <mat-form-field class="price-range">
-            <input matInput placeholder="Min" [formControl]="priceRange.controls.priceMin">
-          </mat-form-field>
-          <p>to</p>
-          <mat-form-field class="price-range">
-            <input matInput placeholder="Max" [formControl]="priceRange.controls.priceMax">
-          </mat-form-field>
+          <div class="numeric-filter">
+            <mat-form-field class="minmax-range">
+              <input matInput type="number" placeholder="Min" [formControl]="weightRange.controls.weightMin">
+            </mat-form-field>
+            <p>to</p>
+            <mat-form-field class="minmax-range">
+              <input matInput type="number" placeholder="Max" [formControl]="weightRange.controls.weightMax">
+            </mat-form-field>
+          </div>
+        </mat-expansion-panel>
+      </section>
+      <section>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title> Price ($) </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="numeric-filter">
+            <mat-form-field class="minmax-range">
+              <mat-label>Min</mat-label>
+              <input matInput type="number" [formControl]="priceRange.controls.priceMin">
+            </mat-form-field>
+            <p>to</p>
+            <mat-form-field class="minmax-range">
+              <input matInput type="number" placeholder="Max" [formControl]="priceRange.controls.priceMax">
+            </mat-form-field>
+          </div>
         </mat-expansion-panel>
       </section>
     </mat-accordion>
@@ -86,7 +105,7 @@
 
       <!-- <h2 class="product_count">{{length}} Products</h2> -->
       <mat-form-field>
-        <input matInput placeholder="Search by name" [formControl]="searchInput">
+        <input matInput type="search" placeholder="Search by name" [formControl]="searchInput">
       </mat-form-field>
       <hr>
       <!-- Trying to make "Filtered By" top bar -->
