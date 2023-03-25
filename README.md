@@ -19,6 +19,7 @@ Uses Dgraph database to model the compatibility relationships between part types
 
 ![BikePartPicker-dgraph-ratel](https://user-images.githubusercontent.com/100744679/227734527-11ad8a46-7a0d-42e5-b27a-c1977f9bbf6d.jpg)
 
+**Basic Idea:**
 
 Instead of sifting through compatibility guides and tables like these:
 
