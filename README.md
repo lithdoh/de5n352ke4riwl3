@@ -20,6 +20,12 @@ Uses Dgraph database to model the compatibility relationships between part types
 ![BikePartPicker-dgraph-ratel](https://user-images.githubusercontent.com/100744679/227734527-11ad8a46-7a0d-42e5-b27a-c1977f9bbf6d.jpg)
 
 
+Instead of sifting through compatibility guides and tables like these:
+https://www.wtb.com/pages/tire-rim-fit-chart
+https://www.ceramicspeed.com/media/3napv0hg/webposter_bbmatrix2021_web.pdf
+https://productinfo.shimano.com/#/com
+
+Users can simply enter the parts they currently have (or in the future, their build, and the parts from the build will be entered automatically) and see whether they are compatible or not. I also think it would be cool if the rule(s) that determines the compatibility of parts is made available. This would a great help in an educational sense, but it would also allow users to verify that the verdict is sensible. It will be difficult to get every last rule pinned down, so if people can verify rules and submit update suggestions, the community can be leveraged to make a really useful tool.
 
 # de5n352ke4riwl3
 
