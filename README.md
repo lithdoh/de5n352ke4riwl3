@@ -23,9 +23,8 @@ Uses Dgraph database to model the compatibility relationships between part types
 Instead of sifting through compatibility guides and tables like these:
 https://www.wtb.com/pages/tire-rim-fit-chart,
 https://www.ceramicspeed.com/media/3napv0hg/webposter_bbmatrix2021_web.pdf,
-https://productinfo.shimano.com/#/com
-
-The basic concept: users can select parts and see whether they are compatible or not. I think it would be cool if the rule(s) that determines the compatibility of parts is/are made available. This would a great help in an educational sense, but it would also allow users to verify that the verdict is sensible. Because it will be difficult to get every last rule pinned down, I think it would be good to have a way for people to verify rules and submit update suggestions. Compatibility is not always straightforward. For example, if you have a chain and rear derailleur that are the same speed, they still might not be compatible because it's a flattop chain and the rear derailleur is SRAM Eagle and hence is not compatible because of the RD pulley. 
+https://productinfo.shimano.com/#/com, 
+users can select parts and see whether they are compatible or not. I think it would be cool if the rule(s) that determines the compatibility of parts is/are made available. This would a great help in an educational sense, but it would also allow users to verify that the verdict is sensible. Because it will be difficult to get every last rule pinned down, I think it would be good to have a way for people to verify rules and submit update suggestions. Compatibility is not always straightforward. For example, if you have a chain and rear derailleur that are the same speed, they still might not be compatible because it's a flattop chain and the rear derailleur is SRAM Eagle and hence is not compatible because of the RD pulley. 
 
 Two parts might be technically compatible, but there may be drawbacks to using them. If you use a Shimano cassette and a SRAM chain, you're shifting might be suboptimal compared to using the same brands for both of these parts. Similarly, you _can_ use a 2.8" tire on a 28mm rim, but the tire shape becomes too tall and round, which can result in reduced cornering performance and tire squirm.
 
