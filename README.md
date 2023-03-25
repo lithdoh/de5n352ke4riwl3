@@ -11,7 +11,7 @@ Pagination:
 
 ![BikePartPicker-pagination](https://user-images.githubusercontent.com/100744679/227734069-9477ffaa-b7dc-4b22-8571-3367a1f49eea.jpg)
 
-Build selections page with localStorage:
+Build selections page with localStorage: (this page will the rest of the parts that go on a bike, but I'm getting the Stem page where I want it first, because the rest of the pages are very similar.
 
 ![BikePartPicker mathome](https://user-images.githubusercontent.com/100744679/227734154-ec4e505f-2e15-4e08-a697-99beaa1fd271.jpg)
 
