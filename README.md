@@ -38,7 +38,7 @@ Uses Dgraph database to model the compatibility relationships between part types
 
 **Compatible But Not Recommended:**
 
-Two parts might be technically compatible, but there may be drawbacks to using them. If you use a Shimano cassette and a SRAM chain, you're shifting might be suboptimal compared to using the same brands for both parts. Similarly, you _can_ use a 2.8" tire on a 28mm rim, but the tire shape becomes too tall and round, which can result in reduced cornering performance and tire squirm.
+Two parts might be technically compatible, but there may be drawbacks to using them. If you use a Shimano cassette and a SRAM chain, you're shifting might be suboptimal compared to using the same brands for both parts. Similarly, you _can_ use a 2.8" tire on a 28mm rim, but the tire shape becomes too tall and round, which can result in reduced cornering performance and tire squirm. I hope to implement something like this.
 
 
 **Database of Completes, Not Just Parts:**
