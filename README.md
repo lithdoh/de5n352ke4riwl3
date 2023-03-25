@@ -11,11 +11,11 @@ Pagination:
 
 ![BikePartPicker-pagination](https://user-images.githubusercontent.com/100744679/227734069-9477ffaa-b7dc-4b22-8571-3367a1f49eea.jpg)
 
-Build selections page with localStorage:
+Build page with localStorage:
 
 ![BikePartPicker mathome](https://user-images.githubusercontent.com/100744679/227734154-ec4e505f-2e15-4e08-a697-99beaa1fd271.jpg)
 
-This page will the rest of the parts that go on a bike, but I'm getting the Stem page where I want it first, because the rest of the pages are very similar.
+The build page above will the rest of the parts that go on a bike, but I'm getting the Stem page where I want it first, because the rest of the pages are very similar.
 
 Uses Dgraph database to model the compatibility relationships between part types, e.g. [frame, fork], [chain, cassette], [rear derailleur, crankset].
 
@@ -62,6 +62,12 @@ Also:
 - whatever I use to create the filters for "Stems" also has to work for every other type of bike part, because they'll each have their own page
 
 Speaking of those pages, I need a way to make a generic one. Each type of part will have a data table with sorting, pagination and filtering, but they differ in column names, filter sections, and of course the actual data.
+
+**Future Plans:**
+
+URL Parameters:
+
+When you select filters, adjust the URL parameters so that you can share the link to that product page with the filters already set.
 
 
 
