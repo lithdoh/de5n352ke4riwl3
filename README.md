@@ -45,15 +45,15 @@ Two parts might be technically compatible, but there may be drawbacks to using t
 
 I'd like to keep a database of completed builds that companies have sold, for three reasons:
 1. Users can enter their Brand, Model, and Year instead of manually entering their bike’s components.
-2. If a user builds a bike that is already being sold as a complete, show them the complete because it will probably be cheaper than the sum of the part costs, not to mention labor for the build.
-3. Knowing that a combination of parts has been used by a brand in a complete bike is confidence-boosting.
+2. If a user builds a bike that is already being sold as a complete, show them the complete because it will probably be cheaper than the sum of the part costs.
+3. Knowing that a combination of parts has been used by a brand in a complete bike boosts confidence that these parts are compatible. (Cycle Selector won't be absolutely perfect)
 
 **What I'm Working On Now:**
 
 Currently I'm trying to come up with a good way to do the filter checkboxes. It's kind of tricky because they should:
 
 - come from the backend (too many to add manually)
-- have a count of how many products would be left if you were to click that checkbox (count also comes from backend)
+- have a count of how many products would be left if the user were to click that checkbox (count also comes from backend)
 - be sorted alphabetically for string-based filters and ascending for number-based filters so that users can find the filter they want quickly
 - be part of one reactive form group so that the paginator can be reset in one go (would have to reset paginator individually for each section otherwise)
 - be Angular Material checkboxes, to keep with the theme.
@@ -64,12 +64,12 @@ Also:
 - each checkbox must be controllable by the "Select All/None" checkbox
 - whatever I use to create the filters for "Stems" also has to work for every other type of bike part, because they'll each have their own page
 
-Speaking of those pages, I need a way to make a generic one. Each type of part will have a data table with sorting, pagination and filtering, but they differ in column names, filter sections, and of course the actual data.
+Speaking of those pages, I need a way to make a generic one. Each type of part will have a data table with sorting, pagination and filtering, but they differ in column names, filter sections, and of course the actual data. I'm looking into ngTemplateOutlet for this.
 
 **Future Plans:**
 
 URL Parameters -- When you select filters, adjust the URL parameters so that you can share the link to that product page with the filters already set.
-Filter Color Coding -- When filters are set as a result of your part selection, and not because you checked filter checkboxes, they will appear in a different color and will be disabled; to remove them you have to remove the relevant selection.
+Filter Color Coding -- When filters are set as a result of your part selection and not because you checked filter checkboxes, they will appear in a different color and will be disabled; to remove them you have to remove the relevant selection. One color for each type of part that affects filters, and the default color for manually set checkboxes.
 
 
 
