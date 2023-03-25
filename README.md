@@ -31,18 +31,12 @@ https://productinfo.shimano.com/#/com,
 users can select parts and see whether they are compatible or not. I think it would be cool if the rule(s) that determines the compatibility of parts is/are made available. This would a great help in an educational sense, but it would also allow users to verify that the verdict is sensible. Because it will be difficult to get every last rule pinned down, I think it would be good to have a way for people to verify rules and submit update suggestions. Compatibility is not always straightforward. For example, if you have a chain and rear derailleur that are the same speed, they still might not be compatible because it's a flattop chain and the rear derailleur is SRAM Eagle and hence is not compatible because of the RD pulley. 
 
 
-
 **Compatible But Not Recommended:**
-
-|
 
 Two parts might be technically compatible, but there may be drawbacks to using them. If you use a Shimano cassette and a SRAM chain, you're shifting might be suboptimal compared to using the same brands for both parts. Similarly, you _can_ use a 2.8" tire on a 28mm rim, but the tire shape becomes too tall and round, which can result in reduced cornering performance and tire squirm.
 
 
-
 **Database of Completes, Not Just Parts:**
-
-|
 
 I'd like to keep a database of completed builds that companies have sold, for three reasons:
 1. Users can enter their Brand, Model, and Year instead of manually entering their bike’s components.
@@ -51,11 +45,20 @@ I'd like to keep a database of completed builds that companies have sold, for th
 
 **What I'm Working On Now:**
 
-|
+Currently I'm trying to come up with a good way to do the filter checkboxes. It's kind of tricky because they should:
 
+- come from the backend (too many to add manually)
+- have a count of how many products would be left if you were to click that checkbox (count also comes from backend)
+- be sorted alphabetically for string-based filters and ascending for number-based filters so that users can find the filter they want quickly
+- be part of one reactive form group so that the paginator can be reset in one go (would have to reset paginator individually for each section otherwise)
 
+Also:
 
+- each section should have a "--" checkbox in case you want to filter by parts that have null for the property you're filtering by
+- each checkbox must be controllable by the "Select All/None" checkbox
+- whatever I use to create the filters for "Stems" also has to work for every other type of bike part, because they'll each have their own page
 
+Speaking of those pages, I need a way to make a generic one. Each type of part will have a data table with sorting, pagination and filtering, but they differ in column names, filter sections, and of course the actual data.
 
 
 
