@@ -1,4 +1,4 @@
-**Don't worry about the repo name. 🤨**
+**Don't worry about the repo name 🤔**
 
 Cycle Selector is a website I'm working on to help people determine bike part compatibility.
 It makes use of reactive principals on things like the sort headers, paginator, filters, search input, receiving data from backend, etc.
@@ -17,7 +17,7 @@ Build page with localStorage:
 
 ![BikePartPicker mathome](https://user-images.githubusercontent.com/100744679/227734154-ec4e505f-2e15-4e08-a697-99beaa1fd271.jpg)
 
-The build page above will the rest of the parts that go on a bike, but I'm getting the Stem page where I want it first, because the rest of the pages are very similar.
+The build page above will have the rest of the parts that go on a bike, but I'm getting the Stem page where I want it first as the rest of the pages are very similar.
 
 Uses Dgraph database to model the compatibility relationships between part types, e.g. [frame, fork], [chain, cassette], [rear derailleur, crankset].
 
