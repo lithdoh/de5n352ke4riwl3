@@ -11,6 +11,9 @@ Build selections page with localStorage:
 
 ![BikePartPicker mathome](https://user-images.githubusercontent.com/100744679/227734154-ec4e505f-2e15-4e08-a697-99beaa1fd271.jpg)
 
+Uses Dgraph database to model the compatibility relationships between part types, e.g. [frame, fork], [chain, cassette], [rear derailleur, crankset].
+
+![BikePartPicker-dgraph-ratel](https://user-images.githubusercontent.com/100744679/227734527-11ad8a46-7a0d-42e5-b27a-c1977f9bbf6d.jpg)
 
 
 
