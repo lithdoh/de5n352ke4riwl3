@@ -91,11 +91,6 @@ export class Matstems2Component implements AfterViewInit {
     "aluminum": false
   };
 
-  // pricesDefault = {
-  //   minimum: 0,
-  //   maximum: 1000000000000000,
-  // }
-
   profileForm = this.fb.group({
     brands: this.fb.group(this.brandsDefault),
     lengths: this.fb.group(this.lengthsDefault),
@@ -165,11 +160,18 @@ export class Matstems2Component implements AfterViewInit {
   materialsList: string[] = [];
 
   priceRange = this.fb.group({
-    priceMin: this.fb.control(0),
-    priceMax: this.fb.control(1000000000000000),
-  })
+    priceMin: new FormControl('', {nonNullable: true}),
+    priceMax: new FormControl('', {nonNullable: true})
+  });
 
-  // pricesArray: number[] = [];
+  pricesArray: number[] = [0, 100000];
+
+  weightRange = this.fb.group({
+    weightMin: new FormControl('', {nonNullable: true}),
+    weightMax: new FormControl('', {nonNullable: true})
+  });
+
+  weightsArray: number[] = [0, 100000];
 
 //______________________________________________________________________________________________
 
@@ -200,7 +202,10 @@ export class Matstems2Component implements AfterViewInit {
     this.profileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
 
     // If the user enters a minimum or maximum price, reset back to the first page.
-    // this.priceRange.valueChanges.pipe(debounceTime(500)).subscribe(() => ((this.paginator.pageIndex = 0)));
+    this.priceRange.valueChanges.pipe(debounceTime(500)).subscribe(() => ((this.paginator.pageIndex = 0)));
+    
+    // If the user enters a minimum or maximum weight, reset back to the first page.
+    this.weightRange.valueChanges.pipe(debounceTime(500)).subscribe(() => ((this.paginator.pageIndex = 0)));
 
     merge(this.sort.sortChange, this.paginator.page, this.searchInput.valueChanges.pipe(
       debounceTime(500)), 
@@ -243,6 +248,28 @@ export class Matstems2Component implements AfterViewInit {
           return this.materialsList;
           }
         )
+      ),
+      this.priceRange.valueChanges
+      .pipe(
+        debounceTime(500),
+        map((x) => {
+          this.pricesArray = Object.values(x).map(Number);
+          if(this.pricesArray[1] === 0) {
+            this.pricesArray[1] = 100000;
+          }
+        })
+      ),
+      this.weightRange.valueChanges
+      .pipe(
+        debounceTime(500),
+        map((x) => {
+          console.log('x', x);
+          this.weightsArray = Object.values(x).map(Number);
+          if(this.weightsArray[1] === 0) {
+            this.weightsArray[1] = 100000;
+          }
+          console.log('weightArray', this.weightsArray);
+        })
       ))
       .pipe(
         startWith({}),
@@ -257,7 +284,9 @@ export class Matstems2Component implements AfterViewInit {
             this.brandsList,
             this.lengthsList,
             this.colorsList,
-            this.materialsList
+            this.materialsList,
+            this.pricesArray,
+            this.weightsArray
           ).pipe(catchError(() => of(null)),
           map((response: any) => {this.length = response.data.aggregateStems.count; return response.data.queryStems}));
         }),
@@ -311,7 +340,6 @@ export class Matstems2Component implements AfterViewInit {
   }
 }
 
-// Sorting and Pagination
 export class ExampleHttpDatabase {
   constructor(private http: HttpClient) {}
 
@@ -323,19 +351,79 @@ export class ExampleHttpDatabase {
     return this.http.get<Stems[]>(requestURL);
   }
 
-  // Sorting, Pagination, Filtering
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: any[], length: any[], color: any[], material: any[]): Observable<Stems[]> {
+  defaultRangeFilter: number[] = [0, 100000];
 
-  const requestURL = this.baseURL + `{ aggregateStems(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
-  length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
-  material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}}) { count }
-   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, 
-   brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
-   color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}})
+  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string[], length: string[], color: string[], material: string[], prices: number[], weights: number[]): Observable<Stems[]> {
+
+  const requestURL = this.baseURL + `{ aggregateStems(filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
+  brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
+  length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
+  color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
+  material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}, 
+  price: ${prices.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + prices[0] + ', max: ' + prices[1] + '}}' : '{}'}, 
+  weight: ${weights.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + weights[0] + ', max: ' + weights[1] + '}}' : '{}'}}) { count }
+   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
+   brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
+   length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
+   color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
+   material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}, 
+   price: ${prices.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + prices[0] + ', max: ' + prices[1] + '}}' : '{}'}, 
+   weight: ${weights.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + weights[0] + ', max: ' + weights[1] + '}}' : '{}'}})
     { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
     // Why doesn't this work?
     // this.http.get('data-from-cyclery/competitive-cyclist-stems.json').subscribe(x => console.log(x));
     console.log(requestURL);
     return this.http.get<Stems[]>(requestURL);
+  }
+
+  getStemsDQL(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string[], length: string[], color: string[], material: string[], prices: number[], weights: number[]): Observable<Stems[]> {
+
+    const requestURL2 = this.baseURL + `{
+      aggregateStems(func: type(Stems)) 
+      @filter(
+      (alloftext(Stems.name, "${search}")) AND
+      (eq(Stems.brand, "Renthal") OR eq(Stems.brand, "TruVativ")) AND 
+      (eq(Stems.length, 60) OR eq(Stems.length, 40)) AND 
+      (eq(Stems.rise, 6) OR eq(Stems.rise, 9)) AND 
+      (eq(Stems.clampDiameter, 35) OR eq(Stems.clampDiameter, 31.8)) AND 
+      (eq(Stems.steererDiameter, "1-1/8in")) AND 
+      (eq(Stems.color, "Black/Gold") OR eq(Stems.color, "Black")) AND 
+      (eq(Stems.material, "alloy") OR eq(Stems.material, "aluminum")) AND 
+      (between(Stems.weight, 100, 200)) AND 
+      (between(Stems.price, 50, 150))
+      ) {
+        count(uid)
+      }
+      getStems(func: type(Stems), orderasc: Stems.name, first: 10, offset: 0) 
+      @filter(
+      (alloftext(Stems.name, "${search}")) AND
+      (eq(Stems.brand, "Renthal") OR eq(Stems.brand, "TruVativ")) AND 
+      (eq(Stems.length, 60) OR eq(Stems.length, 40)) AND 
+      (eq(Stems.rise, 6) OR eq(Stems.rise, 9)) AND 
+      (eq(Stems.clampDiameter, 35) OR eq(Stems.clampDiameter, 31.8)) AND 
+      (eq(Stems.steererDiameter, "1-1/8in")) AND 
+      (eq(Stems.color, "Black/Gold") OR eq(Stems.color, "Black")) AND 
+      (eq(Stems.material, "alloy") OR eq(Stems.material, "aluminum")) AND 
+      (between(Stems.weight, 100, 200)) AND 
+      (between(Stems.price, 50, 150))
+      ) {
+        Stems.link
+        Stems.image
+        Stems.name
+        Stems.length
+        Stems.rise
+        Stems.clampDiameter
+        Stems.steererDiameter
+        Stems.color
+        Stems.material
+        Stems.price
+        Stems.weight
+        Stems.brand
+      }
+    }`
+    // Why doesn't this work?
+    // this.http.get('data-from-cyclery/competitive-cyclist-stems.json').subscribe(x => console.log(x));
+    console.log(requestURL2);
+    return this.http.get<Stems[]>(requestURL2);
   }
 }
