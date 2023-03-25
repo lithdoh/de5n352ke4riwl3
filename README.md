@@ -10,6 +10,7 @@ Features server-side sorting, filtering and pagination:
 Pagination:
 
 ![BikePartPicker-pagination](https://user-images.githubusercontent.com/100744679/227734069-9477ffaa-b7dc-4b22-8571-3367a1f49eea.jpg)
+(I'm proud of the fact that the paginator updates the total count when filters are set.)
 
 Build page with localStorage:
 
@@ -65,7 +66,8 @@ Speaking of those pages, I need a way to make a generic one. Each type of part w
 
 **Future Plans:**
 
-URL Parameters --> When you select filters, adjust the URL parameters so that you can share the link to that product page with the filters already set.
+URL Parameters -- When you select filters, adjust the URL parameters so that you can share the link to that product page with the filters already set.
+Filter Color Coding -- When filters are set as a result of your part selection, and not because you checked filter checkboxes, they will appear in a different color and will be disabled; to remove them you have to remove the relevant selection.
 
 
 
