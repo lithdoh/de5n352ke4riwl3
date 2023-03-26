@@ -11,7 +11,7 @@ Pagination:
 
 ![BikePartPicker-pagination](https://user-images.githubusercontent.com/100744679/227734069-9477ffaa-b7dc-4b22-8571-3367a1f49eea.jpg)
 
-(I'm proud of the fact that the paginator updates the total count when filters are set.)
+(I'm proud of the fact that the paginator's total count updates when filters are set.)
 
 Build page with localStorage:
 
