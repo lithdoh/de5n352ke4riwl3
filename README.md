@@ -72,6 +72,10 @@ URL Parameters -- When you select filters, adjust the URL parameters so that you
 
 Filter Color Coding -- When filters are set as a result of your part selection and not because you checked filter checkboxes, they will appear in a different color and will be disabled; to remove them you have to remove the relevant selection. One color for each type of part that affects filters, and the default color for manually set checkboxes.
 
+Tools List -- Tells you which tools are required for installation of new parts or removal of old parts.
+
+Dependency Graph -- A visualization of which parts depend on which other parts.
+
 
 
 # de5n352ke4riwl3
