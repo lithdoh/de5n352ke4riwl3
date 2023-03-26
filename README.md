@@ -56,7 +56,7 @@ I'd like to keep a database of completed builds that companies have sold, for th
 
 Currently I'm trying to come up with a good way to do the filter checkboxes. It's kind of tricky because they should:
 
-- come from the backend (too many to add manually)
+- come from the backend (too many to add manually and if they were hard-coded you would have to update the filters every time you add new data)
 - have a count of how many products would be left if the user were to click that checkbox (count also comes from backend)
 - be sorted alphabetically for string-based filters and ascending for number-based filters so that users can find the filter they want quickly
 - be part of one reactive form group so that the paginator can be reset in one go (would have to reset paginator individually for each section otherwise)
