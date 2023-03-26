@@ -82,7 +82,7 @@ Dependency Graph -- A visualization of which parts depend on which other parts.
 
 Build Visualization -- Show the parts as they would appear as a fully assembled bike. It would be very cool to have an integrated CAD-type 3D viewer like Bike Config http://www.bikeconfig.com/
 
-There are some things that PCPartPicker does that would make sense for this app like price history tracking, merchant price comparisons, price notifications, promos, ability to set country and units, among other things.
+There are some things that PCPartPicker does that would make sense for this app like price history tracking, merchant price comparisons, price notifications, promos, and the ability to set the country and units.
 
 How to run:
 
