@@ -77,6 +77,7 @@ Tools List -- Tells you which tools are required for installation of new parts o
 Dependency Graph -- A visualization of which parts depend on which other parts.
 
 
+How to run:
 
 # de5n352ke4riwl3
 
