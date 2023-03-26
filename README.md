@@ -68,7 +68,7 @@ Also:
 - each checkbox must be controllable by the "Select All/None" checkbox
 - whatever I use to create the filters for "Stems" also has to work for every other type of bike part, because they'll each have their own page
 
-Speaking of those pages, I need a way to make a generic one. Each type of part will have a data table with sorting, pagination and filtering, but they differ in column names, filter sections, and of course the actual data. I'm looking into ngTemplateOutlet for this.
+Speaking of those pages, I need a way to make a generic one. Each type of part will have a data table with sorting, pagination and filtering, but they differ in column names, filter sections, and, of course, the actual data. I'm looking into ngTemplateOutlet for this.
 
 **Future Plans:**
 
