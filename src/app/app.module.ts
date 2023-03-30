@@ -35,6 +35,7 @@ import { SidebarFilterComponent } from './sidebar-filter/sidebar-filter.componen
 import { Matstems4Component } from './parts/matstems4/matstems4.component';
 import { Matstems5Component } from './parts/matstems5/matstems5.component';
 import { StatusComponent } from './status/status.component';
+import { StemCheckboxFiltersComponent } from './parts/stem-checkbox-filters/stem-checkbox-filters.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { StatusComponent } from './status/status.component';
     Matstems4Component,
     Matstems5Component,
     StatusComponent,
+    StemCheckboxFiltersComponent,
   ],
   imports: [
     BrowserAnimationsModule,

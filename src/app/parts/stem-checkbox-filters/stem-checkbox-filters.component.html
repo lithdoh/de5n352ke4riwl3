@@ -1,0 +1,34 @@
+<mat-accordion displayMode="flat" multi>
+    <mat-expansion-panel [expanded]="true" *ngFor="let section of categories | keyvalue">
+        <mat-expansion-panel-header>
+            <mat-panel-title> {{ section.value.label }} </mat-panel-title>
+        </mat-expansion-panel-header>
+        <section>
+            <form [formGroup]="form">
+                <mat-checkbox 
+                [checked]="allChecked(section.key)" 
+                [indeterminate]="someChecked(section.key)" 
+                (change)="setAll(section.key)"
+                color="primary">
+                    All
+                </mat-checkbox>
+
+                <p *ngFor="let checkbox of section.value.filters">
+                    <mat-checkbox 
+                    value="checkbox" 
+                    (change)="addCheckboxNameToFormControl(section.key, checkbox)"
+                    [checked]="brandsValueContains(section.key, checkbox)" 
+                    color="primary">
+                        {{checkbox}}
+                </mat-checkbox>
+                </p>
+            </form>
+        </section>
+
+        <section>
+            <h4>You chose:</h4>
+            {{form.value | json}}
+        </section>
+        <button (click)="logger()">click</button>
+    </mat-expansion-panel>
+</mat-accordion>
