@@ -353,7 +353,19 @@ export class ExampleHttpDatabase {
 
   defaultRangeFilter: number[] = [0, 100000];
 
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string[], length: string[], color: string[], material: string[], prices: number[], weights: number[]): Observable<Stems[]> {
+  getStems(
+    order: SortDirection,
+    column: string,
+    pageSize: number,
+    pageIndex: number,
+    search: string,
+    brand: string[],
+    length: string[],
+    color: string[],
+    material: string[],
+    prices: number[],
+    weights: number[]
+    ): Observable<Stems[]> {
 
   const requestURL = this.baseURL + `{ aggregateStems(filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
   brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
@@ -376,7 +388,18 @@ export class ExampleHttpDatabase {
     return this.http.get<Stems[]>(requestURL);
   }
 
-  getStemsDQL(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string[], length: string[], color: string[], material: string[], prices: number[], weights: number[]): Observable<Stems[]> {
+  getStemsDQL(
+    order: SortDirection, 
+    column: string,
+    pageSize: number,
+    pageIndex: number,
+    search: string,
+    brand: string[],
+    length: string[],
+    color: string[],
+    material: string[],
+    prices: number[],
+    weights: number[]): Observable<Stems[]> {
 
     const requestURL2 = this.baseURL + `{
       aggregateStems(func: type(Stems)) 
