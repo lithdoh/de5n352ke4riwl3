@@ -109,7 +109,8 @@
       </mat-form-field>
       <hr>
       <!-- Trying to make "Filtered By" top bar -->
-      <div *ngIf="brandsList.length > 0 || lengthsList.length > 0 || colorsList.length > 0 || materialsList.length > 0"> Filters:
+      <!-- <div *ngIf="brandsList.length > 0 || lengthsList.length > 0 || colorsList.length > 0 || materialsList.length > 0"> Filters: -->
+      <div *ngIf="brandsList.length + lengthsList.length + colorsList.length + materialsList.length > 0"> Filters:
         <div *ngIf="brandsList.length > 0"> Brand:
           <button class="remove_selection" *ngFor="let brand of brandsList;"
             (click)="removeSelection('brands', brand)">{{brand}} <mat-icon inline
