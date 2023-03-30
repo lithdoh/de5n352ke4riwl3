@@ -1,12 +1,13 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, inject, Output, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
 import { Stems } from '../../models/stems.model';
+import { ApiService } from '../stem-checkbox-filters/checkbox-services/api.service';
 
 @Component({
   selector: 'app-matstems5',
@@ -14,6 +15,9 @@ import { Stems } from '../../models/stems.model';
   styleUrls: ['./matstems5.component.css']
 })
 export class Matstems5Component {
+
+  api = inject(ApiService);
+  
   displayedColumns: string[] = [
     'image',
     'name',
@@ -351,16 +355,36 @@ export class ExampleHttpDatabase {
     return this.http.get<Stems[]>(requestURL);
   }
 
-  // Sorting, Pagination, Filtering
-  getStems(order: SortDirection, column: string, pageSize: number, pageIndex: number, search: string, brand: string[], length: string[], color: string[], material: string[], prices: number[], weights: number[]): Observable<Stems[]> {
-    console.log('weights', weights);
-    // You should make it so that if no weight filter is set, then you still get the stems that have no weight. Total count should be 163, not 154
-  const requestURL = this.baseURL + `{ aggregateStems(filter: {name: {regexp: "/${search}/i"}, brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
-  length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
-  material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}, price: {between: {min: ${prices[0]}, max: ${prices[1]}}}, weight: {between: {min: ${weights[0]}, max: ${weights[1]}}}}) { count }
-   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: {regexp: "/${search}/i"}, 
-   brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
-   color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}, price: {between: {min: ${prices[0]}, max: ${prices[1]}}}, weight: {between: {min: ${weights[0]}, max: ${weights[1]}}}})
+  defaultRangeFilter: number[] = [0, 100000];
+
+  getStems(
+    order: SortDirection,
+    column: string,
+    pageSize: number,
+    pageIndex: number,
+    search: string,
+    brand: string[],
+    length: string[],
+    color: string[],
+    material: string[],
+    prices: number[],
+    weights: number[]
+    ): Observable<Stems[]> {
+
+  const requestURL = this.baseURL + `{ aggregateStems(filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
+  brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
+  length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
+  color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
+  material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}, 
+  price: ${prices.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + prices[0] + ', max: ' + prices[1] + '}}' : '{}'}, 
+  weight: ${weights.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + weights[0] + ', max: ' + weights[1] + '}}' : '{}'}}) { count }
+   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
+   brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
+   length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
+   color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
+   material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}, 
+   price: ${prices.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + prices[0] + ', max: ' + prices[1] + '}}' : '{}'}, 
+   weight: ${weights.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + weights[0] + ', max: ' + weights[1] + '}}' : '{}'}})
     { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
     // Why doesn't this work?
     // this.http.get('data-from-cyclery/competitive-cyclist-stems.json').subscribe(x => console.log(x));
