@@ -6,7 +6,7 @@ import {merge, Observable, startWith, switchMap} from 'rxjs';
 import {StemsService} from '../../services/stems.service';
 import {Stems} from "../../models/stems.model";
 import {DataSource} from "@angular/cdk/collections";
-import { MatPaginator, MatPaginatorDefaultOptions, PageEvent } from '@angular/material/paginator';
+import { MatLegacyPaginator as MatPaginator, MatLegacyPaginatorDefaultOptions as MatPaginatorDefaultOptions, LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
 
 @Component({
   selector: 'app-matstems',

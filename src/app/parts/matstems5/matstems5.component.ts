@@ -2,7 +2,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap } from 'rxjs';
