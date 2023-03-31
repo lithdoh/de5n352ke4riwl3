@@ -11,6 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { Matstems4Component } from './parts/matstems4/matstems4.component';
 import { Matstems5Component } from './parts/matstems5/matstems5.component';
 import { StatusComponent } from './status/status.component';
 import { StemCheckboxFiltersComponent } from './parts/stem-checkbox-filters/stem-checkbox-filters.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { StemCheckboxFiltersComponent } from './parts/stem-checkbox-filters/stem
   ],
   imports: [
     BrowserAnimationsModule,
+    BrowserModule,
     AppRoutingModule,
     CommonModule,
     MatTableModule,
@@ -79,6 +82,7 @@ import { StemCheckboxFiltersComponent } from './parts/stem-checkbox-filters/stem
     MatExpansionModule,
     FormsModule,
     MatIconModule,
+    MatChipsModule
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
