@@ -1,8 +1,42 @@
 <mat-sidenav-container class="sidenav">
     <mat-sidenav mode="side" opened>
-      <ng-container *ngIf="api.stems$ | async; let stems">
-        <app-stem-checkbox-filters [data]="stems"></app-stem-checkbox-filters>
-      </ng-container>
+      <!-- <ng-container *ngIf="api.stems$ | async; let stems"> -->
+        <!-- <app-stem-checkbox-filters [data]="stems"></app-stem-checkbox-filters> -->
+        <app-stem-checkbox-filters></app-stem-checkbox-filters>
+      <!-- </ng-container> -->
+      <section>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title> Weight (g) </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="numeric-filter">
+            <mat-form-field class="minmax-range">
+              <input matInput type="number" placeholder="Min" [formControl]="weightRange.controls.weightMin">
+            </mat-form-field>
+            <p>to</p>
+            <mat-form-field class="minmax-range">
+              <input matInput type="number" placeholder="Max" [formControl]="weightRange.controls.weightMax">
+            </mat-form-field>
+          </div>
+        </mat-expansion-panel>
+      </section>
+      <section>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title> Price ($) </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="numeric-filter">
+            <mat-form-field class="minmax-range">
+              <mat-label>Min</mat-label>
+              <input matInput type="number" [formControl]="priceRange.controls.priceMin">
+            </mat-form-field>
+            <p>to</p>
+            <mat-form-field class="minmax-range">
+              <input matInput type="number" placeholder="Max" [formControl]="priceRange.controls.priceMax">
+            </mat-form-field>
+          </div>
+        </mat-expansion-panel>
+      </section>
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="mat-elevation-z8">
@@ -10,34 +44,27 @@
           <mat-spinner></mat-spinner>
         </div>
   
-        <!-- <h2 class="product_count">{{length}} Products</h2> -->
+        <h2 class="product_count">{{length}} Products</h2>
         <mat-form-field>
           <input matInput type="search" placeholder="Search by name" [formControl]="searchInput">
         </mat-form-field>
+        <button (click)="log()">click</button>
         <hr>
-        <!-- Trying to make "Filtered By" top bar -->
-        <div *ngIf="brandsList.length > 0 || lengthsList.length > 0 || colorsList.length > 0 || materialsList.length > 0"> Filters:
-          <div *ngIf="brandsList.length > 0"> Brand:
-            <button class="remove_selection" *ngFor="let brand of brandsList;"
-              (click)="removeSelection('brands', brand)">{{brand}} <mat-icon inline
-                aria-hidden="true">cancel</mat-icon></button>
-          </div>
-          <div *ngIf="lengthsList.length > 0"> Length:
-            <button class="remove_selection" *ngFor="let length of lengthsList;"
-              (click)="removeSelection('lengths', length)">{{length}} <mat-icon inline
-                aria-hidden="true">cancel</mat-icon></button>
-          </div>
-          <div *ngIf="colorsList.length > 0"> Color:
-            <button class="remove_selection" *ngFor="let color of colorsList;"
-              (click)="removeSelection('colors', color)">{{color}} <mat-icon inline
-                aria-hidden="true">cancel</mat-icon></button>
-          </div>
-          <div *ngIf="materialsList.length > 0"> Material:
-            <button class="remove_selection" *ngFor="let material of materialsList;"
-              (click)="removeSelection('materials', material)">{{material}} <mat-icon inline
-                aria-hidden="true">cancel</mat-icon></button>
-          </div>
-        </div>
+
+        <!-- Testing form version -->
+        <!-- Why can't I use checkboxComponent.categories here -->
+
+        <ng-container *ngFor="let section of categoriesLocal | keyvalue">
+          <p *ngIf="checkboxComponent.form.get(section.key)?.value.length > 0"> {{section.value.label}}:
+            <!-- but I can use checkboxComponent.form -->
+            <!-- <mat-chip-listbox>
+              <mat-chip-option class="remove_selection" *ngFor="let checkbox of checkboxComponent.form.get(section.key)?.value"
+              (click)="newRemoveSelection(section.key, checkbox)">{{checkbox}} <mat-icon inline
+                aria-hidden="true">cancel</mat-icon></mat-chip-option>
+            </mat-chip-listbox>
+            <mat-chip-grid></mat-chip-grid> -->
+          </p>
+        </ng-container>
   
         <table mat-table [dataSource]="data" matSort [matSortActive]="matSortActive" [matSortDirection]="matSortDirection"
           matSortDisableClear (matSortChange)="announceSortChange($event)">

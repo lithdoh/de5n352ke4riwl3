@@ -1,13 +1,13 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, inject, Output, ViewChild } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
+import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap } from 'rxjs';
 import { Stems } from '../../models/stems.model';
-import { ApiService } from '../stem-checkbox-filters/checkbox-services/api.service';
+import { FilterCategories, StemCheckboxFiltersComponent } from '../stem-checkbox-filters/stem-checkbox-filters.component';
 
 @Component({
   selector: 'app-matstems5',
@@ -16,8 +16,8 @@ import { ApiService } from '../stem-checkbox-filters/checkbox-services/api.servi
 })
 export class Matstems5Component {
 
-  api = inject(ApiService);
-  
+  // api = inject(ApiService);
+
   displayedColumns: string[] = [
     'image',
     'name',
@@ -46,14 +46,14 @@ export class Matstems5Component {
   showFirstLastButtons: boolean = true;
   isLoadingResults: boolean = true;
 
-  @ViewChild(MatSort, {static: true}) sort!: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort!: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
   // Search input
   searchInput: FormControl = new FormControl('');
 
 
-//______________________________________________________________________________________________
+  //______________________________________________________________________________________________
 
   brandsDefault = {
     "Deity Components": false,
@@ -157,6 +157,21 @@ export class Matstems5Component {
     }
   }
 
+  @ViewChild(StemCheckboxFiltersComponent, { static: false }) checkboxComponent!: StemCheckboxFiltersComponent;
+  // @ViewChildren('sidebar') sidebar!: StemCheckboxFiltersComponent;
+
+  categoriesLocal!: FilterCategories;
+
+  newRemoveSelection(section: string, name: string | number | null): void {
+    const formSection = this.checkboxComponent.form.get(section) as FormControl;
+    const index = formSection.value.indexOf(name);
+  
+    formSection.setValue([
+      ...formSection.value.slice(0, index),
+      ...formSection.value.slice(index + 1),
+    ]);
+  };
+
   // These are used for writing the requestURL and also the "Filtered By:" feature
   brandsList: string[] = [];
   lengthsList: string[] = [];
@@ -164,27 +179,28 @@ export class Matstems5Component {
   materialsList: string[] = [];
 
   priceRange = this.fb.group({
-    priceMin: new FormControl('', {nonNullable: true}),
-    priceMax: new FormControl('', {nonNullable: true})
+    priceMin: new FormControl('', { nonNullable: true }),
+    priceMax: new FormControl('', { nonNullable: true })
   });
 
   pricesArray: number[] = [0, 100000];
 
   weightRange = this.fb.group({
-    weightMin: new FormControl('', {nonNullable: true}),
-    weightMax: new FormControl('', {nonNullable: true})
+    weightMin: new FormControl('', { nonNullable: true }),
+    weightMax: new FormControl('', { nonNullable: true })
   });
 
   weightsArray: number[] = [0, 100000];
 
-//______________________________________________________________________________________________
+  //______________________________________________________________________________________________
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
     private _httpClient: HttpClient,
     private fb: FormBuilder,
-  ) {}
+    private cd: ChangeDetectorRef
+  ) { }
 
   // @Output() testingProfForm: FormGroup = this.fb.group({
   //   Renthal: false,
@@ -196,85 +212,55 @@ export class Matstems5Component {
   // });
 
   ngAfterViewInit() {
+
+      this.categoriesLocal = this.checkboxComponent.categories;
+
+      this.cd.detectChanges(); // Run Change Detection manually to make the view update based on this changed value
+
     // If the user changes the sort order, reset back to the first page.
-    this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
+    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
 
     // If the user does a search, reset back to the first page.
-    this.searchInput.valueChanges.pipe(debounceTime(500)).subscribe(() => ((this.paginator.pageIndex = 0)));
+    this.searchInput.valueChanges.pipe(debounceTime(500)).subscribe(() => this.paginator.pageIndex = 0);
 
     // If the user selects any filter option, reset back to the first page.
-    this.profileForm.valueChanges.subscribe(() => ((this.paginator.pageIndex = 0)));
+    this.profileForm.valueChanges.subscribe(() => this.paginator.pageIndex = 0);
+
+    this.checkboxComponent.form.valueChanges.subscribe(() => this.paginator.pageIndex = 0);
 
     // If the user enters a minimum or maximum price, reset back to the first page.
-    this.priceRange.valueChanges.pipe(debounceTime(500)).subscribe(() => ((this.paginator.pageIndex = 0)));
-    
+    this.priceRange.valueChanges.pipe(debounceTime(500)).subscribe(() => this.paginator.pageIndex = 0);
+
     // If the user enters a minimum or maximum weight, reset back to the first page.
-    this.weightRange.valueChanges.pipe(debounceTime(500)).subscribe(() => ((this.paginator.pageIndex = 0)));
+    this.weightRange.valueChanges.pipe(debounceTime(500)).subscribe(() => this.paginator.pageIndex = 0);
+
+    // You could make the formgroup contain all the checkboxes and the range filters and debounce both
 
     merge(this.sort.sortChange, this.paginator.page, this.searchInput.valueChanges.pipe(
-      debounceTime(500)), 
-      this.profileForm.controls.brands.valueChanges
-      .pipe(
-        map((x) => {
-          this.brandsList = Object.entries(x).sort()
-            .filter(([_, isSelected]) => isSelected)
-            .map(([key]) => key);
-          return this.brandsList;
-          }
-        )
-      ), 
-      this.profileForm.controls.lengths.valueChanges
-      .pipe(
-        map((x) => {
-          this.lengthsList = Object.entries(x).sort()
-            .filter(([_, isSelected]) => isSelected)
-            .map(([key]) => key);
-          return this.lengthsList;
-          }
-        )
-      ), 
-      this.profileForm.controls.colors.valueChanges
-      .pipe(
-        map((x) => {
-          this.colorsList = Object.entries(x).sort()
-            .filter(([_, isSelected]) => isSelected)
-            .map(([key]) => key);
-          return this.colorsList;
-          }
-        )
-      ),
-      this.profileForm.controls.materials.valueChanges
-      .pipe(
-        map((x) => {
-          this.materialsList = Object.entries(x).sort()
-            .filter(([_, isSelected]) => isSelected)
-            .map(([key]) => key);
-          return this.materialsList;
-          }
-        )
-      ),
+      debounceTime(500)),
+      this.checkboxComponent.form.valueChanges,
       this.priceRange.valueChanges
-      .pipe(
-        debounceTime(500),
-        map((x) => {
-          this.pricesArray = Object.values(x).map(Number);
-          if(this.pricesArray[1] === 0) {
-            this.pricesArray[1] = 100000;
-          }
-        })
-      ),
+        .pipe(
+          debounceTime(500),
+          map((x) => {
+            this.pricesArray = Object.values(x).map(Number);
+            if (this.pricesArray[1] === 0) {
+              this.pricesArray[1] = 100000;
+            }
+          })
+        ),
       this.weightRange.valueChanges
-      .pipe(
-        debounceTime(500),
-        map((x) => {
-          console.log('x', x);
-          this.weightsArray = Object.values(x).map(Number);
-          if(this.weightsArray[1] === 0) {
-            this.weightsArray[1] = 100000;
-          }
-          console.log('weightArray', this.weightsArray);
-        })
-      ))
+        .pipe(
+          debounceTime(500),
+          map((x) => {
+            console.log('x', x);
+            this.weightsArray = Object.values(x).map(Number);
+            if (this.weightsArray[1] === 0) {
+              this.weightsArray[1] = 100000;
+            }
+            console.log('weightArray', this.weightsArray);
+          })
+        ))
       .pipe(
         startWith({}),
         switchMap(() => {
@@ -285,14 +271,17 @@ export class Matstems5Component {
             this.paginator.pageSize,
             this.paginator.pageIndex,
             this.searchInput.value!,
-            this.brandsList,
-            this.lengthsList,
-            this.colorsList,
-            this.materialsList,
+            this.checkboxComponent.form.controls.brand.value,
+            this.checkboxComponent.form.controls.clampDiameter.value,
+            this.checkboxComponent.form.controls.color.value,
+            this.checkboxComponent.form.controls.length.value,
+            this.checkboxComponent.form.controls.material.value,
+            this.checkboxComponent.form.controls.rise.value,
+            this.checkboxComponent.form.controls.steererDiameter.value,
             this.pricesArray,
             this.weightsArray
           ).pipe(catchError(() => of(null)),
-          map((response: any) => {this.length = response.data.aggregateStems.count; return response.data.queryStems}));
+            map((response: any) => { this.length = response.data.aggregateStems.count; return response.data.queryStems }));
         }),
         map(data => {
           this.isLoadingResults = false;
@@ -339,13 +328,18 @@ export class Matstems5Component {
     }
   }
 
-  logger(x: any) {
+  log() {
+    console.log(Object.values(this.checkboxComponent.form.value).some(x => x.length > 0));
+    console.log(this.checkboxComponent.form.getRawValue());
+  }
+
+  logItem(x: any) {
     console.log(x);
   }
 }
 
 export class ExampleHttpDatabase {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // baseURL = 'http://localhost:8080/graphql?query='; // local
   baseURL = 'https://throbbing-field-240145.us-west-2.aws.cloud.dgraph.io/graphql?query='; // Dgraph Cloud
@@ -364,25 +358,34 @@ export class ExampleHttpDatabase {
     pageIndex: number,
     search: string,
     brand: string[],
-    length: string[],
+    clampDiameter: string[],
     color: string[],
+    length: string[],
     material: string[],
+    rise: string[],
+    steererDiameter: string[],
     prices: number[],
     weights: number[]
-    ): Observable<Stems[]> {
+  ): Observable<Stems[]> {
 
-  const requestURL = this.baseURL + `{ aggregateStems(filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
+    const requestURL = this.baseURL + `{ aggregateStems(filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
   brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
-  length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
+  clampDiameter: ${(clampDiameter.length !== 0) ? '{in: [' + clampDiameter + ']}' : '{}'},
   color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
-  material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}, 
+  length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
+  material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'},
+  rise: ${(rise.length !== 0) ? '{in: [' + rise + ']}' : '{}'},
+  steererDiameter: ${(steererDiameter.length !== 0) ? '{in: [\"' + steererDiameter.join('", "') + '\"]}' : '{}'},
   price: ${prices.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + prices[0] + ', max: ' + prices[1] + '}}' : '{}'}, 
   weight: ${weights.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + weights[0] + ', max: ' + weights[1] + '}}' : '{}'}}) { count }
-   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex*pageSize}, filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
+   queryStems(order: {${order}: ${column}}, first: ${pageSize}, offset: ${pageIndex * pageSize}, filter: {name: ${search ? '{alloftext: \"' + search + '\"}' : '{}'}, 
    brand: ${(brand.length !== 0) ? '{in: [\"' + brand.join('", "') + '\"]}' : '{}'}, 
+  clampDiameter: ${(clampDiameter.length !== 0) ? '{in: [' + clampDiameter + ']}' : '{}'},
    length: ${(length.length !== 0) ? '{in: [' + length + ']}' : '{}'}, 
    color: ${(color.length !== 0) ? '{in: [\"' + color.join('", "') + '\"]}' : '{}'}, 
    material: ${(material.length !== 0) ? '{in: [\"' + material.join('", "') + '\"]}' : '{}'}, 
+   rise: ${(rise.length !== 0) ? '{in: [' + rise + ']}' : '{}'}, 
+   steererDiameter: ${(steererDiameter.length !== 0) ? '{in: [\"' + steererDiameter.join('", "') + '\"]}' : '{}'}, 
    price: ${prices.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + prices[0] + ', max: ' + prices[1] + '}}' : '{}'}, 
    weight: ${weights.toString() !== this.defaultRangeFilter.toString() ? '{between: {min: ' + weights[0] + ', max: ' + weights[1] + '}}' : '{}'}})
     { link clampDiameter brand color image length material name price rise steererDiameter weight } }`;
