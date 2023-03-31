@@ -2,15 +2,15 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';
-import { MatLegacyFormFieldModule as MatFormFieldModule, MAT_LEGACY_FORM_FIELD_DEFAULT_OPTIONS as MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/legacy-form-field';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
-import { MatLegacyProgressBarModule as MatProgressBarModule } from '@angular/material/legacy-progress-bar';
-import { MatLegacyProgressSpinnerModule as MatProgressSpinnerModule } from '@angular/material/legacy-progress-spinner';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSortModule } from '@angular/material/sort';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
+import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +29,7 @@ import { DegreePipe } from './pipes/degree.pipe';
 import { DollarsPerGramPipe } from './pipes/dollars-per-gram.pipe';
 import { GramsPipe } from './pipes/grams.pipe';
 import { MillimeterPipe } from './pipes/millimeter.pipe';
-import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
+import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import { SidebarFilterComponent } from './sidebar-filter/sidebar-filter.component';
@@ -37,7 +37,7 @@ import { Matstems4Component } from './parts/matstems4/matstems4.component';
 import { Matstems5Component } from './parts/matstems5/matstems5.component';
 import { StatusComponent } from './status/status.component';
 import { StemCheckboxFiltersComponent } from './parts/stem-checkbox-filters/stem-checkbox-filters.component';
-import {MatLegacyChipsModule as MatChipsModule} from '@angular/material/legacy-chips';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [

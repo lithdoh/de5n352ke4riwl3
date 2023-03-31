@@ -9,10 +9,10 @@ import { Component } from '@angular/core';
   `,
   styles: [
     `h4 {
-      padding-top: 150px;
-      padding-left: 25%;
-      font-size: 40px;
-      }`
+          padding-top: 150px;
+          padding-left: 25%;
+          font-size: 40px;
+          }`
   ]
 })
 export class StatusComponent {

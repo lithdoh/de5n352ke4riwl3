@@ -6,11 +6,11 @@ mat-form-field {
   margin-left: 85%;
 }
 
-.mat-cell {
+.mat-mdc-cell {
   padding-right: 10px;
 }
 
-.mat-header-cell {
+.mat-mdc-header-cell {
   width: 150px;
 }
 

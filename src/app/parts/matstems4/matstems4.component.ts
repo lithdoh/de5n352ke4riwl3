@@ -3,7 +3,7 @@ import { KeyValue } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, Output, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort, SortDirection } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { catchError, debounceTime, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
