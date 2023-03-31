@@ -5,13 +5,15 @@
         </mat-expansion-panel-header>
         <section>
             <form [formGroup]="form">
-                <mat-checkbox 
-                [checked]="allChecked(section.key)" 
-                [indeterminate]="someChecked(section.key)" 
-                (change)="setAll(section.key)"
-                color="primary">
-                    All
-                </mat-checkbox>
+                <p>
+                    <mat-checkbox
+                    [checked]="allChecked(section.key)"
+                    [indeterminate]="someChecked(section.key)"
+                    (change)="setAll(section.key)"
+                    color="primary">
+                        All
+                    </mat-checkbox>
+                </p>
 
                 <p *ngFor="let checkbox of section.value.filters">
                     <mat-checkbox 
@@ -20,15 +22,9 @@
                     [checked]="brandsValueContains(section.key, checkbox)" 
                     color="primary">
                         {{checkbox}}
-                </mat-checkbox>
+                    </mat-checkbox>
                 </p>
             </form>
         </section>
-
-        <section>
-            <h4>You chose:</h4>
-            {{form.value | json}}
-        </section>
-        <button (click)="logger()">click</button>
     </mat-expansion-panel>
 </mat-accordion>
