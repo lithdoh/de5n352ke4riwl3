@@ -1,7 +1,8 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, Input, Output, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import FormSection from 'src/app/models/form-section';
 import { Stems } from 'src/app/models/stems.model';
+import { ApiService } from './checkbox-services/api.service';
 import { DataService } from './checkbox-services/data.service';
 
 export interface FilterCategories {
@@ -16,14 +17,14 @@ export interface FilterCategories {
   templateUrl: './stem-checkbox-filters.component.html',
   styleUrls: ['./stem-checkbox-filters.component.css']
 })
-export class StemCheckboxFiltersComponent {
+export class StemCheckboxFiltersComponent implements AfterViewInit {
   categories: FilterCategories = {
     brand: {
       label: "Brand",
       filters: []
     },
     steererDiameter: {
-      label: "Steerer Diameter (mm)",
+      label: "Steerer Diameter",
       filters: []
     },
     rise: {
@@ -48,15 +49,16 @@ export class StemCheckboxFiltersComponent {
     }
   };
 
-  #dataService = inject(DataService);
+  api = inject(ApiService);
 
-  #sections: string[] = ["steererDiameter", "rise", "material", "length", "color", "clampDiameter", "brand"];
+  #dataService = inject(DataService);
 
   stems!: Stems[];
 
   @Input() set data(data: Stems[]) {
     this.stems = data;
-    const sections = this.#sections.map<FormSection>((s) => ({
+    const categoryKeys = Object.keys(this.categories);
+    const sections = categoryKeys.map<FormSection>((s) => ({
       name: s,
       checkboxNames: this.#dataService.getUniqueValues(data, s),
     }));
@@ -67,7 +69,7 @@ export class StemCheckboxFiltersComponent {
 
   nnfb = new FormBuilder().nonNullable;
 
-  form = this.nnfb.group({
+  @Output() form = this.nnfb.group({
     brand: this.nnfb.control([]),
     steererDiameter: this.nnfb.control([]),
     rise: this.nnfb.control([]),
@@ -80,15 +82,6 @@ export class StemCheckboxFiltersComponent {
   addCheckboxNameToFormControl(section: string, name: string | number | null): void {
     const formSection = this.form.get(section) as FormControl;
     const index = formSection.value.indexOf(name);
-
-    console.log('categories: ', this.categories);
-
-    // Alternate way, something like:
-    // if(this.brands.value.includes(name)) {
-    //   this.brands.setValue(this.brands.value.splice(this.brands.value.indexOf(name, 1)));
-    // } else {
-    //   this.brands.setValue(this.brands.value.push(name));
-    // }
 
     if (index > -1) {
       formSection.setValue([
@@ -112,11 +105,7 @@ export class StemCheckboxFiltersComponent {
 
   setAll(section: string) {
     const formSection = this.form.get(section) as FormControl;
-    // If (some, but not all) OR none of the checkboxes are checked when All is clicked, set the value to all.
-    if ((
-      (formSection.value.length > 0) &&
-      (formSection.value.length < this.categories[section].filters.length)) ||
-      (formSection.value.length === 0)) {
+    if (formSection.value.length !== this.categories[section].filters.length) {
       formSection.setValue(this.categories[section].filters);
     } else {
       formSection.setValue([]);
@@ -138,5 +127,6 @@ export class StemCheckboxFiltersComponent {
 
   ngAfterViewInit() {
     this.form.controls.brand.valueChanges.subscribe(x => console.log('xpp: ', x));
+    this.api.stems$.subscribe((x) => this.data = x);
   }
 }
