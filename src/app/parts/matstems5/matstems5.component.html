@@ -7,15 +7,17 @@
       <section>
         <mat-expansion-panel [expanded]="true">
           <mat-expansion-panel-header>
-            <mat-panel-title> Weight (g) </mat-panel-title>
+            <mat-panel-title> Weight </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="numeric-filter">
             <mat-form-field class="minmax-range">
               <input matInput type="number" placeholder="Min" [formControl]="weightRange.controls.weightMin">
+              <span matTextSuffix>&nbsp;g</span>
             </mat-form-field>
             <p>to</p>
             <mat-form-field class="minmax-range">
               <input matInput type="number" placeholder="Max" [formControl]="weightRange.controls.weightMax">
+              <span matTextSuffix>&nbsp;g</span>
             </mat-form-field>
           </div>
         </mat-expansion-panel>
@@ -23,16 +25,17 @@
       <section>
         <mat-expansion-panel [expanded]="true">
           <mat-expansion-panel-header>
-            <mat-panel-title> Price ($) </mat-panel-title>
+            <mat-panel-title> Price </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="numeric-filter">
             <mat-form-field class="minmax-range">
-              <mat-label>Min</mat-label>
-              <input matInput type="number" [formControl]="priceRange.controls.priceMin">
+              <input matInput type="number" placeholder="Min" [formControl]="priceRange.controls.priceMin">
+              <span matTextPrefix>$&nbsp;</span>
             </mat-form-field>
             <p>to</p>
             <mat-form-field class="minmax-range">
               <input matInput type="number" placeholder="Max" [formControl]="priceRange.controls.priceMax">
+              <span matTextPrefix>$&nbsp;</span>
             </mat-form-field>
           </div>
         </mat-expansion-panel>
@@ -49,6 +52,7 @@
           <input matInput type="search" placeholder="Search by name" [formControl]="searchInput">
         </mat-form-field>
         <button (click)="log()">click</button>
+        <button (click)="updateQueryParameters()">add params</button>
         <hr>
 
         <!-- Testing form version -->
@@ -57,12 +61,9 @@
         <ng-container *ngFor="let section of categoriesLocal | keyvalue">
           <p *ngIf="checkboxComponent.form.get(section.key)?.value.length > 0"> {{section.value.label}}:
             <!-- but I can use checkboxComponent.form -->
-            <!-- <mat-chip-listbox>
-              <mat-chip-option class="remove_selection" *ngFor="let checkbox of checkboxComponent.form.get(section.key)?.value"
+              <button class="remove_selection" *ngFor="let checkbox of checkboxComponent.form.get(section.key)?.value"
               (click)="newRemoveSelection(section.key, checkbox)">{{checkbox}} <mat-icon inline
-                aria-hidden="true">cancel</mat-icon></mat-chip-option>
-            </mat-chip-listbox>
-            <mat-chip-grid></mat-chip-grid> -->
+                aria-hidden="true">cancel</mat-icon></button>
           </p>
         </ng-container>
   
