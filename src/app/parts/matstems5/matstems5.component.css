@@ -26,12 +26,12 @@
   }
   
   .remove_selection:hover {
-    border-color: lightgreen;
+    border-color: rgb(99, 219, 171);
     border-radius: 3px;
   }
   
   .remove_selection:hover .mat-icon {
-    color:lightgreen;
+    color: rgb(99, 219, 171);
   }
   
   .mat-icon {
