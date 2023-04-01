@@ -55,109 +55,8 @@ export class Matstems5Component {
 
   //______________________________________________________________________________________________
 
-  brandsDefault = {
-    "Deity Components": false,
-    "Industry Nine": false,
-    "FSA": false,
-    "Chromag": false,
-    "OneUp Components": false,
-    "Renthal": false,
-    "PNW Components": false,
-    "Race Face": false,
-  };
 
-  lengthsDefault = {
-    30: false,
-    32: false,
-    35: false,
-    40: false,
-    50: false,
-    60: false,
-    65: false,
-  };
-
-  colorsDefault = {
-    "Purple": false,
-    "Lime": false,
-    "Red": false,
-    "Black": false,
-    "Ano Orange": false,
-    "Blue": false,
-  };
-
-  materialsDefault = {
-    "6061 T6 aluminum": false,
-    "[stem] 7075 aluminum, [bolts] 316 stainless steel": false,
-    "CNC machined 6061 T6 aluminum": false,
-    "2014-series aluminum": false,
-    "[body] carbon fiber, [face plate] aluminum, [hardware] titanium": false,
-    "EA70 aluminum": false,
-    "aluminum": false
-  };
-
-  profileForm = this.fb.group({
-    brands: this.fb.group(this.brandsDefault),
-    lengths: this.fb.group(this.lengthsDefault),
-    colors: this.fb.group(this.colorsDefault),
-    materials: this.fb.group(this.materialsDefault),
-  });
-
-  someComplete(section: string): boolean {
-    switch (section) {
-      case 'brands':
-        return Object.values(this.profileForm.controls.brands.value).every(
-          (x) => x === false
-        );
-      case 'lengths':
-        return Object.values(this.profileForm.controls.lengths.value).every(
-          (x) => x === false
-        );
-      case 'colors':
-        return Object.values(this.profileForm.controls.colors.value).every(
-          (x) => x === false
-        );
-      case 'materials':
-        return Object.values(this.profileForm.controls.materials.value).every(
-          (x) => x === false
-        );
-      default:
-        return true;
-    }
-  }
-
-  uncheckAll(section: string) {
-    switch (section) {
-      case 'brands':
-        this.profileForm.controls.brands.setValue(this.brandsDefault);
-        break;
-      case 'lengths':
-        this.profileForm.controls.lengths.setValue(this.lengthsDefault);
-        break;
-      case 'colors':
-        this.profileForm.controls.colors.setValue(this.colorsDefault);
-        break;
-      case 'materials':
-        this.profileForm.controls.materials.setValue(this.materialsDefault);
-    }
-  }
-
-  removeSelection(section: string, selection: string) {
-    switch (section) {
-      case 'brands':
-        this.profileForm.controls.brands.get(selection)?.setValue(false);
-        break;
-      case 'lengths':
-        this.profileForm.controls.lengths.get(selection)?.setValue(false);
-        break;
-      case 'colors':
-        this.profileForm.controls.colors.get(selection)?.setValue(false);
-        break;
-      case 'materials':
-        this.profileForm.controls.materials.get(selection)?.setValue(false);
-    }
-  }
-
-  @ViewChild(StemCheckboxFiltersComponent, { static: false }) checkboxComponent!: StemCheckboxFiltersComponent;
+  @ViewChild(StemCheckboxFiltersComponent) checkboxComponent!: StemCheckboxFiltersComponent;
   // @ViewChildren('sidebar') sidebar!: StemCheckboxFiltersComponent;
 
   categoriesLocal!: FilterCategories;
@@ -165,7 +64,7 @@ export class Matstems5Component {
   newRemoveSelection(section: string, name: string | number | null): void {
     const formSection = this.checkboxComponent.form.get(section) as FormControl;
     const index = formSection.value.indexOf(name);
-  
+
     formSection.setValue([
       ...formSection.value.slice(0, index),
       ...formSection.value.slice(index + 1),
@@ -211,11 +110,23 @@ export class Matstems5Component {
   //   Spank: false,
   // });
 
+  updateQueryParameters() {
+    this.router.navigate(
+      [],
+      {
+        queryParams: {
+          genre: ['rpg', 'prg', 'gpe'].join(',')
+        },
+        queryParamsHandling: 'merge'
+      }
+    );
+  }
+
   ngAfterViewInit() {
 
-      this.categoriesLocal = this.checkboxComponent.categories;
+    this.categoriesLocal = this.checkboxComponent.categories;
 
-      this.cd.detectChanges(); // Run Change Detection manually to make the view update based on this changed value
+    this.cd.detectChanges(); // Run Change Detection manually to make the view update based on this changed value
 
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
@@ -224,8 +135,6 @@ export class Matstems5Component {
     this.searchInput.valueChanges.pipe(debounceTime(500)).subscribe(() => this.paginator.pageIndex = 0);
 
     // If the user selects any filter option, reset back to the first page.
-    this.profileForm.valueChanges.subscribe(() => this.paginator.pageIndex = 0);
-
     this.checkboxComponent.form.valueChanges.subscribe(() => this.paginator.pageIndex = 0);
 
     // If the user enters a minimum or maximum price, reset back to the first page.
@@ -329,8 +238,22 @@ export class Matstems5Component {
   }
 
   log() {
-    console.log(Object.values(this.checkboxComponent.form.value).some(x => x.length > 0));
-    console.log(this.checkboxComponent.form.getRawValue());
+    console.log('getStemsParams: ', {
+      direction: this.sort.direction,
+      active: this.sort.active,
+      pageSize: this.paginator.pageSize,
+      pageIndex: this.paginator.pageIndex,
+      searchInput: this.searchInput.value!,
+      brand: this.checkboxComponent.form.controls.brand.value,
+      clampDiameter: this.checkboxComponent.form.controls.clampDiameter.value,
+      color: this.checkboxComponent.form.controls.color.value,
+      length: this.checkboxComponent.form.controls.length.value,
+      material: this.checkboxComponent.form.controls.material.value,
+      rise: this.checkboxComponent.form.controls.rise.value,
+      steererDiameter: this.checkboxComponent.form.controls.steererDiameter.value,
+      pricesArray: this.pricesArray,
+      weightsArray: this.weightsArray
+    })
   }
 
   logItem(x: any) {
