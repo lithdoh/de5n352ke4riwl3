@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'parts/matstems3', component: Matstems3Component },
   { path: 'parts/matstems4', component: Matstems4Component },
   { path: 'parts/matstems5', component: Matstems5Component },
-  { path: '', redirectTo: 'parts/matstems2', pathMatch: 'full' },
+  { path: '', redirectTo: 'parts/matstems5', pathMatch: 'full' },
   { path: "**", component: StatusComponent }
 ];
 

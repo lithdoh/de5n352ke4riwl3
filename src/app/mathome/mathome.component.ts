@@ -29,7 +29,7 @@ let ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     component: 'Stems',
-    routeLink: '/parts/matstems2',
+    routeLink: '/parts/matstems5',
     image: '',
     selection: 'Choose a Stem',
     price: '',
