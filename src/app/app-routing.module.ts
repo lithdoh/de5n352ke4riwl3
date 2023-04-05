@@ -13,6 +13,7 @@ import { Matstems3Component } from './parts/matstems3/matstems3.component';
 import { Matstems4Component } from './parts/matstems4/matstems4.component';
 import { Matstems5Component } from './parts/matstems5/matstems5.component';
 import { StatusComponent } from './status/status.component';
+import { Matbars2Component } from './parts/matbars2/matbars2.component';
 
 const routes: Routes = [
   { path: 'parts/frame', component: FrameComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'parts/matstems3', component: Matstems3Component },
   { path: 'parts/matstems4', component: Matstems4Component },
   { path: 'parts/matstems5', component: Matstems5Component },
+  { path: 'parts/matbars2', component: Matbars2Component },
   { path: '', redirectTo: 'parts/matstems5', pathMatch: 'full' },
   { path: "**", component: StatusComponent }
 ];
