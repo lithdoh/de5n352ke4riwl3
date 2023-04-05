@@ -1,4 +1,4 @@
-import { Component, inject, Input, Output, AfterViewInit } from '@angular/core';
+import { Component, inject, Input, AfterViewInit, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import FormSection from 'src/app/models/form-section';
 import { Stems } from 'src/app/models/stems.model';
@@ -17,7 +17,7 @@ export interface FilterCategories {
   templateUrl: './stem-checkbox-filters.component.html',
   styleUrls: ['./stem-checkbox-filters.component.css']
 })
-export class StemCheckboxFiltersComponent implements AfterViewInit {
+export class StemCheckboxFiltersComponent implements OnInit {
   categories: FilterCategories = {
     brand: {
       label: "Brand",
@@ -69,14 +69,14 @@ export class StemCheckboxFiltersComponent implements AfterViewInit {
 
   nnfb = new FormBuilder().nonNullable;
 
-  @Output() form = this.nnfb.group({
+  form = this.nnfb.group({
     brand: this.nnfb.control([]),
     steererDiameter: this.nnfb.control([]),
     rise: this.nnfb.control([]),
     material: this.nnfb.control([]),
     length: this.nnfb.control([]),
     color: this.nnfb.control([]),
-    clampDiameter: this.nnfb.control([])
+    clampDiameter: this.nnfb.control([]),
   });
 
   addCheckboxNameToFormControl(section: string, name: string | number | null): void {
@@ -112,21 +112,20 @@ export class StemCheckboxFiltersComponent implements AfterViewInit {
     }
   }
 
-  brandsValueContains(section: string, checkboxName: string | number | null): boolean {
+  checkIfSectionContainsCheckbox(section: string, checkboxName: string | number | null): boolean {
     const formSection = this.form.get(section) as FormControl;
     return formSection.value.includes(checkboxName);
   }
 
-  logger() {
-    // console.log('posts: ', this.posts);
-  }
+  // logger() {
+  //   // console.log('posts: ', this.posts);
+  // }
 
-  log(x: any) {
-    console.log('x: ', x);
-  }
+  // log(x: any) {
+  //   console.log('x: ', x);
+  // }
 
-  ngAfterViewInit() {
-    this.form.controls.brand.valueChanges.subscribe(x => console.log('xpp: ', x));
+  ngOnInit() {
     this.api.stems$.subscribe((x) => this.data = x);
   }
 }

@@ -16,7 +16,7 @@
                     <mat-checkbox 
                     value="checkbox" 
                     (change)="addCheckboxNameToFormControl(section.key, checkbox)"
-                    [checked]="brandsValueContains(section.key, checkbox)" 
+                    [checked]="checkIfSectionContainsCheckbox(section.key, checkbox)" 
                     color="primary">
                         {{checkbox}}
                     </mat-checkbox>
