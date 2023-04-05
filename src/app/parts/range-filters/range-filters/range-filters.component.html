@@ -1,0 +1,28 @@
+<mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Weight </mat-panel-title>
+    </mat-expansion-panel-header>
+      <mat-form-field class="minmax-range">
+        <input matInput type="number" placeholder="Min" [formControl]="form.controls.weightRange.controls.min">
+        <span matTextSuffix>&nbsp;g</span>
+      </mat-form-field>
+      <p>to</p>
+      <mat-form-field class="minmax-range">
+        <input matInput type="number" placeholder="Max" [formControl]="form.controls.weightRange.controls.max">
+        <span matTextSuffix>&nbsp;g</span>
+      </mat-form-field>
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Price </mat-panel-title>
+    </mat-expansion-panel-header>
+      <mat-form-field class="minmax-range">
+        <input matInput type="number" placeholder="Min" [formControl]="form.controls.priceRange.controls.min">
+        <span matTextPrefix>$&nbsp;</span>
+      </mat-form-field>
+      <p>to</p>
+      <mat-form-field class="minmax-range">
+        <input matInput type="number" placeholder="Max" [formControl]="form.controls.priceRange.controls.max">
+        <span matTextPrefix>$&nbsp;</span>
+      </mat-form-field>
+  </mat-expansion-panel>

@@ -4,42 +4,7 @@
         <!-- <app-stem-checkbox-filters [data]="stems"></app-stem-checkbox-filters> -->
         <app-stem-checkbox-filters></app-stem-checkbox-filters>
       <!-- </ng-container> -->
-      <section>
-        <mat-expansion-panel [expanded]="true">
-          <mat-expansion-panel-header>
-            <mat-panel-title> Weight </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="numeric-filter">
-            <mat-form-field class="minmax-range">
-              <input matInput type="number" placeholder="Min" [formControl]="weightRange.controls.weightMin">
-              <span matTextSuffix>&nbsp;g</span>
-            </mat-form-field>
-            <p>to</p>
-            <mat-form-field class="minmax-range">
-              <input matInput type="number" placeholder="Max" [formControl]="weightRange.controls.weightMax">
-              <span matTextSuffix>&nbsp;g</span>
-            </mat-form-field>
-          </div>
-        </mat-expansion-panel>
-      </section>
-      <section>
-        <mat-expansion-panel [expanded]="true">
-          <mat-expansion-panel-header>
-            <mat-panel-title> Price </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="numeric-filter">
-            <mat-form-field class="minmax-range">
-              <input matInput type="number" placeholder="Min" [formControl]="priceRange.controls.priceMin">
-              <span matTextPrefix>$&nbsp;</span>
-            </mat-form-field>
-            <p>to</p>
-            <mat-form-field class="minmax-range">
-              <input matInput type="number" placeholder="Max" [formControl]="priceRange.controls.priceMax">
-              <span matTextPrefix>$&nbsp;</span>
-            </mat-form-field>
-          </div>
-        </mat-expansion-panel>
-      </section>
+      <app-range-filters></app-range-filters>
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="mat-elevation-z8">
@@ -53,6 +18,7 @@
         </mat-form-field>
         <button (click)="log()">click</button>
         <button (click)="updateQueryParameters()">add params</button>
+        <!-- <button (click)="getQueryParameters()">get params</button> -->
         <hr>
 
         <!-- Testing form version -->
@@ -164,7 +130,7 @@
           </tr>
         </table>
   
-        <mat-paginator [length]="length" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize"
+        <mat-paginator [length]="length" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" [pageIndex]="pageIndex"
           [showFirstLastButtons]="showFirstLastButtons" aria-label="Select page">
         </mat-paginator>
       </div>
