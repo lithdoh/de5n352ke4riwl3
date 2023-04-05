@@ -38,6 +38,9 @@ import { Matstems5Component } from './parts/matstems5/matstems5.component';
 import { StatusComponent } from './status/status.component';
 import { StemCheckboxFiltersComponent } from './parts/stem-checkbox-filters/stem-checkbox-filters.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { RangeFiltersComponent } from './parts/range-filters/range-filters/range-filters.component';
+import { Matbars2Component } from './parts/matbars2/matbars2.component';
+import { BarCheckboxFiltersComponent } from './parts/bar-checkbox-filters/bar-checkbox-filters.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import {MatChipsModule} from '@angular/material/chips';
     Matstems5Component,
     StatusComponent,
     StemCheckboxFiltersComponent,
+    RangeFiltersComponent,
+    Matbars2Component,
+    BarCheckboxFiltersComponent,
   ],
   imports: [
     BrowserAnimationsModule,
