@@ -2,7 +2,7 @@ mutation MyMutation {
   addBars(input: [
   {
     link: "https://www.competitivecyclist.com/truvativ-descendant-35mm-handlebar",
-    image: "assets/truvativ-descendant-35mm-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/truvativ-descendant-35mm-handlebar_BK.jpg",
     name: "Descendant 35mm Handlebar",
     brand: "TruVativ",
     material: "aluminum",
@@ -16,7 +16,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-sixc-dh-handlebar",
-    image: "assets/race-face-sixc-dh-handlebar_TU.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-sixc-dh-handlebar_TU.jpg",
     name: "SIXC DH Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -31,7 +31,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-sixc-dh-handlebar",
-    image: "assets/race-face-sixc-dh-handlebar_RD.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-sixc-dh-handlebar_RD.jpg",
     name: "SIXC DH Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -46,7 +46,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-turbine-r-35-35mm-rise-handlebar",
-    image: "assets/race-face-turbine-r-35-35mm-rise-handlebar_STE.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-turbine-r-35-35mm-rise-handlebar_STE.jpg",
     name: "Turbine R 35 35mm Rise Handlebar",
     brand: "Race Face",
     material: "7075 aluminum",
@@ -61,7 +61,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-sixc-35-35mm-rise-handlebar",
-    image: "assets/race-face-sixc-35-35mm-rise-handlebar_CAR.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-sixc-35-35mm-rise-handlebar_CAR.jpg",
     name: "SIXC 35 35mm Rise Handlebar",
     brand: "Race Face",
     material: "unidirectional carbon fiber",
@@ -76,7 +76,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-50mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-50mm-rise-handlebar_BLU.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-50mm-rise-handlebar_BLU.jpg",
     name: "OS-35 Highside 50mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -91,7 +91,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-50mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-50mm-rise-handlebar_BRO.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-50mm-rise-handlebar_BRO.jpg",
     name: "OS-35 Highside 50mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -106,7 +106,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-50mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-50mm-rise-handlebar_ORA.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-50mm-rise-handlebar_ORA.jpg",
     name: "OS-35 Highside 50mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -121,7 +121,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-50mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-50mm-rise-handlebar_RED.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-50mm-rise-handlebar_RED.jpg",
     name: "OS-35 Highside 50mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -136,7 +136,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-50mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-50mm-rise-handlebar_TUR.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-50mm-rise-handlebar_TUR.jpg",
     name: "OS-35 Highside 50mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -151,7 +151,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-50mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-50mm-rise-handlebar_WHI.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-50mm-rise-handlebar_WHI.jpg",
     name: "OS-35 Highside 50mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -166,7 +166,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/whisky-parts-co.-no.9-carbon-flat-handlebar",
-    image: "assets/whisky-parts-co.-no.9-carbon-flat-handlebar_MATBK.jpg",
+    image: "assets/competitive-cyclist-bars/whisky-parts-co.-no.9-carbon-flat-handlebar_MATBK.jpg",
     name: "No.9 Carbon Flat Handlebar",
     brand: "Whisky Parts Co.",
     material: "carbon fiber",
@@ -180,7 +180,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/whisky-parts-co.-no.9-carbon-flat-handlebar",
-    image: "assets/whisky-parts-co.-no.9-carbon-flat-handlebar_MATBK.jpg",
+    image: "assets/competitive-cyclist-bars/whisky-parts-co.-no.9-carbon-flat-handlebar_MATBK.jpg",
     name: "No.9 Carbon Flat Handlebar",
     brand: "Whisky Parts Co.",
     material: "carbon fiber",
@@ -193,7 +193,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/enve-m9-handlebar",
-    image: "assets/enve-m9-handlebar_S318MMCLA.jpg",
+    image: "assets/competitive-cyclist-bars/enve-m9-handlebar_S318MMCLA.jpg",
     name: "M9 Handlebar",
     brand: "ENVE",
     material: "Carbon",
@@ -208,7 +208,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-sixc-35-20mm-rise-handlebar",
-    image: "assets/race-face-sixc-35-20mm-rise-handlebar_BL.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-sixc-35-20mm-rise-handlebar_BL.jpg",
     name: "SIXC 35 20mm Rise Carbon Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -223,7 +223,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-sixc-35-20mm-rise-handlebar",
-    image: "assets/race-face-sixc-35-20mm-rise-handlebar_CAR.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-sixc-35-20mm-rise-handlebar_CAR.jpg",
     name: "SIXC 35 20mm Rise Carbon Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -238,7 +238,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-sixc-35-20mm-rise-handlebar",
-    image: "assets/race-face-sixc-35-20mm-rise-handlebar_GN.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-sixc-35-20mm-rise-handlebar_GN.jpg",
     name: "SIXC 35 20mm Rise Carbon Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -253,7 +253,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/ritchey-comp-flat-handlebar",
-    image: "assets/ritchey-comp-flat-handlebar_BLA.jpg",
+    image: "assets/competitive-cyclist-bars/ritchey-comp-flat-handlebar_BLA.jpg",
     name: "Comp Flat Handlebar",
     brand: "Ritchey",
     material: "double-butted 6061 alloy",
@@ -267,7 +267,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-35-handlebar",
-    image: "assets/renthal-fatbar-35-handlebar_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-35-handlebar_GD.jpg",
     name: "Fatbar 35 Handlebar",
     brand: "Renthal",
     material: "7 series aluminum",
@@ -282,7 +282,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-35-handlebar",
-    image: "assets/renthal-fatbar-35-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-35-handlebar_BK.jpg",
     name: "Fatbar 35 Handlebar",
     brand: "Renthal",
     material: "7 series aluminum",
@@ -297,7 +297,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-35-handlebar",
-    image: "assets/renthal-fatbar-35-handlebar_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-35-handlebar_GD.jpg",
     name: "Fatbar 35 Handlebar",
     brand: "Renthal",
     material: "7 series aluminum",
@@ -312,7 +312,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-35-handlebar",
-    image: "assets/renthal-fatbar-35-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-35-handlebar_BK.jpg",
     name: "Fatbar 35 Handlebar",
     brand: "Renthal",
     material: "7 series aluminum",
@@ -327,7 +327,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-80mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-80mm-rise-handlebar_BLU.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-80mm-rise-handlebar_BLU.jpg",
     name: "OS-35 Highside 80mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -342,7 +342,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-80mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-80mm-rise-handlebar_BRO.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-80mm-rise-handlebar_BRO.jpg",
     name: "OS-35 Highside 80mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -357,7 +357,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-80mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-80mm-rise-handlebar_ORA.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-80mm-rise-handlebar_ORA.jpg",
     name: "OS-35 Highside 80mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -372,7 +372,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-80mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-80mm-rise-handlebar_RED.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-80mm-rise-handlebar_RED.jpg",
     name: "OS-35 Highside 80mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -387,7 +387,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-80mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-80mm-rise-handlebar_TUR.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-80mm-rise-handlebar_TUR.jpg",
     name: "OS-35 Highside 80mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -402,7 +402,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-os-35-highside-80mm-rise-handlebar",
-    image: "assets/deity-components-os-35-highside-80mm-rise-handlebar_WHI.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-os-35-highside-80mm-rise-handlebar_WHI.jpg",
     name: "OS-35 Highside 80mm Rise Handlebar",
     brand: "Deity Components",
     material: "aluminum",
@@ -417,7 +417,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-bf800-brendog-handlebar",
-    image: "assets/deity-components-bf800-brendog-handlebar_STE.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-bf800-brendog-handlebar_STE.jpg",
     name: "BF800 Brendog Handlebar",
     brand: "Deity Components",
     material: "7075 T73 aluminum",
@@ -432,7 +432,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-bf800-brendog-handlebar",
-    image: "assets/deity-components-bf800-brendog-handlebar_WH.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-bf800-brendog-handlebar_WH.jpg",
     name: "BF800 Brendog Handlebar",
     brand: "Deity Components",
     material: "7075 T73 aluminum",
@@ -447,7 +447,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-bf800-brendog-handlebar",
-    image: "assets/deity-components-bf800-brendog-handlebar_RD.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-bf800-brendog-handlebar_RD.jpg",
     name: "BF800 Brendog Handlebar",
     brand: "Deity Components",
     material: "7075 T73 aluminum",
@@ -462,7 +462,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/deity-components-bf800-brendog-handlebar",
-    image: "assets/deity-components-bf800-brendog-handlebar_OR.jpg",
+    image: "assets/competitive-cyclist-bars/deity-components-bf800-brendog-handlebar_OR.jpg",
     name: "BF800 Brendog Handlebar",
     brand: "Deity Components",
     material: "7075 T73 aluminum",
@@ -477,7 +477,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite",
-    image: "assets/renthal-fatbar-lite_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite_GD.jpg",
     name: "FatBar Lite V2",
     brand: "Renthal",
     material: "7050 T6 aluminum",
@@ -492,7 +492,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite",
-    image: "assets/renthal-fatbar-lite_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite_GD.jpg",
     name: "FatBar Lite V2",
     brand: "Renthal",
     material: "7050 T6 aluminum",
@@ -507,7 +507,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite",
-    image: "assets/renthal-fatbar-lite_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite_GD.jpg",
     name: "FatBar Lite V2",
     brand: "Renthal",
     material: "7050 T6 aluminum",
@@ -522,7 +522,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite",
-    image: "assets/renthal-fatbar-lite_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite_BK.jpg",
     name: "FatBar Lite V2",
     brand: "Renthal",
     material: "7050 T6 aluminum",
@@ -537,7 +537,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite",
-    image: "assets/renthal-fatbar-lite_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite_BK.jpg",
     name: "FatBar Lite V2",
     brand: "Renthal",
     material: "7050 T6 aluminum",
@@ -552,7 +552,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite",
-    image: "assets/renthal-fatbar-lite_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite_BK.jpg",
     name: "FatBar Lite V2",
     brand: "Renthal",
     material: "7050 T6 aluminum",
@@ -567,7 +567,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-next-r-35-10mm-rise-handlebar",
-    image: "assets/race-face-next-r-35-10mm-rise-handlebar_CAR.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-next-r-35-10mm-rise-handlebar_CAR.jpg",
     name: "Next R 35 10mm Rise Carbon Handlebar",
     brand: "Race Face",
     material: "UD carbon",
@@ -582,7 +582,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-aeffect-r-35-20mm-rise-handlebar",
-    image: "assets/race-face-aeffect-r-35-20mm-rise-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-aeffect-r-35-20mm-rise-handlebar_BK.jpg",
     name: "Aeffect R 35 20mm Rise Handlebar",
     brand: "Race Face",
     material: "2014 aluminum",
@@ -597,7 +597,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/pro-tharsis-3five-carbon-handlebar",
-    image: "assets/pro-tharsis-3five-carbon-handlebar_S35MCLA.jpg",
+    image: "assets/competitive-cyclist-bars/pro-tharsis-3five-carbon-handlebar_S35MCLA.jpg",
     name: "Tharsis 3five Carbon Handlebar",
     brand: "PRO",
     material: "UD carbon",
@@ -612,7 +612,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-atlas-35-35mm-rise-handlebar",
-    image: "assets/race-face-atlas-35-35mm-rise-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-atlas-35-35mm-rise-handlebar_BK.jpg",
     name: "Atlas 35 35mm Rise Handlebar",
     brand: "Race Face",
     material: "7075 aluminum",
@@ -627,7 +627,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-atlas-35-35mm-rise-handlebar",
-    image: "assets/race-face-atlas-35-35mm-rise-handlebar_BL.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-atlas-35-35mm-rise-handlebar_BL.jpg",
     name: "Atlas 35 35mm Rise Handlebar",
     brand: "Race Face",
     material: "7075 aluminum",
@@ -642,7 +642,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-atlas-35-35mm-rise-handlebar",
-    image: "assets/race-face-atlas-35-35mm-rise-handlebar_RD.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-atlas-35-35mm-rise-handlebar_RD.jpg",
     name: "Atlas 35 35mm Rise Handlebar",
     brand: "Race Face",
     material: "7075 aluminum",
@@ -657,7 +657,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-atlas-35-35mm-rise-handlebar",
-    image: "assets/race-face-atlas-35-35mm-rise-handlebar_STE.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-atlas-35-35mm-rise-handlebar_STE.jpg",
     name: "Atlas 35 35mm Rise Handlebar",
     brand: "Race Face",
     material: "7075 aluminum",
@@ -672,7 +672,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-atlas-35-35mm-rise-handlebar",
-    image: "assets/race-face-atlas-35-35mm-rise-handlebar_PU.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-atlas-35-35mm-rise-handlebar_PU.jpg",
     name: "Atlas 35 35mm Rise Handlebar",
     brand: "Race Face",
     material: "7075 aluminum",
@@ -687,7 +687,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-atlas-35-35mm-rise-handlebar",
-    image: "assets/race-face-atlas-35-35mm-rise-handlebar_GN.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-atlas-35-35mm-rise-handlebar_GN.jpg",
     name: "Atlas 35 35mm Rise Handlebar",
     brand: "Race Face",
     material: "7075 aluminum",
@@ -702,7 +702,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite-35-handlebar",
-    image: "assets/renthal-fatbar-lite-35-handlebar_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite-35-handlebar_GD.jpg",
     name: "Fatbar Lite 35 Handlebar",
     brand: "Renthal",
     material: "7 series aluminum",
@@ -717,7 +717,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite-35-handlebar",
-    image: "assets/renthal-fatbar-lite-35-handlebar_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite-35-handlebar_GD.jpg",
     name: "Fatbar Lite 35 Handlebar",
     brand: "Renthal",
     material: "7 series aluminum",
@@ -732,7 +732,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite-35-handlebar",
-    image: "assets/renthal-fatbar-lite-35-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite-35-handlebar_BK.jpg",
     name: "Fatbar Lite 35 Handlebar",
     brand: "Renthal",
     material: "7 series aluminum",
@@ -747,7 +747,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/enve-m7-handlebar",
-    image: "assets/enve-m7-handlebar_S35MMCLA.jpg",
+    image: "assets/competitive-cyclist-bars/enve-m7-handlebar_S35MMCLA.jpg",
     name: "M7 Handlebar",
     brand: "ENVE",
     material: "carbon fiber",
@@ -762,7 +762,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/enve-m7-handlebar",
-    image: "assets/enve-m7-handlebar_S35MMCLA.jpg",
+    image: "assets/competitive-cyclist-bars/enve-m7-handlebar_S35MMCLA.jpg",
     name: "M7 Handlebar",
     brand: "ENVE",
     material: "carbon fiber",
@@ -777,7 +777,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/enve-m7-handlebar",
-    image: "assets/enve-m7-handlebar_S35MMCLA.jpg",
+    image: "assets/competitive-cyclist-bars/enve-m7-handlebar_S35MMCLA.jpg",
     name: "M7 Handlebar",
     brand: "ENVE",
     material: "carbon fiber",
@@ -792,7 +792,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-next-riser-handlebar",
-    image: "assets/race-face-next-riser-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-next-riser-handlebar_BK.jpg",
     name: "Next Riser 35mm Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -807,7 +807,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-next-riser-handlebar",
-    image: "assets/race-face-next-riser-handlebar_GN.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-next-riser-handlebar_GN.jpg",
     name: "Next Riser 35mm Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -822,7 +822,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-next-riser-handlebar",
-    image: "assets/race-face-next-riser-handlebar_STE.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-next-riser-handlebar_STE.jpg",
     name: "Next Riser 35mm Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -837,7 +837,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-next-riser-handlebar",
-    image: "assets/race-face-next-riser-handlebar_TUR.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-next-riser-handlebar_TUR.jpg",
     name: "Next Riser 35mm Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -852,7 +852,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite-carbon-35-handlebar",
-    image: "assets/renthal-fatbar-lite-carbon-35-handlebar_UNICB.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite-carbon-35-handlebar_UNICB.jpg",
     name: "Fatbar Lite Carbon 35 Handlebar",
     brand: "Renthal",
     material: "carbon fiber",
@@ -867,7 +867,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar",
-    image: "assets/renthal-fatbar_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar_GD.jpg",
     name: "FatBar V2",
     brand: "Renthal",
     material: "7050 T6 aluminum alloy",
@@ -882,7 +882,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar",
-    image: "assets/renthal-fatbar_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar_GD.jpg",
     name: "FatBar V2",
     brand: "Renthal",
     material: "7050 T6 aluminum alloy",
@@ -897,7 +897,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar",
-    image: "assets/renthal-fatbar_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar_GD.jpg",
     name: "FatBar V2",
     brand: "Renthal",
     material: "7050 T6 aluminum alloy",
@@ -912,7 +912,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar",
-    image: "assets/renthal-fatbar_GD.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar_GD.jpg",
     name: "FatBar V2",
     brand: "Renthal",
     material: "7050 T6 aluminum alloy",
@@ -927,7 +927,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/truvativ-descendant-riser-handlebar",
-    image: "assets/truvativ-descendant-riser-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/truvativ-descendant-riser-handlebar_BK.jpg",
     name: "Descendant Riser Handlebar",
     brand: "TruVativ",
     material: "Al-7050 aluminum",
@@ -940,7 +940,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-carbon-35-handlebar",
-    image: "assets/renthal-fatbar-carbon-35-handlebar_UNICB.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-carbon-35-handlebar_UNICB.jpg",
     name: "Fatbar Carbon 35 Handlebar",
     brand: "Renthal",
     material: "unidirectional carbon fiber",
@@ -955,7 +955,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-carbon-35-handlebar",
-    image: "assets/renthal-fatbar-carbon-35-handlebar_UNICB.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-carbon-35-handlebar_UNICB.jpg",
     name: "Fatbar Carbon 35 Handlebar",
     brand: "Renthal",
     material: "unidirectional carbon fiber",
@@ -970,7 +970,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-carbon-35-handlebar",
-    image: "assets/renthal-fatbar-carbon-35-handlebar_UNICB.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-carbon-35-handlebar_UNICB.jpg",
     name: "Fatbar Carbon 35 Handlebar",
     brand: "Renthal",
     material: "unidirectional carbon fiber",
@@ -985,7 +985,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite-carbon",
-    image: "assets/renthal-fatbar-lite-carbon_S10MMRIS.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite-carbon_S10MMRIS.jpg",
     name: "Fatbar Lite Carbon",
     brand: "Renthal",
     material: "unidirectional carbon fiber",
@@ -1000,7 +1000,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-lite-carbon",
-    image: "assets/renthal-fatbar-lite-carbon_S30MMRIS.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-lite-carbon_S30MMRIS.jpg",
     name: "Fatbar Lite Carbon",
     brand: "Renthal",
     material: "unidirectional carbon fiber",
@@ -1015,7 +1015,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/pnw-components-range-v3-35-handlebar",
-    image: "assets/pnw-components-range-v3-35-handlebar_CEMGRE.jpg",
+    image: "assets/competitive-cyclist-bars/pnw-components-range-v3-35-handlebar_CEMGRE.jpg",
     name: "Range v3 35 Handlebar",
     brand: "PNW Components",
     material: "aluminum",
@@ -1030,7 +1030,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/pnw-components-range-v3-35-handlebar",
-    image: "assets/pnw-components-range-v3-35-handlebar_REARED.jpg",
+    image: "assets/competitive-cyclist-bars/pnw-components-range-v3-35-handlebar_REARED.jpg",
     name: "Range v3 35 Handlebar",
     brand: "PNW Components",
     material: "aluminum",
@@ -1045,7 +1045,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/pnw-components-range-v3-35-handlebar",
-    image: "assets/pnw-components-range-v3-35-handlebar_SAFORA.jpg",
+    image: "assets/competitive-cyclist-bars/pnw-components-range-v3-35-handlebar_SAFORA.jpg",
     name: "Range v3 35 Handlebar",
     brand: "PNW Components",
     material: "aluminum",
@@ -1060,7 +1060,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/pnw-components-range-v3-35-handlebar",
-    image: "assets/pnw-components-range-v3-35-handlebar_SEATEA.jpg",
+    image: "assets/competitive-cyclist-bars/pnw-components-range-v3-35-handlebar_SEATEA.jpg",
     name: "Range v3 35 Handlebar",
     brand: "PNW Components",
     material: "aluminum",
@@ -1075,7 +1075,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-next-3-4in-riser-handlebar",
-    image: "assets/race-face-next-3-4in-riser-handlebar_BK.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-next-3-4in-riser-handlebar_BK.jpg",
     name: "Next 3/4in Riser Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -1090,7 +1090,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/race-face-next-3-4in-riser-handlebar",
-    image: "assets/race-face-next-3-4in-riser-handlebar_RD.jpg",
+    image: "assets/competitive-cyclist-bars/race-face-next-3-4in-riser-handlebar_RD.jpg",
     name: "Next 3/4in Riser Handlebar",
     brand: "Race Face",
     material: "carbon fiber",
@@ -1105,7 +1105,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-carbon",
-    image: "assets/renthal-fatbar-carbon_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-carbon_BK.jpg",
     name: "Fatbar Carbon V2",
     brand: "Renthal",
     material: "uni-directional carbon fiber",
@@ -1120,7 +1120,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-carbon",
-    image: "assets/renthal-fatbar-carbon_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-carbon_BK.jpg",
     name: "Fatbar Carbon V2",
     brand: "Renthal",
     material: "uni-directional carbon fiber",
@@ -1135,7 +1135,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-carbon",
-    image: "assets/renthal-fatbar-carbon_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-carbon_BK.jpg",
     name: "Fatbar Carbon V2",
     brand: "Renthal",
     material: "uni-directional carbon fiber",
@@ -1150,7 +1150,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/renthal-fatbar-carbon",
-    image: "assets/renthal-fatbar-carbon_BK.jpg",
+    image: "assets/competitive-cyclist-bars/renthal-fatbar-carbon_BK.jpg",
     name: "Fatbar Carbon V2",
     brand: "Renthal",
     material: "uni-directional carbon fiber",
@@ -1165,7 +1165,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/enve-m5-handlebar",
-    image: "assets/enve-m5-handlebar_S318MMCLA.jpg",
+    image: "assets/competitive-cyclist-bars/enve-m5-handlebar_S318MMCLA.jpg",
     name: "M5 Handlebar",
     brand: "ENVE",
     material: "Carbon",
@@ -1179,7 +1179,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/enve-m6-handlebar",
-    image: "assets/enve-m6-handlebar_S75MMRIS.jpg",
+    image: "assets/competitive-cyclist-bars/enve-m6-handlebar_S75MMRIS.jpg",
     name: "M6 Handlebar",
     brand: "ENVE",
     material: "carbon fiber",
@@ -1194,7 +1194,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/enve-m6-handlebar",
-    image: "assets/enve-m6-handlebar_S25MMRIS.jpg",
+    image: "assets/competitive-cyclist-bars/enve-m6-handlebar_S25MMRIS.jpg",
     name: "M6 Handlebar",
     brand: "ENVE",
     material: "carbon fiber",
@@ -1209,7 +1209,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/pnw-components-range-v3-handlebar",
-    image: "assets/pnw-components-range-v3-handlebar_REARED.jpg",
+    image: "assets/competitive-cyclist-bars/pnw-components-range-v3-handlebar_REARED.jpg",
     name: "Range v3 Handlebar",
     brand: "PNW Components",
     material: "2014-T73 heat treated alloy",
@@ -1222,7 +1222,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/pnw-components-range-v3-handlebar",
-    image: "assets/pnw-components-range-v3-handlebar_SAFORA.jpg",
+    image: "assets/competitive-cyclist-bars/pnw-components-range-v3-handlebar_SAFORA.jpg",
     name: "Range v3 Handlebar",
     brand: "PNW Components",
     material: "2014-T73 heat treated alloy",
@@ -1235,7 +1235,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/pnw-components-range-v3-handlebar",
-    image: "assets/pnw-components-range-v3-handlebar_SEATEA.jpg",
+    image: "assets/competitive-cyclist-bars/pnw-components-range-v3-handlebar_SEATEA.jpg",
     name: "Range v3 Handlebar",
     brand: "PNW Components",
     material: "2014-T73 heat treated alloy",
@@ -1248,7 +1248,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/oneup-components-carbon-handlebar",
-    image: "assets/oneup-components-carbon-handlebar_BLA.jpg",
+    image: "assets/competitive-cyclist-bars/oneup-components-carbon-handlebar_BLA.jpg",
     name: "Carbon Handlebar",
     brand: "OneUp Components",
     material: "carbon fiber",
@@ -1263,7 +1263,7 @@ mutation MyMutation {
   },
   {
     link: "https://www.competitivecyclist.com/oneup-components-carbon-handlebar",
-    image: "assets/oneup-components-carbon-handlebar_BLA.jpg",
+    image: "assets/competitive-cyclist-bars/oneup-components-carbon-handlebar_BLA.jpg",
     name: "Carbon Handlebar",
     brand: "OneUp Components",
     material: "carbon fiber",
