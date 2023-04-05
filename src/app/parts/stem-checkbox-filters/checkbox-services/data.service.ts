@@ -6,8 +6,8 @@ import { Stems } from 'src/app/models/stems.model';
 })
 export class DataService {
 
-  getUniqueValues(data: Stems[], property: string) {
-    const brandSet = new Set(data.map(stem => stem[property as keyof typeof stem]))
+  getUniqueValues(data: any[], property: string): (string | number | null)[] {
+    const brandSet = new Set(data.map(stem => stem[property]))
     const uniqArray: (string | number | null)[] = [...brandSet];
     let sortedUniqArray: (string | number | null)[] = uniqArray;
 
