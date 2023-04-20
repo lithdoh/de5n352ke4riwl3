@@ -1,7 +1,7 @@
 Cycle Selector is a website I'm working on to help people determine bike part compatibility.
 It makes use of reactive principals on things like the sort headers, paginator, filters, search input, receiving data from backend, etc.
 
-Features server-side sorting, filtering and pagination:
+Server-side sorting, filtering, pagination, and searching:
 
 ![BikePartPicker Sorting:Filtering](https://user-images.githubusercontent.com/100744679/227733989-859f9d42-794d-49dd-b386-73bb7a220ccf.jpg)
 
