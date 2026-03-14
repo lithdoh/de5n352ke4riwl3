@@ -1,5 +1,5 @@
 Cycle Selector is a website I'm working on to help people determine bike part compatibility.
-It makes use of reactive principals on things like the sort headers, paginator, filters, search input, receiving data from backend, etc.
+It makes use of reactive principles on things like the sort headers, paginator, filters, search input, receiving data from backend, etc.
 
 Server-side sorting, filtering, pagination, and searching:
 
